@@ -262,10 +262,10 @@ ul.items li:last-child{{border-bottom:none;}}
 .celda{{position:relative;border-radius:8px;overflow:hidden;background:#1a1a1a;
   border:3px solid #202020;}}
 .celda img{{width:100%;height:100%;object-fit:cover;display:block;}}
-.mosaico.n2 .celda{{height:520px;}}
-.mosaico.n3 .celda{{height:300px;}}
-.mosaico.n3 .celda:first-child{{height:330px;}}
-.mosaico.n4 .celda{{height:300px;}}
+.mosaico.n2 .celda{{height:660px;}}
+.mosaico.n3 .celda{{height:330px;}}
+.mosaico.n3 .celda:first-child{{height:380px;}}
+.mosaico.n4 .celda{{height:340px;}}
 .celda .pie-foto{{position:absolute;left:0;bottom:0;width:100%;
   background:linear-gradient(180deg,transparent,rgba(0,0,0,.9));
   color:#fff;font-size:24px;font-weight:700;padding:44px 20px 16px;}}
