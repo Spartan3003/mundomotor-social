@@ -23,6 +23,10 @@ on:
         description: "Mostrar el push sin enviarlo"
         type: boolean
         default: true
+      probar_clave:
+        description: "Comprobar que la clave de OneSignal funciona (no envía nada)"
+        type: boolean
+        default: false
 
 permissions:
   contents: read
@@ -50,8 +54,34 @@ jobs:
             echo "simular=no" >> $GITHUB_OUTPUT
           fi
 
+      # Comprueba que la clave autentica, con una llamada de SOLO LECTURA.
+      # Sirve para validar la configuración sin mandarle una notificación a
+      # 87 personas a deshoras.
+      - name: Comprobar la clave sin enviar nada
+        if: inputs.probar_clave
+        env:
+          APP: ${{ vars.ONESIGNAL_APP_ID }}
+          KEY: ${{ secrets.ONESIGNAL_API_KEY }}
+        run: |
+          if [ -z "$KEY" ]; then echo "::error::Falta ONESIGNAL_API_KEY."; exit 1; fi
+          for ESQUEMA in Key Basic; do
+            CODIGO=$(curl -s -o /tmp/os.json -w "%{http_code}" \
+              -H "Authorization: $ESQUEMA $KEY" \
+              "https://api.onesignal.com/notifications?app_id=$APP&limit=1")
+            echo "Esquema $ESQUEMA -> HTTP $CODIGO"
+            if [ "$CODIGO" = "200" ]; then
+              echo "La clave autentica correctamente como '$ESQUEMA'."
+              grep -o '"total_count":[0-9]*' /tmp/os.json | head -1
+              exit 0
+            fi
+          done
+          echo "::error::OneSignal rechazó la clave en los dos formatos."
+          cat /tmp/os.json
+          exit 1
+
       - name: Elegir la pieza del día
         id: pieza
+        if: '!inputs.probar_clave'
         run: |
           if ! SLUG=$(python cola.py siguiente --slug); then
             echo "hay=no" >> $GITHUB_OUTPUT
