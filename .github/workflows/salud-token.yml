@@ -96,3 +96,23 @@ jobs:
               owner: context.repo.owner, repo: context.repo.repo,
               title: titulo, body: cuerpo,
             });
+
+      - name: Avisar por WhatsApp
+        if: steps.check.outputs.estado != 'ok'
+        env:
+          TEL: ${{ secrets.CALLMEBOT_PHONE }}
+          KEY: ${{ secrets.CALLMEBOT_APIKEY }}
+          ESTADO: ${{ steps.check.outputs.estado }}
+          RESTAN: ${{ steps.check.outputs.restan }}
+        run: |
+          [ -z "$TEL" ] || [ -z "$KEY" ] && { echo "Sin CallMebot configurado."; exit 0; }
+          case "$ESTADO" in
+            invalido)    M="🚨 Mundo Motor: el token de Instagram CADUCÓ. La publicación automática está caída hasta que lo renueves." ;;
+            por_caducar) M="🔑 Mundo Motor: el token de Instagram caduca en ~$RESTAN días. Renuévalo antes de que corte la publicación." ;;
+            sin_token)   M="⚠️ Mundo Motor: no hay token de Instagram configurado, la publicación automática no está funcionando." ;;
+            *)           M="⚠️ Mundo Motor: revisa el token de Instagram (estado: $ESTADO)." ;;
+          esac
+          M="$M Pasos: github.com/Spartan3003/mundomotor-social/issues"
+          curl -sG "https://api.callmebot.com/whatsapp.php" \
+            -d "phone=$TEL" -d "apikey=$KEY" --data-urlencode "text=$M" \
+            --max-time 30 || echo "(no pude enviar el WhatsApp)"

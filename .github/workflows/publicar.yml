@@ -184,3 +184,33 @@ jobs:
           path: salida/${{ steps.pieza.outputs.slug }}/
           if-no-files-found: error
           retention-days: 30
+
+      # Un issue en GitHub no lo lee nadie. Lo que sí se lee es WhatsApp.
+      # Si los secrets de CallMebot no están puestos, este paso no hace nada
+      # y no rompe el workflow.
+      - name: Avisar por WhatsApp
+        if: always()
+        env:
+          TEL: ${{ secrets.CALLMEBOT_PHONE }}
+          KEY: ${{ secrets.CALLMEBOT_APIKEY }}
+        run: |
+          [ -z "$TEL" ] || [ -z "$KEY" ] && { echo "Sin CallMebot configurado, no aviso."; exit 0; }
+          VIVAS="${{ steps.banco.outputs.vivas }}"
+          SLUG="${{ steps.pieza.outputs.slug }}"
+          ESTADO="${{ job.status }}"
+          MENSAJE=""
+          if [ "$ESTADO" != "success" ]; then
+            MENSAJE="⚠️ Mundo Motor: FALLÓ la publicación de hoy en Instagram. Pieza: ${SLUG:-ninguna}. Revisa: https://github.com/Spartan3003/mundomotor-social/actions"
+          elif [ "${{ steps.pieza.outputs.hay }}" = "no" ]; then
+            MENSAJE="🚨 Mundo Motor: el banco está VACÍO, hoy no se publicó nada en Instagram y no se publicará hasta que haya piezas nuevas."
+          elif [ "${{ steps.modo.outputs.simular }}" = "no" ] && [ -n "$VIVAS" ] && [ "$VIVAS" -lt 3 ]; then
+            MENSAJE="📸 Mundo Motor: publicado '$SLUG' en Instagram. Quedan $VIVAS pieza(s) en el banco: toca producir más esta semana."
+          fi
+          if [ -n "$MENSAJE" ]; then
+            curl -sG "https://api.callmebot.com/whatsapp.php" \
+              -d "phone=$TEL" -d "apikey=$KEY" --data-urlencode "text=$MENSAJE" \
+              --max-time 30 || echo "(no pude enviar el WhatsApp)"
+            echo "Aviso enviado."
+          else
+            echo "Todo en orden, no hace falta avisar."
+          fi
