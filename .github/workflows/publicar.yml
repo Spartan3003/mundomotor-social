@@ -60,9 +60,11 @@ jobs:
           SLUG="${{ steps.pieza.outputs.slug }}"
           mkdir -p docs/$SLUG
           cp salida/$SLUG/*.png docs/$SLUG/
+          cp salida/$SLUG/paquete.json docs/$SLUG/
+          python galeria.py
           git config user.name "Mundo Motor bot"
           git config user.email "actions@github.com"
-          git add docs/$SLUG
+          git add docs
           git commit -m "Imágenes del carrusel $SLUG" || echo "sin cambios"
           git push
 
