@@ -4,3 +4,7 @@ _tmp/
 pruebas/
 # Caché de imágenes descargadas
 imagenes/
+
+# Cachés de Python
+__pycache__/
+*.pyc
