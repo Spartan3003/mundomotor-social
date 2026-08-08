@@ -23,6 +23,8 @@ import shutil
 import subprocess
 import sys
 
+from PIL import Image
+
 BASE = pathlib.Path(__file__).parent
 FONTS = BASE / "fonts"
 BRAND = BASE / "brand"
@@ -492,6 +494,7 @@ def build(config_path: str):
     tmp.mkdir(exist_ok=True)
 
     hoja = css()
+    fallos = 0
     for i, s in enumerate(slides, 1):
         doc = ("<!doctype html><html lang='es'><head><meta charset='utf-8'>"
                f"<style>{hoja}</style></head><body>"
@@ -499,20 +502,45 @@ def build(config_path: str):
         f = tmp / f"{slug}_{i:02d}.html"
         f.write_text(doc, encoding="utf-8")
 
-        png = out / f"{i:02d}.png"
-        subprocess.run(
-            [CHROME, "--headless=new", "--disable-gpu", "--hide-scrollbars",
-             "--no-sandbox", "--disable-dev-shm-usage",
-             "--force-device-scale-factor=1", f"--window-size={W},{H}",
-             "--default-background-color=0B0B0BFF", "--virtual-time-budget=2500",
-             f"--screenshot={png}", f"file:///{f.as_posix()}"],
-            capture_output=True, timeout=120,
-        )
-        print(f"  [{'OK' if png.exists() else 'FALLO'}] {png.name}  {s.get('tipo')}")
+        png = tmp / f"{slug}_{i:02d}.png"
+        png.unlink(missing_ok=True)
+        try:
+            subprocess.run(
+                [CHROME, "--headless=new", "--disable-gpu", "--hide-scrollbars",
+                 "--no-sandbox", "--disable-dev-shm-usage",
+                 "--force-device-scale-factor=1", f"--window-size={W},{H}",
+                 "--default-background-color=0B0B0BFF", "--virtual-time-budget=4000",
+                 f"--screenshot={png}", f"file:///{f.as_posix()}"],
+                capture_output=True, timeout=180,
+            )
+        except subprocess.TimeoutExpired:
+            print(f"  [FALLO] lamina {i:02d}: Chrome no respondio a tiempo")
+            fallos += 1
+            continue
+
+        # Instagram solo documenta JPEG como formato admitido para las fotos.
+        jpg = out / f"{i:02d}.jpg"
+        try:
+            with Image.open(png) as im:
+                if im.size != (W, H):
+                    raise ValueError(f"render de {im.size}, se esperaba {(W, H)}")
+                im.convert("RGB").save(jpg, "JPEG", quality=88, optimize=True)
+        except Exception as e:
+            print(f"  [FALLO] lamina {i:02d}: {e}")
+            fallos += 1
+            continue
+        finally:
+            png.unlink(missing_ok=True)
+
+        print(f"  [OK] {jpg.name}  {s.get('tipo')}  ({jpg.stat().st_size // 1024} KB)")
+
+    if fallos:
+        print(f"\n*** {fallos} de {total} laminas NO se generaron. Pieza incompleta. ***")
+        return 1
 
     print(f"\nCarrusel listo: {out}")
-    return out
+    return 0
 
 
 if __name__ == "__main__":
-    build(sys.argv[1] if len(sys.argv) > 1 else str(BASE / "carrusel.json"))
+    sys.exit(build(sys.argv[1] if len(sys.argv) > 1 else str(BASE / "carrusel.json")))

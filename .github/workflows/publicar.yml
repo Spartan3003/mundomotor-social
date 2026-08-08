@@ -4,13 +4,15 @@ name: Publicar carrusel en Instagram
 # Los cron van en UTC; Bogotá es UTC-5. Las franjas salen del estudio de
 # horarios: martes 20:00 es el pico más consistente y el miércoles al mediodía
 # es la única hora que también alcanza a España.
+# Los minutos NO son :00 a propósito: GitHub avisa de que las ejecuciones
+# programadas al inicio de la hora pueden retrasarse o directamente perderse.
 on:
   schedule:
-    - cron: "0 0 * * 2"    # lunes    19:00 Bogotá
-    - cron: "0 1 * * 3"    # martes   20:00 Bogotá  <- la mejor pieza de la semana
-    - cron: "30 17 * * 3"  # miércoles 12:30 Bogotá
-    - cron: "0 23 * * 4"   # jueves   18:00 Bogotá
-    - cron: "0 22 * * 5"   # viernes  17:00 Bogotá
+    - cron: "7 0 * * 2"    # lunes    19:07 Bogotá
+    - cron: "7 1 * * 3"    # martes   20:07 Bogotá  <- la mejor pieza de la semana
+    - cron: "37 17 * * 3"  # miércoles 12:37 Bogotá
+    - cron: "7 23 * * 4"   # jueves   18:07 Bogotá
+    - cron: "7 22 * * 5"   # viernes  17:07 Bogotá
   workflow_dispatch:
     inputs:
       simular:
@@ -20,6 +22,7 @@ on:
 
 permissions:
   contents: write
+  issues: write
 
 concurrency:
   group: publicar-instagram
@@ -35,15 +38,31 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Comprobar que hay Chrome
-        run: google-chrome --version
+      - name: Preparar entorno
+        run: |
+          google-chrome --version
+          python -m pip install --quiet pillow
+
+      # El modo se resuelve UNA vez y de forma explícita. En las ejecuciones
+      # por cron el contexto `inputs` no existe, así que sin esto el
+      # comportamiento dependería de coincidencias poco evidentes.
+      - name: Determinar el modo
+        id: modo
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ inputs.simular }}" = "true" ]; then
+            echo "simular=si" >> $GITHUB_OUTPUT
+            echo "Modo: SIMULACIÓN (no se publica ni se toca el repositorio)"
+          else
+            echo "simular=no" >> $GITHUB_OUTPUT
+            echo "Modo: PUBLICACIÓN REAL"
+          fi
 
       - name: Elegir la pieza del día
         id: pieza
         run: |
           if ! SLUG=$(python cola.py siguiente --slug); then
-            echo "El banco está vacío o todo está caducado. Hoy no se publica."
             echo "hay=no" >> $GITHUB_OUTPUT
+            echo "::warning::El banco está vacío o todo está caducado. Hoy no se publica."
             exit 0
           fi
           echo "Pieza de hoy: $SLUG"
@@ -55,35 +74,45 @@ jobs:
         run: python producir.py "banco/pendientes/${{ steps.pieza.outputs.slug }}.json"
 
       - name: Publicar las imágenes en GitHub Pages
-        if: steps.pieza.outputs.hay == 'si'
+        if: steps.pieza.outputs.hay == 'si' && steps.modo.outputs.simular == 'no'
         run: |
           SLUG="${{ steps.pieza.outputs.slug }}"
           mkdir -p docs/$SLUG
-          cp salida/$SLUG/*.png docs/$SLUG/
+          cp salida/$SLUG/*.jpg docs/$SLUG/
           cp salida/$SLUG/paquete.json docs/$SLUG/
           python galeria.py
           git config user.name "Mundo Motor bot"
           git config user.email "actions@github.com"
           git add docs
           git commit -m "Imágenes del carrusel $SLUG" || echo "sin cambios"
-          git push
+          for i in 1 2 3; do
+            git pull --rebase --autostash origin main && git push && break
+            echo "push fallido (intento $i), reintento en 10s"; sleep 10
+          done
 
       - name: Esperar a que las imágenes estén accesibles
-        if: steps.pieza.outputs.hay == 'si' && !inputs.simular
+        if: steps.pieza.outputs.hay == 'si' && steps.modo.outputs.simular == 'no'
         run: |
           SLUG="${{ steps.pieza.outputs.slug }}"
-          URL="${{ vars.BASE_URL }}/$SLUG/01.png"
-          echo "Esperando a $URL"
-          for i in $(seq 1 40); do
-            CODIGO=$(curl -s -o /dev/null -w "%{http_code}" "$URL")
-            if [ "$CODIGO" = "200" ]; then
-              echo "Disponible tras $((i*15))s"
-              exit 0
+          # Se comprueban TODAS las láminas, no solo la primera: Meta las
+          # descarga una por una y basta con que falte la última para que el
+          # contenedor entre en ERROR.
+          for f in salida/$SLUG/*.jpg; do
+            NOMBRE=$(basename "$f")
+            URL="${{ vars.BASE_URL }}/$SLUG/$NOMBRE"
+            OK=no
+            for i in $(seq 1 40); do
+              if [ "$(curl -s -o /dev/null -w '%{http_code}' "$URL")" = "200" ]; then
+                OK=si; break
+              fi
+              sleep 15
+            done
+            if [ "$OK" = "no" ]; then
+              echo "::error::$NOMBRE no quedó público a tiempo. No se publica."
+              exit 1
             fi
-            sleep 15
           done
-          echo "Las imágenes no quedaron públicas a tiempo. No se publica."
-          exit 1
+          echo "Las ${{ steps.pieza.outputs.slug }} láminas están accesibles."
 
       - name: Publicar en Instagram
         if: steps.pieza.outputs.hay == 'si'
@@ -94,23 +123,58 @@ jobs:
           GRAPH_VERSION: ${{ vars.GRAPH_VERSION }}
         run: |
           SLUG="${{ steps.pieza.outputs.slug }}"
-          if [ "${{ inputs.simular }}" = "true" ]; then
+          if [ "${{ steps.modo.outputs.simular }}" = "si" ]; then
             python publicar_ig.py "salida/$SLUG/paquete.json" --simular
           else
             python publicar_ig.py "salida/$SLUG/paquete.json"
           fi
 
       - name: Marcar la pieza como publicada
-        if: steps.pieza.outputs.hay == 'si' && !inputs.simular
+        if: steps.pieza.outputs.hay == 'si' && steps.modo.outputs.simular == 'no'
         run: |
           python cola.py publicada "${{ steps.pieza.outputs.slug }}"
           git add banco
           git commit -m "Publicada ${{ steps.pieza.outputs.slug }}" || echo "sin cambios"
-          git push
+          for i in 1 2 3; do
+            git pull --rebase --autostash origin main && git push && break
+            echo "push fallido (intento $i), reintento en 10s"; sleep 10
+          done
 
-      - name: Avisar si el banco se está quedando corto
-        if: steps.pieza.outputs.hay == 'si'
-        run: python cola.py estado
+      # always(): este aviso tiene que correr sobre todo cuando NO hubo pieza,
+      # que es justo el caso que existe para cubrir.
+      - name: Revisar el banco y avisar si se está agotando
+        if: always()
+        id: banco
+        run: |
+          python cola.py estado | tee estado.txt
+          VIVAS=$(grep -oP 'Listas para publicar\s*:\s*\K[0-9]+' estado.txt || echo 0)
+          echo "vivas=$VIVAS" >> $GITHUB_OUTPUT
+
+      - name: Abrir aviso si el banco se está quedando sin piezas
+        if: always() && steps.banco.outputs.vivas != '' && fromJSON(steps.banco.outputs.vivas) < 3
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const vivas = Number("${{ steps.banco.outputs.vivas }}");
+            const titulo = "El banco de piezas se está agotando";
+            const cuerpo = vivas === 0
+              ? "**El banco está vacío: hoy no se publicó nada y no se publicará hasta que haya piezas.**\n\nCorre `python cola.py candidatos` para ver qué artículos del archivo sirven, y crea piezas nuevas siguiendo `REDACTOR.md`."
+              : `Quedan **${vivas}** pieza(s) en el banco, es decir ${vivas} día(s) laborables de autonomía.\n\nConviene producir más esta semana: \`python cola.py candidatos\` propone artículos del archivo que aún no se han usado.`;
+            const abiertos = await github.rest.issues.listForRepo({
+              owner: context.repo.owner, repo: context.repo.repo, state: "open",
+            });
+            const previo = abiertos.data.find(i => i.title === titulo);
+            if (previo) {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner, repo: context.repo.repo,
+                issue_number: previo.number, body: cuerpo,
+              });
+            } else {
+              await github.rest.issues.create({
+                owner: context.repo.owner, repo: context.repo.repo,
+                title: titulo, body: cuerpo,
+              });
+            }
 
       - name: Guardar la pieza como artefacto
         if: steps.pieza.outputs.hay == 'si'
@@ -118,4 +182,5 @@ jobs:
         with:
           name: carrusel-${{ steps.pieza.outputs.slug }}
           path: salida/${{ steps.pieza.outputs.slug }}/
+          if-no-files-found: error
           retention-days: 30

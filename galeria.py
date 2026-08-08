@@ -51,7 +51,7 @@ def main():
     for carpeta in sorted(DOCS.iterdir()):
         if not carpeta.is_dir():
             continue
-        laminas = sorted(carpeta.glob("[0-9][0-9].png"))
+        laminas = sorted(carpeta.glob("[0-9][0-9].jpg"))
         if not laminas:
             continue
         slug = carpeta.name

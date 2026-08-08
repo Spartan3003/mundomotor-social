@@ -35,19 +35,34 @@ import urllib.error
 import urllib.parse
 import urllib.request
 
-GRAPH = os.environ.get("GRAPH_VERSION", "v21.0")
+BASE = pathlib.Path(__file__).parent
+
+# El `or` importa: Actions exporta la variable vacia cuando no existe, y con
+# string vacio el segundo argumento de os.environ.get no llega a aplicarse.
+GRAPH = os.environ.get("GRAPH_VERSION") or "v21.0"
 API = f"https://graph.instagram.com/{GRAPH}"
 
 
-def pide(url: str, datos: dict = None, metodo: str = "POST"):
+def pide(url: str, datos: dict = None, metodo: str = "POST", intentos: int = 3):
+    """Reintenta ante fallos de red y 5xx; un 4xx es definitivo y no se repite."""
     cuerpo = urllib.parse.urlencode(datos).encode() if datos else None
-    req = urllib.request.Request(url, data=cuerpo, method=metodo)
-    try:
-        with urllib.request.urlopen(req, timeout=90) as r:
-            return json.loads(r.read().decode())
-    except urllib.error.HTTPError as e:
-        detalle = e.read().decode("utf-8", "ignore")
-        raise SystemExit(f"\nLa API respondio {e.code}:\n{detalle}\n")
+    ultimo = ""
+    for n in range(1, intentos + 1):
+        req = urllib.request.Request(url, data=cuerpo, method=metodo)
+        try:
+            with urllib.request.urlopen(req, timeout=90) as r:
+                return json.loads(r.read().decode())
+        except urllib.error.HTTPError as e:
+            detalle = e.read().decode("utf-8", "ignore")
+            if e.code < 500:
+                raise SystemExit(f"\nLa API respondio {e.code}:\n{detalle}\n")
+            ultimo = f"{e.code}: {detalle}"
+        except Exception as e:                      # red, DNS, timeout, JSON roto
+            ultimo = str(e)
+        if n < intentos:
+            print(f"  (intento {n} fallido: {ultimo[:120]}; reintento en {n * 5}s)")
+            time.sleep(n * 5)
+    raise SystemExit(f"\nLa API no respondio tras {intentos} intentos:\n{ultimo}\n")
 
 
 def espera_contenedor(cid: str, token: str, intentos: int = 30):
@@ -85,9 +100,20 @@ def main() -> int:
     imagenes = paquete["imagenes"]
     caption = paquete["caption"]
 
-    if len(imagenes) > 10:
-        print(f"El carrusel trae {len(imagenes)} imagenes y el maximo son 10.")
+    if not 2 <= len(imagenes) <= 10:
+        print(f"Un carrusel necesita entre 2 y 10 imagenes, y trae {len(imagenes)}.")
         return 1
+
+    # Salvaguarda contra duplicados: si la pieza ya figura como publicada, no
+    # se vuelve a publicar aunque el estado del repo se haya quedado atras.
+    hist = BASE / "banco" / "historial.json"
+    if hist.exists():
+        ya = json.loads(hist.read_text(encoding="utf-8")).get("publicadas", [])
+        previa = next((x for x in ya if x.get("slug") == slug), None)
+        if previa:
+            print(f"'{slug}' ya figura como publicada el {previa.get('fecha')}. "
+                  "No se publica de nuevo.")
+            return 0
 
     urls = [f"{base}/{slug}/{im['archivo']}" for im in imagenes]
     print(f"Carrusel '{slug}' — {len(urls)} laminas")
@@ -131,9 +157,17 @@ def main() -> int:
     })
     print(f"\nPUBLICADO. id del post: {pub.get('id')}")
 
-    limite = pide(f"{API}/{ig_id}/content_publishing_limit"
-                  f"?fields=quota_usage&access_token={token}", metodo="GET")
-    print(f"Cuota usada en 24 h: {limite.get('data', [{}])[0].get('quota_usage', '?')}/100")
+    # A partir de aqui el post YA existe. Nada de lo que siga puede tumbar el
+    # proceso: si lo hiciera, el paso que marca la pieza como publicada no
+    # correria y manana se publicaria de nuevo.
+    try:
+        limite = pide(f"{API}/{ig_id}/content_publishing_limit"
+                      f"?fields=quota_usage&access_token={token}",
+                      metodo="GET", intentos=1)
+        print(f"Cuota usada en 24 h: "
+              f"{limite.get('data', [{}])[0].get('quota_usage', '?')}/100")
+    except Exception as e:
+        print(f"(no pude consultar la cuota, es informativo: {e})")
     return 0
 
 

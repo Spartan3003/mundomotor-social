@@ -1,12 +1,19 @@
 name: Vigilar el token de Instagram
 
-# El token de larga duración de Instagram caduca a los 60 días. Este workflow
-# lo refresca cada semana (refrescarlo extiende su validez otros 60 días) y,
-# si algo falla, abre un issue para que no nos enteremos el día que deje de
-# publicarse el carrusel.
+# El token de larga duración de Instagram caduca a los 60 días.
+#
+# Refrescarlo devuelve una cadena NUEVA (Meta no documenta si la anterior
+# queda invalidada), así que refrescar sin guardar el resultado no sirve de
+# nada: el secret se quedaría con el token viejo y el sistema moriría a los
+# 60 días exactos, con la vigilancia dando verde cada semana.
+#
+# Por eso aquí NO se refresca a ciegas. Se comprueba que el token del secret
+# siga siendo válido y se avisa por antigüedad, contando desde la fecha
+# registrada en banco/token_emitido.txt. Renovarlo es un gesto manual de dos
+# minutos, y es preferible eso a una automatización que aparenta funcionar.
 on:
   schedule:
-    - cron: "0 14 * * 1"   # lunes, 09:00 Bogotá
+    - cron: "13 14 * * 1"   # lunes, 09:13 Bogotá
   workflow_dispatch:
 
 permissions:
@@ -17,7 +24,9 @@ jobs:
   revisar:
     runs-on: ubuntu-latest
     steps:
-      - name: Refrescar y comprobar el token
+      - uses: actions/checkout@v4
+
+      - name: Comprobar el token y su antigüedad
         id: check
         env:
           IG_TOKEN: ${{ secrets.IG_TOKEN }}
@@ -26,17 +35,30 @@ jobs:
             echo "estado=sin_token" >> $GITHUB_OUTPUT
             exit 0
           fi
-          RESP=$(curl -s "https://graph.instagram.com/refresh_access_token?grant_type=ig_refresh_token&access_token=$IG_TOKEN")
-          echo "$RESP" | grep -q "access_token" && OK=si || OK=no
-          if [ "$OK" = "si" ]; then
-            DIAS=$(echo "$RESP" | sed -n 's/.*"expires_in":\([0-9]*\).*/\1/p')
-            DIAS=$((DIAS / 86400))
-            echo "El token es válido y caduca en $DIAS días."
-            echo "dias=$DIAS" >> $GITHUB_OUTPUT
-            [ "$DIAS" -lt 15 ] && echo "estado=por_caducar" >> $GITHUB_OUTPUT || echo "estado=ok" >> $GITHUB_OUTPUT
-          else
+
+          # ¿Sigue siendo válido? Una llamada de solo lectura, sin refrescar.
+          RESP=$(curl -s "https://graph.instagram.com/me?fields=id,username&access_token=$IG_TOKEN")
+          if ! echo "$RESP" | grep -q '"id"'; then
             echo "La API rechazó el token: $RESP"
             echo "estado=invalido" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+          echo "Token válido para: $(echo "$RESP" | grep -o '"username":"[^"]*"')"
+
+          # ¿Cuánto le queda? Se cuenta desde la fecha de emisión registrada.
+          if [ ! -f banco/token_emitido.txt ]; then
+            echo "estado=sin_fecha" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+          EMITIDO=$(tr -d '[:space:]' < banco/token_emitido.txt)
+          DIAS=$(( ( $(date +%s) - $(date -d "$EMITIDO" +%s) ) / 86400 ))
+          RESTAN=$(( 60 - DIAS ))
+          echo "Emitido el $EMITIDO — $DIAS días de antigüedad, quedan $RESTAN."
+          echo "restan=$RESTAN" >> $GITHUB_OUTPUT
+          if [ "$RESTAN" -lt 15 ]; then
+            echo "estado=por_caducar" >> $GITHUB_OUTPUT
+          else
+            echo "estado=ok" >> $GITHUB_OUTPUT
           fi
 
       - name: Avisar por issue
@@ -45,20 +67,24 @@ jobs:
         with:
           script: |
             const estado = "${{ steps.check.outputs.estado }}";
-            const dias = "${{ steps.check.outputs.dias }}";
+            const restan = "${{ steps.check.outputs.restan }}";
+            const renovar = [
+              "**Cómo renovarlo** (dos minutos):",
+              "",
+              "1. Entra a la app *Mundo Motor Publicador* en developers.facebook.com,",
+              "   caso de uso Instagram → *Generar tokens de acceso*.",
+              "2. Genera un token nuevo para la cuenta @mundomotor.bike.",
+              "3. Reemplaza el secret `IG_TOKEN` del repositorio.",
+              "4. Actualiza `banco/token_emitido.txt` con la fecha de hoy (AAAA-MM-DD).",
+            ].join("\n");
             const mensajes = {
               sin_token: "No hay ningún token configurado: el secret `IG_TOKEN` está vacío, así que el carrusel diario no se está publicando.",
-              invalido: "El token de Instagram dejó de ser válido. Hasta que se reemplace, el carrusel diario no se publica.",
-              por_caducar: `El token de Instagram caduca en ${dias} días. Conviene renovarlo antes de que se corte la publicación.`,
+              invalido: "**El token de Instagram dejó de ser válido y la publicación está caída.** Hasta que se reemplace, no sale nada.",
+              por_caducar: `El token de Instagram caduca en unos **${restan} días**. Conviene renovarlo antes de que corte la publicación.`,
+              sin_fecha: "Falta el archivo `banco/token_emitido.txt` con la fecha de emisión del token, así que no puedo avisar con antelación de su caducidad. Créalo con la fecha en formato AAAA-MM-DD.",
             };
-            const cuerpo = [
-              mensajes[estado],
-              "",
-              "Para renovarlo: genera un token nuevo de larga duración en la app de Meta y reemplaza el secret `IG_TOKEN` del repositorio (Settings → Secrets and variables → Actions).",
-              "",
-              "Los pasos completos están en PUESTA_EN_MARCHA.md, punto 3.",
-            ].join("\n");
             const titulo = "Token de Instagram: hay que renovarlo";
+            const cuerpo = `${mensajes[estado]}\n\n${renovar}`;
             const abiertos = await github.rest.issues.listForRepo({
               owner: context.repo.owner, repo: context.repo.repo, state: "open",
             });

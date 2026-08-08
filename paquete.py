@@ -50,11 +50,28 @@ def construye_caption(p: dict) -> str:
     return "\n".join(partes).strip()
 
 
-def revisa(cfg: dict, caption: str) -> list:
-    """Devuelve la lista de incumplimientos. Vacia = todo en orden."""
+def revisa(cfg: dict, caption: str, n_imagenes: int) -> tuple:
+    """Devuelve (bloqueantes, avisos).
+
+    Bloqueante = la pieza NO puede publicarse: rompe la API, engana al lector
+    o sale incompleta. Aviso = rinde peor, pero publicarla no hace dano.
+    La distincion importa: un aviso de estilo no puede dejar al medio sin
+    publicar, porque la cola es determinista y manana fallaria igual.
+    """
     p = cfg["publicacion"]
     laminas = cfg["laminas"]
-    fallos = []
+    fallos, avisos = [], []
+
+    # --- integridad: la pieza tiene que estar completa ---
+    if n_imagenes != len(laminas):
+        fallos.append(
+            f"Se generaron {n_imagenes} imagenes para {len(laminas)} laminas: "
+            "la pieza esta incompleta."
+        )
+    if n_imagenes < 2:
+        fallos.append("Un carrusel necesita al menos 2 imagenes.")
+    if n_imagenes > 10:
+        fallos.append(f"Instagram admite 10 imagenes por carrusel y hay {n_imagenes}.")
 
     # Se mide solo el copy: la atribucion de fuentes y los hashtags no cuentan,
     # porque son obligacion editorial y la regla no debe empujar a quitarlos.
@@ -62,19 +79,20 @@ def revisa(cfg: dict, caption: str) -> list:
     if len(caption) > MAX_CAPTION:
         fallos.append(f"El caption tiene {len(caption)} caracteres; el maximo es {MAX_CAPTION}.")
     elif len(copy) > RECOMENDADO_CAPTION:
-        fallos.append(
+        avisos.append(
             f"El copy tiene {len(copy)} caracteres ({len(copy.split())} palabras), sin contar "
             f"fuentes ni hashtags. Por encima de {RECOMENDADO_CAPTION} rinde peor en carrusel: "
             "el detalle va en las laminas, no en el texto."
         )
     if len(p["gancho"]) > MAX_GANCHO:
-        fallos.append(
+        avisos.append(
             f"El gancho tiene {len(p['gancho'])} caracteres. Por encima de {MAX_GANCHO} "
             "se corta antes del '... mas' y se pierde."
         )
     if p["gancho"].rstrip().endswith(":"):
-        fallos.append("El gancho termina en dos puntos: obliga a abrir para entenderlo.")
+        avisos.append("El gancho termina en dos puntos: obliga a abrir para entenderlo.")
 
+    # El alt es accesibilidad: si falta o sobra, la publicacion sale mal formada.
     alt = p.get("alt", [])
     if len(alt) != len(laminas):
         fallos.append(f"Hay {len(alt)} textos alternativos para {len(laminas)} laminas.")
@@ -82,10 +100,10 @@ def revisa(cfg: dict, caption: str) -> list:
         if len(a) > MAX_ALT:
             fallos.append(f"El alt de la lamina {i} supera {MAX_ALT} caracteres.")
         if len(a) < 25:
-            fallos.append(f"El alt de la lamina {i} es demasiado corto para describir la imagen.")
+            avisos.append(f"El alt de la lamina {i} es demasiado corto para describir la imagen.")
 
     if not p.get("cta"):
-        fallos.append("Falta la llamada a la accion (guardar o compartir).")
+        avisos.append("Falta la llamada a la accion (guardar o compartir).")
 
     # Hashtags: Metricool midio sobre 24M posts que su uso acompana -31,7% de
     # vistas y -33,9% de interacciones. Se usan pocos y solo si aportan contexto.
@@ -96,15 +114,15 @@ def revisa(cfg: dict, caption: str) -> list:
             f"{TOPE_HASHTAGS}. Mosseri ya aclaro que no dan alcance: sirven para "
             "describir el tema y para la busqueda interna."
         )
-    if n_tags > 3:
-        fallos.append(
+    if 3 < n_tags <= TOPE_HASHTAGS:
+        avisos.append(
             f"Lleva {n_tags} hashtags. Con 3 hiperrelevantes basta; mas no aporta."
         )
 
     # Una pregunta al cierre multiplica los comentarios (+36,7% segun Metricool).
     if not re.search(r"\?\s*$", (p.get("cta") or "").strip()) and \
        not any("?" in b for b in p.get("cuerpo", [])):
-        fallos.append(
+        avisos.append(
             "El caption no plantea ninguna pregunta. Cerrar con una pregunta real "
             "sube los comentarios de forma consistente."
         )
@@ -119,9 +137,9 @@ def revisa(cfg: dict, caption: str) -> list:
             fallos.append(f"El caption contiene cebo de interaccion ('{c}'): Instagram lo castiga.")
 
     if len(laminas) < 3:
-        fallos.append("Un carrusel de menos de 3 laminas no aprovecha el formato.")
+        avisos.append("Un carrusel de menos de 3 laminas no aprovecha el formato.")
 
-    return fallos
+    return fallos, avisos
 
 
 def main(ruta: str) -> int:
@@ -137,7 +155,7 @@ def main(ruta: str) -> int:
 
     (destino / "publicacion.txt").write_text(caption, encoding="utf-8")
 
-    imgs = sorted(destino.glob("[0-9][0-9].png"))
+    imgs = sorted(destino.glob("[0-9][0-9].jpg"))
     (destino / "paquete.json").write_text(json.dumps({
         "slug": cfg["slug"],
         "origen": cfg["origen"],
@@ -147,17 +165,24 @@ def main(ruta: str) -> int:
                      for f, a in zip(imgs, p.get("alt", []))],
     }, ensure_ascii=False, indent=2), encoding="utf-8")
 
-    fallos = revisa(cfg, caption)
+    fallos, avisos = revisa(cfg, caption, len(imgs))
     informe = ["REVISION DE LA PUBLICACION", "=" * 40,
                f"Laminas: {len(cfg['laminas'])}   Imagenes generadas: {len(imgs)}",
                f"Caption: {len(caption)} caracteres",
                f"Gancho: {len(p['gancho'])} caracteres",
                f"Hashtags: {len(p.get('hashtags', []))}", ""]
     if fallos:
-        informe.append(f"*** {len(fallos)} PUNTO(S) A CORREGIR ***")
+        informe.append(f"*** {len(fallos)} PROBLEMA(S) QUE IMPIDEN PUBLICAR ***")
         informe += [f" - {f}" for f in fallos]
-    else:
-        informe.append("OK: la publicacion cumple el checklist.")
+        informe.append("")
+    if avisos:
+        informe.append(f"{len(avisos)} aviso(s) de estilo (no impiden publicar):")
+        informe += [f" ? {a}" for a in avisos]
+        informe.append("")
+    if not fallos and not avisos:
+        informe.append("OK: la publicacion cumple el checklist entero.")
+    elif not fallos:
+        informe.append("PUBLICABLE: solo hay avisos de estilo.")
     texto = "\n".join(informe)
     (destino / "revision.txt").write_text(texto, encoding="utf-8")
     print(texto)
