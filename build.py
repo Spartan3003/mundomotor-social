@@ -253,6 +253,33 @@ ul.items li:last-child{{border-bottom:none;}}
   color:rgba(255,255,255,.72);background:rgba(0,0,0,.45);padding:8px 16px;
   border-radius:4px;letter-spacing:.03em;}}
 
+/* ============ galeria de fotos del tema ============ */
+.mosaico{{display:grid;gap:16px;}}
+.mosaico.n2{{grid-template-columns:1fr 1fr;}}
+.mosaico.n3{{grid-template-columns:1fr 1fr;}}
+.mosaico.n3 .celda:first-child{{grid-column:1 / -1;}}
+.mosaico.n4{{grid-template-columns:1fr 1fr;}}
+.celda{{position:relative;border-radius:8px;overflow:hidden;background:#1a1a1a;
+  border:3px solid #202020;}}
+.celda img{{width:100%;height:100%;object-fit:cover;display:block;}}
+.mosaico.n2 .celda{{height:520px;}}
+.mosaico.n3 .celda{{height:300px;}}
+.mosaico.n3 .celda:first-child{{height:330px;}}
+.mosaico.n4 .celda{{height:300px;}}
+.celda .pie-foto{{position:absolute;left:0;bottom:0;width:100%;
+  background:linear-gradient(180deg,transparent,rgba(0,0,0,.9));
+  color:#fff;font-size:24px;font-weight:700;padding:44px 20px 16px;}}
+.celda .pie-foto b{{color:{AMARILLO};display:block;font-family:'Anton';
+  font-size:30px;font-weight:400;text-transform:uppercase;line-height:1.1;}}
+
+/* ============ foto + texto ============ */
+.dupla{{display:grid;grid-template-columns:1fr 1fr;gap:26px;align-items:center;}}
+.dupla .marco{{border-radius:8px;overflow:hidden;height:480px;background:#1a1a1a;
+  border:3px solid #202020;}}
+.dupla .marco img{{width:100%;height:100%;object-fit:cover;display:block;}}
+.dupla .texto p{{font-size:31px;line-height:1.45;color:#DEDEDE;}}
+.dupla .texto p + p{{margin-top:18px;}}
+
 /* ============ cierre ============ */
 .cierre{{flex:1;display:flex;flex-direction:column;align-items:center;
   justify-content:center;text-align:center;}}
@@ -376,6 +403,47 @@ def render_slide(s: dict, idx: int, total: int, logo: str) -> str:
         cuerpo = (
             f'<h2>{s["titulo"]}</h2><div class="sep"></div>'
             + f'<div class="bloque-centro"><div class="vs">{cols}</div>'
+            + (f'<div class="sep"></div><div class="nota">{s["nota"]}</div>'
+               if s.get("nota") else "")
+            + "</div>"
+        )
+
+    elif tipo == "galeria":
+        # Fotos del tema. Cada una obliga a declarar su procedencia: las
+        # propias del medio no llevan credito, las de bancos libres si.
+        celdas = ""
+        for f in s["fotos"]:
+            if not f.get("propia") and not f.get("credito"):
+                raise SystemExit(
+                    f"Lamina {idx}: la foto {f.get('imagen')} no es propia y no "
+                    "declara credito."
+                )
+            pie = ""
+            if f.get("titulo") or f.get("nota"):
+                pie = (f'<div class="pie-foto">'
+                       f'{f"<b>{f['titulo']}</b>" if f.get("titulo") else ""}'
+                       f'{f.get("nota", "")}</div>')
+            celdas += (f'<div class="celda"><img src="data:image;base64,'
+                       f'{imagen_b64(f["imagen"])}">{pie}</div>')
+        n = min(len(s["fotos"]), 4)
+        cuerpo = (
+            f'<h2 class="{s.get("size","")}">{s["titulo"]}</h2><div class="sep"></div>'
+            + f'<div class="bloque-centro"><div class="mosaico n{n}">{celdas}</div>'
+            + (f'<div class="sep"></div><div class="nota">{s["nota"]}</div>'
+               if s.get("nota") else "")
+            + "</div>"
+        )
+
+    elif tipo == "foto_texto":
+        f = s["foto"]
+        if not f.get("propia") and not f.get("credito"):
+            raise SystemExit(f"Lamina {idx}: foto sin credito declarado.")
+        parrafos = "".join(f"<p>{p}</p>" for p in s["parrafos"])
+        cuerpo = (
+            f'<h2 class="{s.get("size","")}">{s["titulo"]}</h2><div class="sep"></div>'
+            + '<div class="bloque-centro"><div class="dupla">'
+            + f'<div class="marco"><img src="data:image;base64,{imagen_b64(f["imagen"])}"></div>'
+            + f'<div class="texto">{parrafos}</div></div>'
             + (f'<div class="sep"></div><div class="nota">{s["nota"]}</div>'
                if s.get("nota") else "")
             + "</div>"

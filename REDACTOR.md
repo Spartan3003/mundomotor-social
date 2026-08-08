@@ -88,9 +88,41 @@ Ante la duda, la vigencia más corta.
 
 ## Fotos
 
-Solo si aportan. Deben venir de la **web del fabricante o del concesionario que
-vende esa moto**, nunca de un medio de la competencia, y toda foto obliga a
-declarar `credito`. Un validador bloquea los dominios prohibidos.
+**De dónde salen**, por orden:
+
+1. **La biblioteca de medios de mundomotor.bike.** Búscalas con
+   `python imagenes.py <término>`. Son propias: sin licencia que resolver y sin
+   crédito que arrastrar. Márcalas con `"propia": true`.
+2. Si la pieza va de una moto concreta, la **web del fabricante o del
+   concesionario que la vende**. Nunca de un medio de la competencia:
+   `fuentes.py` bloquea esos dominios.
+3. Como último recurso, bancos libres vía Openverse. Esas licencias **exigen
+   atribución**, así que la foto obliga a declarar `credito` con autor y
+   licencia.
+
+**La regla que de verdad importa: una foto que no corresponde es tan falsa como
+un dato inventado.**
+
+Esto se descubrió probando el sistema: se etiquetaron tres fotos como
+"integral", "abatible" y "abierto" sin mirarlas, y ninguna mostraba lo que la
+etiqueta afirmaba. El validador no lo detecta, porque no ve las imágenes. Así
+que la salvaguarda es tuya:
+
+- **Las fotos ilustran, no afirman.** Por defecto van sin etiqueta descriptiva:
+  acompañan al texto, no sostienen un dato.
+- **Si vas a etiquetar una foto** (decir que eso es un casco integral, que esa
+  es la moto X), **primero mírala**. Descárgala y ábrela. Si no puedes
+  confirmar que muestra lo que dices, quita la etiqueta o cambia la foto.
+- **Sin preferencia de marca** en los temas genéricos (cascos, trámites,
+  mantenimiento): descarta las fotos donde una marca sea el sujeto o su logo
+  domine el encuadre. `imagenes.py` avisa si detecta una marca en el título,
+  pero muchos logos solo se ven mirando la imagen.
+- **Calidad:** nada por debajo de 900 px de ancho, o se ve pixelado al llevarlo
+  a 1080.
+
+Tipos de lámina con foto: `foto` (a sangre, con el titular encima), `galeria`
+(mosaico de 2 a 4) y `foto_texto` (imagen a un lado, texto al otro). Cualquier
+lámina admite además `imagen` como fondo.
 
 ## Formato de salida
 
