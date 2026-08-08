@@ -1,0 +1,172 @@
+{
+  "slug": "cambio-aceite",
+  "origen": "https://mundomotor.bike/moto-tips/cada-cuantos-kilometros-cambiar-el-aceite-de-la-moto-y-por-que-el-manual-no-basta-solo/",
+  "publicacion": {
+    "gancho": "El intervalo del aceite no sale de una cifra de internet: sale del manual, corregido por cómo usa la moto.",
+    "cuerpo": [
+      "Dos motos del mismo modelo, con el mismo kilometraje, pueden necesitar ritmos distintos. El tráfico detenido, los trayectos cortos y el polvo degradan el lubricante antes de lo que dice el odómetro.",
+      "Y antes del intervalo va la especificación: la viscosidad que pide la marca y la norma correcta, API y, en motos, casi siempre JASO MA o MA2."
+    ],
+    "cta": "Guarde el carrusel: adentro están las señales para adelantar el cambio y los errores que más se repiten. ¿Cada cuánto le cambia el aceite a su moto?",
+    "fuente_texto": "Fuentes: manual del fabricante y normas API y JASO. Guía completa, en el enlace de la biografía.",
+    "hashtags": [
+      "#CambioDeAceite",
+      "#MantenimientoMoto",
+      "#MotosColombia"
+    ],
+    "ubicacion": "Bogotá, Colombia",
+    "menciones": [],
+    "alt": [
+      "Portada del carrusel sobre fondo negro con el titular '¿Cada cuántos cambiar el aceite?' y la etiqueta 'Guía práctica', con el logo de Mundo Motor.",
+      "Recuadro amarillo con el mensaje 'Mismo modelo, mismo kilometraje': dos motos iguales pueden necesitar ritmos de cambio distintos.",
+      "Lista de cuatro cosas que el manual no puede saber: horas en tráfico detenido, calor acumulado en ciudad, parrillero a diario y filtro de aire semiobstruido.",
+      "La viscosidad 10W-40 destacada en amarillo como ejemplo, con la explicación de que describe el comportamiento del aceite en frío y en caliente.",
+      "Recuadro amarillo con la norma JASO MA o MA2, la que casi siempre pide el fabricante en motos, junto a la especificación API.",
+      "Lista de cuatro señales para adelantar el cambio: tráfico urbano denso, trayectos cortos repetidos, polvo o caminos destapados y aceite mineral en uso intenso.",
+      "Comparación en dos columnas entre uso mixto, donde se sigue el intervalo del fabricante, y uso urbano, donde conviene acortarlo y priorizar los meses.",
+      "Lista de cuatro errores caros al cambiar el aceite: completar con otro aceite, sobrellenar, ignorar fugas pequeñas y guiarse solo por el color.",
+      "Lámina de cierre con el logo de Mundo Motor y la invitación a leer la guía completa en mundomotor.bike."
+    ]
+  },
+  "laminas": [
+    {
+      "tipo": "portada",
+      "kicker": "Mantenimiento · Moto tips",
+      "etiqueta": "Guía práctica",
+      "titulo": "¿Cada cuántos <em>cambiar el aceite</em>?",
+      "size": "chico",
+      "bajada": "La respuesta del sticker del taller sirve como punto de partida. Como <strong>única regla</strong>, es peligrosa."
+    },
+    {
+      "tipo": "destacado",
+      "titulo": "Dos motos <em>iguales</em> no piden lo mismo",
+      "size": "chico",
+      "caja_titulo": "Mismo modelo, mismo kilometraje",
+      "caja_texto": "Y aun así pueden necesitar ritmos de cambio distintos.",
+      "bajada": "El intervalo correcto depende del aceite que lleva, del uso real y de cómo trabaja el motor la mayor parte del tiempo."
+    },
+    {
+      "tipo": "lista",
+      "titulo": "Lo que el manual <em>no puede saber</em>",
+      "size": "chico",
+      "items": [
+        {
+          "titulo": "Horas en tráfico detenido",
+          "texto": "El manual asume condiciones de uso normales."
+        },
+        {
+          "titulo": "El calor que acumula el motor en ciudad",
+          "texto": "Ese trabajo térmico no queda registrado en el odómetro."
+        },
+        {
+          "titulo": "Parrillero a diario",
+          "texto": "La carga sostenida no entra en el intervalo declarado."
+        },
+        {
+          "titulo": "Filtro de aire semiobstruido",
+          "texto": "Más contaminantes llegan al cárter."
+        }
+      ],
+      "nota": "El fabricante declara el intervalo en kilómetros o en meses, el que se cumpla primero.",
+      "fuente": "Manual del fabricante."
+    },
+    {
+      "tipo": "cifra",
+      "kicker": "Primero lo correcto, después el intervalo",
+      "cifra": "10W-40",
+      "nota": "Un ejemplo de viscosidad",
+      "bajada": "Describe el comportamiento <strong>en frío y en caliente</strong>. Una más gruesa o más delgada de lo especificado altera la película lubricante y el tacto del embrague.",
+      "fuente": "Especificación de viscosidad indicada por el fabricante."
+    },
+    {
+      "tipo": "destacado",
+      "titulo": "El aceite de <em>auto</em> hace patinar el embrague",
+      "size": "chico",
+      "caja_titulo": "JASO MA o MA2",
+      "caja_texto": "La norma que casi siempre pide el fabricante en motos, junto con la especificación API.",
+      "bajada": "Un aceite de auto con <strong>modificadores de fricción</strong> puede hacer patinar el embrague en baño de aceite."
+    },
+    {
+      "tipo": "lista",
+      "titulo": "Cuándo <em>adelantar</em> el cambio",
+      "size": "chico",
+      "items": [
+        {
+          "titulo": "Tráfico urbano denso",
+          "texto": "Muchas horas de motor con pocos kilómetros. El odómetro subestima el trabajo térmico."
+        },
+        {
+          "titulo": "Trayectos muy cortos repetidos",
+          "texto": "El aceite no alcanza temperatura de trabajo estable y acumula humedad."
+        },
+        {
+          "titulo": "Polvo o caminos destapados",
+          "texto": "Más contaminantes llegan al cárter."
+        },
+        {
+          "titulo": "Aceite mineral en uso intenso",
+          "texto": "Degrada antes que un sintético de la misma especificación."
+        }
+      ],
+      "nota": "Si en la mirilla se ve opaco, muy oscuro de golpe o con olor fuerte a combustible, revise nivel y fugas y programe el cambio."
+    },
+    {
+      "tipo": "comparativa",
+      "titulo": "Cómo fijar un <em>intervalo</em> práctico",
+      "columnas": [
+        {
+          "titulo": "Uso mixto",
+          "datos": [
+            "Carretera y mantenimiento al día.",
+            "<b>Siga el intervalo del fabricante</b>, en kilómetros o en meses."
+          ]
+        },
+        {
+          "titulo": "Uso urbano",
+          "datos": [
+            "Ciudad o mensajería.",
+            "<b>Acorte el intervalo</b> respecto al manual.",
+            "Priorice el criterio de meses si hace pocos kilómetros."
+          ]
+        }
+      ],
+      "nota": "Después de cualquier intervención mayor de motor, arranque con aceite nuevo y vuelva a cero el contador del servicio."
+    },
+    {
+      "tipo": "lista",
+      "titulo": "Errores <em>caros</em> que se repiten",
+      "size": "chico",
+      "items": [
+        {
+          "titulo": "Completar con otro aceite",
+          "texto": "Mezclar restos sin saber la compatibilidad. Mejor vaciar y cargar bien."
+        },
+        {
+          "titulo": "Sobrellenar",
+          "texto": "Más aceite no lubrica mejor: puede airearse y forzar retenes."
+        },
+        {
+          "titulo": "Ignorar fugas pequeñas",
+          "texto": "Un goteo lento deja el motor bajo de nivel entre servicios."
+        },
+        {
+          "titulo": "Guiarse solo por el color",
+          "texto": "El aceite de moto se oscurece rápido por el embrague en baño de aceite."
+        }
+      ],
+      "nota": "El filtro de aceite se cambia con el lubricante en la mayoría de servicios: dejarlo viejo es reinyectar residuos al circuito nuevo."
+    },
+    {
+      "tipo": "cierre",
+      "titulo": "La guía completa está en la web",
+      "texto": "Qué mirar antes de fijar un intervalo y por qué el manual es el punto de partida, no la regla única. Lo explicamos entero en Mundo Motor.",
+      "url": "mundomotor.bike",
+      "acciones": [
+        "<b>Guarda</b> esta guía",
+        "<b>Compártela</b> con un parcero"
+      ]
+    }
+  ],
+  "vigencia": "permanente",
+  "creada": "2026-08-07"
+}

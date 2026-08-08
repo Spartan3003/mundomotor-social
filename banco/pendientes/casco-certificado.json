@@ -1,0 +1,209 @@
+{
+  "slug": "casco-certificado",
+  "origen": "https://mundomotor.bike/moto-tips/casco-certificado-colombia-norma/",
+  "publicacion": {
+    "gancho": "Antes de pagar el casco, levante el acolchado interno: la etiqueta de adentro es la que acredita la norma.",
+    "cuerpo": [
+      "Colombia reconoce tres referencias: NTC 4533 de 2017, el Reglamento 22.05 de Naciones Unidas y el FMVSS 218 estadounidense.",
+      "La etiqueta va adherida por dentro, no en la caja, y debe traer seis datos mínimos. Usar mal el casco cae en el mismo código que no usarlo: C.24, $633.200 e inmovilización."
+    ],
+    "cta": "Guarde el carrusel: adentro está la revisión para hacer en el mostrador. ¿Ha mirado la etiqueta interna de su casco?",
+    "fuente_texto": "Fuentes: Ministerio de Transporte y Norma Técnica Colombiana NTC 4533. Guía completa, en el enlace de la biografía.",
+    "hashtags": [
+      "#Cascos",
+      "#MotosColombia",
+      "#SeguridadVial"
+    ],
+    "ubicacion": "Bogotá, Colombia",
+    "menciones": [],
+    "alt": [
+      "Portada del carrusel sobre fondo negro con el titular 'Casco certificado: qué exige la norma' y la etiqueta 'Guía de compra', con el logo de Mundo Motor.",
+      "La cifra 633.200 pesos destacada en amarillo, valor de la infracción C.24 por no usar el casco o usarlo mal, con inmovilización de la motocicleta.",
+      "Lista de las tres normas que acepta Colombia: NTC 4533 de 2017, Reglamento 22.05 de Naciones Unidas y FMVSS 218, identificable por la sigla DOT.",
+      "Lista de los seis datos mínimos que debe traer la etiqueta del casco: nombre del producto, talla, país de origen, norma que cumple, importador o fabricante, y lote con fecha de producción.",
+      "Recuadro amarillo que indica que la etiqueta debe ir adherida por dentro del casco y no en el empaque, en un lugar visible y de fácil consulta.",
+      "Comparación en dos columnas entre el Reglamento 22.05, que es la referencia de la norma colombiana, y el 22.06, que rige en Europa y es más exigente en impacto rotacional y visor.",
+      "Lista de cinco pasos para revisar un casco en el punto de venta: buscar la etiqueta interna, confirmar la norma, verificar la razón social, revisar lote y fecha, y pedir el certificado de conformidad.",
+      "Lista de los cuatro errores más frecuentes al comprar casco: confiar en el adhesivo exterior, comprar una talla mayor, cambiar el visor por uno genérico y reutilizar un casco golpeado.",
+      "Lámina de cierre con el logo de Mundo Motor y la invitación a leer la guía completa en mundomotor.bike."
+    ]
+  },
+  "laminas": [
+    {
+      "tipo": "portada",
+      "kicker": "Normativa · Colombia",
+      "etiqueta": "Guía de compra",
+      "size": "mediano",
+      "titulo": "Casco certificado: <em>qué exige</em> la norma",
+      "bajada": "No basta con que se vea robusto ni con que traiga adhesivos. Lo que acredita la certificación es <strong>la etiqueta interna</strong>.",
+      "fuente": "Resolución 1080 de 2019, Ministerio de Transporte."
+    },
+    {
+      "tipo": "cifra",
+      "kicker": "Lo que cuesta el error",
+      "cifra": "$633.200",
+      "nota": "Código C.24 · con inmovilización",
+      "bajada": "El Código Nacional de Tránsito obliga a conductor y acompañante a usar casco. El mismo código cubre <strong>no usarlo y usarlo mal</strong>.",
+      "fuente": "Código Nacional de Tránsito. Valor de la infracción de tipo C en 2026."
+    },
+    {
+      "tipo": "lista",
+      "titulo": "Las <em>tres</em> normas que acepta Colombia",
+      "size": "chico",
+      "items": [
+        {
+          "marca": "01",
+          "titulo": "NTC 4533 de 2017",
+          "texto": "La norma técnica colombiana, verificada por organismos de certificación acreditados en el país."
+        },
+        {
+          "marca": "02",
+          "titulo": "Reglamento 22.05 de Naciones Unidas",
+          "texto": "El estándar europeo, identificable por la etiqueta con la letra E dentro de un círculo."
+        },
+        {
+          "marca": "03",
+          "titulo": "FMVSS 218",
+          "texto": "El estándar federal estadounidense, identificable por la sigla DOT."
+        }
+      ],
+      "nota": "Cualquiera de las tres es válida para comercializar y usar el casco en Colombia. Un casco que no cumpla ninguna no puede venderse legalmente.",
+      "fuente": "Resolución 1080 de 2019, Ministerio de Transporte."
+    },
+    {
+      "tipo": "lista",
+      "titulo": "Los <em>seis datos</em> de la etiqueta",
+      "items": [
+        {
+          "marca": "01",
+          "titulo": "Nombre del producto",
+          "texto": "La leyenda “Casco para uso en motocicleta y vehículos afines”."
+        },
+        {
+          "marca": "02",
+          "titulo": "Talla"
+        },
+        {
+          "marca": "03",
+          "titulo": "País de origen"
+        },
+        {
+          "marca": "04",
+          "titulo": "Indicación de la norma que cumple",
+          "texto": "Entre las tres reconocidas. Este dato puede venir en inglés."
+        },
+        {
+          "marca": "05",
+          "titulo": "Importador o fabricante, con su razón social"
+        },
+        {
+          "marca": "06",
+          "titulo": "Número de lote y fecha de producción"
+        }
+      ],
+      "fuente": "Artículo 6 de la Resolución 1080 de 2019."
+    },
+    {
+      "tipo": "destacado",
+      "titulo": "Dónde va <em>pegada</em>",
+      "caja_titulo": "Por dentro, no en la caja",
+      "caja_texto": "Debe ir adherida internamente, en un lugar visible y de fácil consulta, sin alterar la estructura del casco.",
+      "bajada": "Un casco cuya única identificación esté en el empaque <strong>no cumple el requisito</strong>. La información debe ser legible a simple vista, veraz y completa, y va en castellano."
+    },
+    {
+      "tipo": "comparativa",
+      "titulo": "El <em>22.05</em> y el 22.06",
+      "columnas": [
+        {
+          "titulo": "22.05",
+          "datos": [
+            "<b>Es la referencia colombiana.</b>",
+            "La NTC 4533 se construyó sobre este reglamento, anexo al Acuerdo de Naciones Unidas de 1958.",
+            "Sirve para vender y usar el casco en el país."
+          ]
+        },
+        {
+          "titulo": "22.06",
+          "datos": [
+            "<b>Es la versión que rige en Europa.</b>",
+            "Más exigente en ensayos de impacto rotacional y de visor.",
+            "Un estándar posterior y más severo que el que toma la norma colombiana."
+          ]
+        }
+      ],
+      "nota": "No hay una fecha pública para que el reglamento nacional actualice esa referencia."
+    },
+    {
+      "tipo": "lista",
+      "titulo": "Cómo <em>revisarlo</em> antes de pagar",
+      "size": "chico",
+      "items": [
+        {
+          "marca": "01",
+          "titulo": "Levante el acolchado interno",
+          "texto": "La etiqueta debe estar adherida al interior, no suelta ni impresa solo en la bolsa."
+        },
+        {
+          "marca": "02",
+          "titulo": "Confirme que aparezca la norma",
+          "texto": "NTC 4533, la E dentro del círculo o la sigla DOT."
+        },
+        {
+          "marca": "03",
+          "titulo": "Verifique la razón social",
+          "texto": "Del importador o fabricante. Sin responsable, no hay a quién reclamar."
+        },
+        {
+          "marca": "04",
+          "titulo": "Revise lote y fecha de producción",
+          "texto": "Sirve para calcular la antigüedad real del casco."
+        },
+        {
+          "marca": "05",
+          "titulo": "Pida el certificado de conformidad",
+          "texto": "Expedido por organismos acreditados ante el ONAC."
+        }
+      ]
+    },
+    {
+      "tipo": "lista",
+      "titulo": "Cuatro <em>errores</em> al comprar",
+      "items": [
+        {
+          "marca": "01",
+          "titulo": "Confiar en el adhesivo exterior",
+          "texto": "Un sticker con siglas pegado por fuera no equivale a certificación."
+        },
+        {
+          "marca": "02",
+          "titulo": "Comprar una talla mayor “por comodidad”",
+          "texto": "Un casco holgado se desplaza en el impacto."
+        },
+        {
+          "marca": "03",
+          "titulo": "Sustituir el visor por uno genérico",
+          "texto": "Un reemplazo sin certificar altera la visibilidad nocturna."
+        },
+        {
+          "marca": "04",
+          "titulo": "Reutilizar un casco que ya sufrió un golpe",
+          "texto": "La absorción de energía funciona una sola vez, aunque la coraza no muestre daño."
+        }
+      ],
+      "nota": "Entre dos cascos de costo similar, elija el que tenga la etiqueta completa y legible."
+    },
+    {
+      "tipo": "cierre",
+      "titulo": "La guía completa está en la web",
+      "texto": "Qué mide cada ensayo, quién responde ante un casco no certificado y cómo exigir el respaldo documental. Lo explicamos entero en Mundo Motor.",
+      "url": "mundomotor.bike",
+      "acciones": [
+        "<b>Guarda</b> esta guía",
+        "<b>Compártela</b> con un parcero"
+      ]
+    }
+  ],
+  "vigencia": "anual",
+  "anio": 2026,
+  "creada": "2026-08-07"
+}

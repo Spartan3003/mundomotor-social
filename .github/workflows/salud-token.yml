@@ -1,0 +1,72 @@
+name: Vigilar el token de Instagram
+
+# El token de larga duración de Instagram caduca a los 60 días. Este workflow
+# lo refresca cada semana (refrescarlo extiende su validez otros 60 días) y,
+# si algo falla, abre un issue para que no nos enteremos el día que deje de
+# publicarse el carrusel.
+on:
+  schedule:
+    - cron: "0 14 * * 1"   # lunes, 09:00 Bogotá
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  revisar:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Refrescar y comprobar el token
+        id: check
+        env:
+          IG_TOKEN: ${{ secrets.IG_TOKEN }}
+        run: |
+          if [ -z "$IG_TOKEN" ]; then
+            echo "estado=sin_token" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+          RESP=$(curl -s "https://graph.instagram.com/refresh_access_token?grant_type=ig_refresh_token&access_token=$IG_TOKEN")
+          echo "$RESP" | grep -q "access_token" && OK=si || OK=no
+          if [ "$OK" = "si" ]; then
+            DIAS=$(echo "$RESP" | sed -n 's/.*"expires_in":\([0-9]*\).*/\1/p')
+            DIAS=$((DIAS / 86400))
+            echo "El token es válido y caduca en $DIAS días."
+            echo "dias=$DIAS" >> $GITHUB_OUTPUT
+            [ "$DIAS" -lt 15 ] && echo "estado=por_caducar" >> $GITHUB_OUTPUT || echo "estado=ok" >> $GITHUB_OUTPUT
+          else
+            echo "La API rechazó el token: $RESP"
+            echo "estado=invalido" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Avisar por issue
+        if: steps.check.outputs.estado != 'ok'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const estado = "${{ steps.check.outputs.estado }}";
+            const dias = "${{ steps.check.outputs.dias }}";
+            const mensajes = {
+              sin_token: "No hay ningún token configurado: el secret `IG_TOKEN` está vacío, así que el carrusel diario no se está publicando.",
+              invalido: "El token de Instagram dejó de ser válido. Hasta que se reemplace, el carrusel diario no se publica.",
+              por_caducar: `El token de Instagram caduca en ${dias} días. Conviene renovarlo antes de que se corte la publicación.`,
+            };
+            const cuerpo = [
+              mensajes[estado],
+              "",
+              "Para renovarlo: genera un token nuevo de larga duración en la app de Meta y reemplaza el secret `IG_TOKEN` del repositorio (Settings → Secrets and variables → Actions).",
+              "",
+              "Los pasos completos están en PUESTA_EN_MARCHA.md, punto 3.",
+            ].join("\n");
+            const titulo = "Token de Instagram: hay que renovarlo";
+            const abiertos = await github.rest.issues.listForRepo({
+              owner: context.repo.owner, repo: context.repo.repo, state: "open",
+            });
+            if (abiertos.data.some(i => i.title === titulo)) {
+              core.info("Ya hay un issue abierto sobre esto.");
+              return;
+            }
+            await github.rest.issues.create({
+              owner: context.repo.owner, repo: context.repo.repo,
+              title: titulo, body: cuerpo,
+            });

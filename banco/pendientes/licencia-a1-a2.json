@@ -1,0 +1,184 @@
+{
+  "slug": "licencia-a1-a2",
+  "origen": "https://mundomotor.bike/moto-tips/licencia-moto-colombia-a1-a2/",
+  "publicacion": {
+    "gancho": "Si pasa de una 125 a una 150, su licencia A1 deja de habilitarlo el día que saca la moto del concesionario.",
+    "cuerpo": [
+      "La categoría A1 habilita para motocicletas de hasta 125 c.c. La A2 cubre motocicletas, motociclos y mototriciclos de más de 125 c.c.",
+      "Con A2 usted puede manejar una moto de 110 c.c. sin trámite adicional; al revés no funciona. Y la cilindrada que cuenta es la de la tarjeta de propiedad, no la del nombre comercial."
+    ],
+    "cta": "Guarde el carrusel antes de ir a tramitar: adentro están los requisitos, la vigencia por edad y qué moto habilita cada categoría. ¿Con cuál de las dos anda usted?",
+    "fuente_texto": "Fuentes: Ministerio de Transporte y Código Nacional de Tránsito. Guía completa, en el enlace de la biografía.",
+    "hashtags": [
+      "#LicenciaDeMoto",
+      "#MotosColombia",
+      "#RUNT"
+    ],
+    "ubicacion": "Bogotá, Colombia",
+    "menciones": [],
+    "alt": [
+      "Portada del carrusel sobre fondo negro con el titular 'A1 o A2: manda la cilindrada' y la etiqueta 'Guía del trámite', con el logo de Mundo Motor.",
+      "La cifra 125 destacada en amarillo sobre fondo negro, el corte en centímetros cúbicos que separa la licencia A1 de la A2.",
+      "Comparación en dos columnas entre la categoría A1, para motocicletas de hasta 125 c.c. desde los 16 años, y la A2, para motos, motociclos y mototriciclos de más de 125 c.c. desde los 18 años.",
+      "Recuadro amarillo que explica que la licencia A2 también habilita para conducir motos de categoría inferior, como una de 110 c.c., sin trámite adicional.",
+      "Tabla que cruza cilindrada y licencia: de 100 a 125 c.c. sirve A1 o A2; de 150 a 200, de 250 a 400 y más de 400 c.c. exigen solo A2.",
+      "Recuadro que advierte que en el salto de 125 a 150 centímetros cúbicos la A1 deja de habilitar y el conductor queda expuesto a comparendo.",
+      "Lista de los cinco pasos del trámite: inscripción en el RUNT, curso en un CEA, exámenes en un CRC, paz y salvo por comparendos y documento de identidad vigente con el pago de derechos.",
+      "Tabla con la vigencia de la licencia de servicio particular según la edad: 10 años para menores de 60, 5 años entre 60 y 80 y 1 año para mayores de 80.",
+      "Lámina de cierre con el logo de Mundo Motor y la invitación a leer la guía completa en mundomotor.bike."
+    ]
+  },
+  "laminas": [
+    {
+      "tipo": "portada",
+      "kicker": "Normativa · Colombia",
+      "etiqueta": "Guía del trámite",
+      "titulo": "A1 o A2: manda la <em>cilindrada</em>",
+      "bajada": "Un solo dato decide qué moto puede comprar, qué curso debe tomar y si su licencia <strong>le sirve o no</strong> cuando cambie de moto."
+    },
+    {
+      "tipo": "cifra",
+      "kicker": "El corte que divide todo",
+      "cifra": "125",
+      "nota": "Centímetros cúbicos",
+      "bajada": "Hasta <strong>125 c.c.</strong> le sirve la A1. De ahí para arriba, la moto exige A2.",
+      "fuente": "Resolución 1500 de 2005, Ministerio de Transporte."
+    },
+    {
+      "tipo": "comparativa",
+      "titulo": "Qué habilita <em>cada categoría</em>",
+      "columnas": [
+        {
+          "titulo": "A1",
+          "datos": [
+            "<b>Hasta 125 c.c.</b>",
+            "Solo motocicletas",
+            "Edad mínima: <b>16 años</b>",
+            "Quien la saca a los 16 debe cambiarla después de los 18"
+          ]
+        },
+        {
+          "titulo": "A2",
+          "datos": [
+            "<b>Más de 125 c.c.</b>",
+            "Motocicletas, motociclos y mototriciclos",
+            "Edad mínima: <b>18 años</b>",
+            "También habilita las motos de categoría inferior"
+          ]
+        }
+      ],
+      "nota": "El cambio de la licencia obtenida a los 16 no exige repetir los exámenes teórico-prácticos ni los de aptitud física y mental.",
+      "fuente": "Resolución 1500 de 2005, artículo 4.° · Ley 769 de 2002, Código Nacional de Tránsito."
+    },
+    {
+      "tipo": "destacado",
+      "titulo": "La A2 <em>cubre</em> a la A1",
+      "caja_titulo": "Sin trámite adicional",
+      "caja_texto": "Quien tiene la licencia de mayor categoría puede conducir vehículos de categoría inferior. Con A2 usted maneja una moto de 110 c.c. sin hacer nada más.",
+      "bajada": "Al revés no funciona. Y una licencia B1 de carro <strong>no habilita para moto</strong>: se conduce indispensablemente con A1 o A2.",
+      "fuente": "Resolución 1500 de 2005, parágrafo 1.° del artículo 4.° y parágrafo 2.° del artículo 6.°"
+    },
+    {
+      "tipo": "tabla",
+      "titulo": "Qué moto puede <em>conducir</em>",
+      "columnas": [
+        "Cilindrada",
+        "Segmento",
+        "Licencia"
+      ],
+      "filas": [
+        [
+          "100 a 125",
+          "Entrada y uso urbano",
+          "A1 o A2"
+        ],
+        [
+          "150 a 200",
+          "Naked y scooters medias",
+          "Solo A2"
+        ],
+        [
+          "250 a 400",
+          "Doble propósito y adventure",
+          "Solo A2"
+        ],
+        [
+          "Más de 400",
+          "Supersport y superbike",
+          "Solo A2"
+        ]
+      ],
+      "nota": "Cilindrada aproximada en c.c. El segmento de mayor volumen del país —las motos de trabajo de 100, 110 y 125 c.c.— queda cubierto por la A1."
+    },
+    {
+      "tipo": "destacado",
+      "titulo": "El salto de <em>125 a 150</em>",
+      "caja_titulo": "Ahí deja de servir la A1",
+      "caja_texto": "Es el paso natural del motociclista que mejora de moto. Muchos compran una 150 sin recategorizar la licencia y quedan expuestos a comparendo.",
+      "bajada": "Verifique la cilindrada real en la <strong>tarjeta de propiedad</strong>, no en el nombre comercial del modelo."
+    },
+    {
+      "tipo": "lista",
+      "titulo": "Lo que <em>exige</em> el trámite",
+      "items": [
+        {
+          "titulo": "Estar inscrito en el RUNT",
+          "texto": "Es la base de todo. Si nunca ha tenido licencia ni vehículo, inscríbase primero."
+        },
+        {
+          "titulo": "Curso en un CEA",
+          "texto": "El Centro de Enseñanza Automovilística expide el certificado de aptitud en conducción."
+        },
+        {
+          "titulo": "Exámenes en un CRC",
+          "texto": "Aptitud física, mental y de coordinación motriz."
+        },
+        {
+          "titulo": "Paz y salvo por comparendos",
+          "texto": "Las multas pendientes bloquean el trámite."
+        },
+        {
+          "titulo": "Documento vigente y pago",
+          "texto": "Derechos del trámite ante el organismo de tránsito."
+        }
+      ],
+      "fuente": "El CEA y el CRC deben estar registrados en el RUNT: si no lo están, el trámite no queda en firme. Para la categoría A1 el programa se reporta en 36 horas · Resolución 20223040009425 de 2022."
+    },
+    {
+      "tipo": "tabla",
+      "titulo": "Cuánto le <em>dura</em> la licencia",
+      "columnas": [
+        "Edad del conductor",
+        "Vigencia particular"
+      ],
+      "filas": [
+        [
+          "Menor de 60",
+          "10 años"
+        ],
+        [
+          "Entre 60 y 80",
+          "5 años"
+        ],
+        [
+          "Mayor de 80",
+          "1 año"
+        ]
+      ],
+      "nota": "Renovar exige repetir el examen físico, mental y de coordinación motriz en un CRC. No hay que volver a hacer el curso de conducción.",
+      "fuente": "Ley 769 de 2002 con la modificación del Decreto 019 de 2012."
+    },
+    {
+      "tipo": "cierre",
+      "titulo": "La guía completa está en la web",
+      "texto": "Requisitos, costos, vigencia y los errores que más caros salen, explicados paso a paso en Mundo Motor.",
+      "url": "mundomotor.bike",
+      "acciones": [
+        "<b>Guarda</b> esta guía",
+        "<b>Compártela</b> con un parcero"
+      ]
+    }
+  ],
+  "vigencia": "permanente",
+  "creada": "2026-08-07"
+}
