@@ -1,0 +1,200 @@
+{
+  "slug": "tecnomecanica-2026",
+  "origen": "https://mundomotor.bike/moto-tips/tecnomecanica-moto-2026-precio-y-que-revisan-en-el-cda/",
+  "publicacion": {
+    "gancho": "La tecnomecánica de la moto tiene tarifa tope: en 2026 va de $217.781 a $247.490 según la antigüedad.",
+    "cuerpo": [
+      "Es una tarifa regulada. Ningún CDA puede cobrar por encima del tope, y el valor ya incluye IVA, tasa RUNT y los demás recargos.",
+      "La primera revisión va a los 2 años desde la matrícula y después cada año. Sin SOAT vigente no se la hacen, y una llanta lisa es rechazo directo."
+    ],
+    "cta": "Guarde el carrusel: adentro está la tabla por antigüedad y los seis puntos que le revisan en el CDA. ¿Sabe cuándo se le vence la suya?",
+    "fuente_texto": "Fuentes: Ministerio de Transporte y RUNT. Guía completa, en el enlace de la biografía.",
+    "hashtags": [
+      "#Tecnomecanica",
+      "#MotosColombia",
+      "#CDA"
+    ],
+    "ubicacion": "Bogotá, Colombia",
+    "menciones": [],
+    "alt": [
+      "Portada del carrusel sobre fondo negro con el titular 'Tecnomecánica: el precio tope en 2026' y la etiqueta 'Guía 2026', con el logo de Mundo Motor.",
+      "La cifra 247.490 pesos en amarillo sobre fondo negro, tope máximo de la tecnomecánica de moto en 2026 para vehículos de 8 a 16 años.",
+      "Tabla de tarifas 2026 por antigüedad de la moto: de 0 a 2 años entre 217.781 y 246.890 pesos, de 3 a 7 años entre 218.081 y 247.190, de 8 a 16 años entre 218.381 y 247.490, y de 17 años o más entre 218.081 y 247.190 pesos.",
+      "Recuadro amarillo que indica que la tarifa ya incluye el IVA del 19 %, la tasa RUNT, el sistema SICOV, el recaudo bancario y la tarifa de la ANSV.",
+      "Comparativa a dos columnas entre la moto de combustión, que paga entre 217.781 y 247.490 pesos, y el vehículo eléctrico particular, que paga entre 240.301 y 276.508 pesos y no hace prueba de emisiones.",
+      "Recuadro amarillo con el plazo de la revisión: la primera a los 2 años desde la matrícula y luego cada año.",
+      "Lista numerada de los seis puntos que revisan en el CDA: frenos, luces y señalización, dirección y suspensión, llantas, emisiones y escape, y chasis y elementos de seguridad.",
+      "Lista de lo que hay que llevar al CDA: licencia de tránsito, SOAT vigente y un chequeo propio de la moto una semana antes.",
+      "Recuadro amarillo que advierte que circular con la tecnomecánica vencida implica multa e inmovilización, más grúa y patios.",
+      "Lámina de cierre con el logo de Mundo Motor y la invitación a leer la guía completa en mundomotor.bike."
+    ]
+  },
+  "laminas": [
+    {
+      "tipo": "portada",
+      "kicker": "Trámites · Colombia",
+      "etiqueta": "Guía 2026",
+      "titulo": "Tecnomecánica: el <em>precio tope</em> en 2026",
+      "size": "mediano",
+      "bajada": "Es una tarifa regulada: <strong>ningún CDA puede cobrar por encima del tope</strong>. Esto es lo que vale y lo que le revisan."
+    },
+    {
+      "tipo": "cifra",
+      "kicker": "El tope regulado",
+      "cifra": "$247.490",
+      "nota": "Máximo para una moto de 8 a 16 años",
+      "bajada": "La tarifa arranca en <strong>$217.781</strong> para las motos de 0 a 2 años. El ajuste frente a 2025 fue del 6 %.",
+      "fuente": "Tarifas 2026 de revisión técnico-mecánica y de emisiones contaminantes."
+    },
+    {
+      "tipo": "tabla",
+      "titulo": "Cuánto vale según la <em>antigüedad</em>",
+      "columnas": [
+        "Antigüedad de la moto",
+        "Mínimo",
+        "Máximo"
+      ],
+      "filas": [
+        [
+          "0 a 2 años",
+          "$217.781",
+          "$246.890"
+        ],
+        [
+          "3 a 7 años",
+          "$218.081",
+          "$247.190"
+        ],
+        [
+          "8 a 16 años",
+          "$218.381",
+          "$247.490"
+        ],
+        [
+          "17 años o más",
+          "$218.081",
+          "$247.190"
+        ]
+      ],
+      "nota": "Cada rango tiene mínimo y máximo, y la diferencia entre el CDA más económico y el más costoso puede llegar a los $30.000. Cotizar sí sirve.",
+      "fuente": "Tarifas reguladas para Centros de Diagnóstico Automotor."
+    },
+    {
+      "tipo": "destacado",
+      "titulo": "Lo que <em>ya está</em> incluido",
+      "caja_titulo": "IVA del 19 %",
+      "caja_texto": "El valor incluye IVA, tasa RUNT, costo del sistema SICOV, recaudo bancario y tarifa de la ANSV.",
+      "bajada": "Si en el CDA le suman cobros aparte por “revisión previa”, “alineación” o similares, <strong>eso ya no hace parte de la tarifa regulada</strong>."
+    },
+    {
+      "tipo": "comparativa",
+      "titulo": "Moto de gasolina vs. <em>eléctrica</em>",
+      "columnas": [
+        {
+          "titulo": "Moto",
+          "datos": [
+            "<b>$217.781 – $247.490</b>",
+            "La tarifa depende de la antigüedad",
+            "Incluye la medición de gases contaminantes"
+          ]
+        },
+        {
+          "titulo": "Eléctrico",
+          "datos": [
+            "<b>$240.301 – $276.508</b>",
+            "Tarifa de vehículos eléctricos particulares",
+            "Sin la prueba de emisiones de gases"
+          ]
+        }
+      ],
+      "nota": "Como referencia, un carro liviano particular paga entre $316.828 y $368.153 en los mismos rangos de antigüedad."
+    },
+    {
+      "tipo": "destacado",
+      "titulo": "Cada cuánto le <em>toca</em>",
+      "caja_titulo": "2 años y luego cada año",
+      "caja_texto": "La primera revisión va a los 2 años contados desde la fecha de matrícula en el Registro Nacional Automotor. Después, cada año sin excepción.",
+      "bajada": "Los vehículos particulares distintos de motos tienen 5 años para la primera revisión. <strong>Motocicletas y servicio público mantienen los 2 años.</strong>",
+      "fuente": "Ley 2294 de 2023, que modificó la Ley 769 de 2002 · Concepto 46801 de 2023 del Ministerio de Transporte."
+    },
+    {
+      "tipo": "lista",
+      "titulo": "Los <em>seis puntos</em> que le revisan",
+      "items": [
+        {
+          "marca": "01",
+          "titulo": "Frenos",
+          "texto": "Eficiencia en ambos ejes, pastillas y fugas."
+        },
+        {
+          "marca": "02",
+          "titulo": "Luces y señalización",
+          "texto": "Farola, stop, direccionales, placa y bocina."
+        },
+        {
+          "marca": "03",
+          "titulo": "Dirección y suspensión",
+          "texto": "Sin juego ni holguras; suspensión sin fugas."
+        },
+        {
+          "marca": "04",
+          "titulo": "Llantas",
+          "texto": "Labrado y cortes. La llanta lisa es rechazo."
+        },
+        {
+          "marca": "05",
+          "titulo": "Emisiones y escape",
+          "texto": "Gases dentro del límite y exosto sin fugas."
+        },
+        {
+          "marca": "06",
+          "titulo": "Chasis y seguridad",
+          "texto": "Chasis y motor, espejos, manubrio, estriberas."
+        }
+      ],
+      "fuente": "Decreto 19 de 2012 y resoluciones 3500 de 2005 y 2200 de 2006 del Ministerio de Transporte."
+    },
+    {
+      "tipo": "lista",
+      "titulo": "Qué llevar y qué <em>revisar antes</em>",
+      "items": [
+        {
+          "marca": "01",
+          "titulo": "Licencia de tránsito",
+          "texto": "La tarjeta de propiedad de la moto."
+        },
+        {
+          "marca": "02",
+          "titulo": "SOAT vigente",
+          "texto": "Sin SOAT al día no le hacen la revisión."
+        },
+        {
+          "marca": "03",
+          "titulo": "Chequeo propio, una semana antes",
+          "texto": "Pastillas y líquido de frenos, luces, pito, labrado de llantas, fugas de aceite y exosto."
+        }
+      ],
+      "nota": "Es exactamente lo que mira el técnico. Llegar con eso resuelto evita el reproceso."
+    },
+    {
+      "tipo": "destacado",
+      "titulo": "Con la tecnomecánica <em>vencida</em>",
+      "caja_titulo": "Multa e inmovilización",
+      "caja_texto": "A la infracción se suman los costos adicionales de grúa y patios.",
+      "bajada": "Adelantarse no cuesta nada: la revisión se puede hacer <strong>hasta un mes antes</strong> del vencimiento sin perder vigencia, porque el nuevo certificado se cuenta desde el vencimiento del anterior."
+    },
+    {
+      "tipo": "cierre",
+      "titulo": "La guía completa está en la web",
+      "texto": "El certificado se registra en el RUNT y sirve en todo el país. La tabla de tarifas y el detalle de cada punto, en Mundo Motor.",
+      "url": "mundomotor.bike",
+      "acciones": [
+        "<b>Guarda</b> esta guía",
+        "<b>Compártela</b> con un parcero"
+      ]
+    }
+  ],
+  "vigencia": "anual",
+  "anio": 2026,
+  "creada": "2026-08-07"
+}
