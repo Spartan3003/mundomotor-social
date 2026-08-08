@@ -112,7 +112,7 @@ jobs:
               exit 1
             fi
           done
-          echo "Las ${{ steps.pieza.outputs.slug }} láminas están accesibles."
+          echo "Todas las láminas de ${{ steps.pieza.outputs.slug }} están accesibles."
 
       - name: Publicar en Instagram
         if: steps.pieza.outputs.hay == 'si'
@@ -194,7 +194,9 @@ jobs:
           TEL: ${{ secrets.CALLMEBOT_PHONE }}
           KEY: ${{ secrets.CALLMEBOT_APIKEY }}
         run: |
-          [ -z "$TEL" ] || [ -z "$KEY" ] && { echo "Sin CallMebot configurado, no aviso."; exit 0; }
+          if [ -z "$TEL" ] || [ -z "$KEY" ]; then
+            echo "Sin CallMebot configurado, no aviso."; exit 0
+          fi
           VIVAS="${{ steps.banco.outputs.vivas }}"
           SLUG="${{ steps.pieza.outputs.slug }}"
           ESTADO="${{ job.status }}"

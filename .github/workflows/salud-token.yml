@@ -105,7 +105,9 @@ jobs:
           ESTADO: ${{ steps.check.outputs.estado }}
           RESTAN: ${{ steps.check.outputs.restan }}
         run: |
-          [ -z "$TEL" ] || [ -z "$KEY" ] && { echo "Sin CallMebot configurado."; exit 0; }
+          if [ -z "$TEL" ] || [ -z "$KEY" ]; then
+            echo "Sin CallMebot configurado."; exit 0
+          fi
           case "$ESTADO" in
             invalido)    M="🚨 Mundo Motor: el token de Instagram CADUCÓ. La publicación automática está caída hasta que lo renueves." ;;
             por_caducar) M="🔑 Mundo Motor: el token de Instagram caduca en ~$RESTAN días. Renuévalo antes de que corte la publicación." ;;
