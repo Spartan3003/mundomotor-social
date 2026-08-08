@@ -127,19 +127,36 @@ def main() -> int:
         cuerpo["chrome_web_image"] = imagen
         cuerpo["big_picture"] = imagen
 
-    req = urllib.request.Request(
-        API, data=json.dumps(cuerpo).encode("utf-8"),
-        headers={"Authorization": f"Key {api_key}",
-                 "Content-Type": "application/json"},
-        method="POST")
-    try:
-        with urllib.request.urlopen(req, timeout=60) as r:
-            resp = json.loads(r.read().decode())
-    except urllib.error.HTTPError as e:
-        print(f"\nOneSignal respondio {e.code}:\n{e.read().decode('utf-8', 'ignore')}")
-        return 1
-    except Exception as e:
-        print(f"\nNo pude contactar con OneSignal: {e}")
+    # OneSignal convive con dos formatos de clave: las nuevas usan
+    # `Authorization: Key ...` y las "Legacy" -- que es la que tiene puesta
+    # el plugin de WordPress -- usan `Basic ...`. Se prueban las dos para no
+    # depender de cual pegue Nicolas en el secret.
+    resp = None
+    ultimo = ""
+    for esquema in ("Key", "Basic"):
+        req = urllib.request.Request(
+            API, data=json.dumps(cuerpo).encode("utf-8"),
+            headers={"Authorization": f"{esquema} {api_key}",
+                     "Content-Type": "application/json"},
+            method="POST")
+        try:
+            with urllib.request.urlopen(req, timeout=60) as r:
+                resp = json.loads(r.read().decode())
+            break
+        except urllib.error.HTTPError as e:
+            detalle = e.read().decode("utf-8", "ignore")
+            ultimo = f"{e.code}: {detalle}"
+            if e.code in (401, 403):
+                print(f"  (la clave no funciono como '{esquema}', pruebo el otro formato)")
+                continue
+            print(f"\nOneSignal respondio {ultimo}")
+            return 1
+        except Exception as e:
+            print(f"\nNo pude contactar con OneSignal: {e}")
+            return 1
+
+    if resp is None:
+        print(f"\nOneSignal rechazo la clave en los dos formatos.\n{ultimo}")
         return 1
 
     if resp.get("errors"):
