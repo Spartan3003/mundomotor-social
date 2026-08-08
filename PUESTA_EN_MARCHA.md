@@ -48,6 +48,11 @@ Actions → Variables → New repository variable**:
 - Nombre: `BASE_URL`
 - Valor: `https://spartan3003.github.io/mundomotor-social`
 
+Y una segunda variable, que fija la versión de la API de Meta:
+
+- Nombre: `GRAPH_VERSION`
+- Valor: `v21.0`
+
 ## 3. Crear la app de Meta (20 minutos)
 
 Esto es lo único tedioso, y se hace una sola vez.
@@ -78,8 +83,22 @@ Guarda las dos credenciales como **secrets** (no como variables) en
 - `IG_USER_ID` — el identificador de la cuenta
 - `IG_TOKEN` — el token de larga duración
 
-⚠️ **El token caduca a los 60 días.** Hay un workflow que lo vigila y te abre un
-issue avisando antes de que expire. Renovarlo es reemplazar el secret.
+⚠️ **El token caduca a los 60 días.** El actual se emitió el 7 de agosto de
+2026, así que vence alrededor del **6 de octubre**; un workflow te avisa unos
+quince días antes. Renovarlo es generar otro, reemplazar el secret y poner la
+fecha nueva en `banco/token_emitido.txt`.
+
+## 3 bis. Avisos por WhatsApp (2 minutos)
+
+Los avisos importantes —publicación fallida, banco vacío, token por caducar—
+llegan por WhatsApp además de por issue, usando CallMebot, el mismo servicio
+del radar de empleo.
+
+`CALLMEBOT_PHONE` ya está configurado. Falta añadir un secret más:
+
+- `CALLMEBOT_APIKEY` — la clave de CallMebot
+
+Sin ese dato el sistema funciona igual, pero solo avisa por GitHub.
 
 ## 4. Probar sin publicar (2 minutos)
 

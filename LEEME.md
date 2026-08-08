@@ -15,11 +15,12 @@ Eso encadena tres pasos y se detiene ante el primer problema:
    citada en el carrusel **aparezca literalmente en el artículo de origen**, y
    que las fotos no vengan de un medio de la competencia. Si algo falla, no se
    genera nada.
-2. **`build.py`** — renderiza las láminas a PNG con Chrome headless.
+2. **`build.py`** — renderiza las láminas con Chrome headless y las guarda
+   en **JPEG**, que es el único formato que Meta documenta para publicar.
 3. **`paquete.py`** — arma el caption, el alt text de cada lámina y una
    revisión con el checklist de buenas prácticas.
 
-La salida queda en `salida/<slug>/`: las imágenes numeradas, `publicacion.txt`
+La salida queda en `salida/<slug>/`: las láminas numeradas en `.jpg`, `publicacion.txt`
 (el copy listo para pegar), `paquete.json` (lo que consumirá el publicador
 automático) y `revision.txt`.
 
