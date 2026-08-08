@@ -26,7 +26,11 @@
       "Lista de los cinco pasos del trámite: inscripción en el RUNT, curso en un CEA, exámenes en un CRC, paz y salvo por comparendos y documento de identidad vigente con el pago de derechos.",
       "Tabla con la vigencia de la licencia de servicio particular según la edad: 10 años para menores de 60, 5 años entre 60 y 80 y 1 año para mayores de 80.",
       "Lámina de cierre con el logo de Mundo Motor y la invitación a leer la guía completa en mundomotor.bike."
-    ]
+    ],
+    "push": {
+      "titulo": "¿Su licencia le sirve para esa moto?",
+      "texto": "Un solo dato decide si necesita A1 o A2: la cilindrada. Y a partir de 150 c.c. la A1 deja de servirle."
+    }
   },
   "laminas": [
     {

@@ -27,7 +27,11 @@
       "Comparación en dos columnas entre uso mixto, donde se sigue el intervalo del fabricante, y uso urbano, donde conviene acortarlo y priorizar los meses.",
       "Lista de cuatro errores caros al cambiar el aceite: completar con otro aceite, sobrellenar, ignorar fugas pequeñas y guiarse solo por el color.",
       "Lámina de cierre con el logo de Mundo Motor y la invitación a leer la guía completa en mundomotor.bike."
-    ]
+    ],
+    "push": {
+      "titulo": "El manual no basta para el cambio de aceite",
+      "texto": "Dos motos iguales con el mismo kilometraje pueden necesitar ritmos distintos. Cómo fijar el suyo."
+    }
   },
   "laminas": [
     {

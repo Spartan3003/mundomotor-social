@@ -1,0 +1,90 @@
+name: Notificación push del día
+
+# UN push al día, de lunes a viernes, y solo de la pieza que ese día sale
+# también en Instagram. Antes el plugin de WordPress mandaba uno por cada
+# artículo publicado -- 3 a 5 diarios sobre los mismos 87 suscriptores --, y
+# el resultado medido fue 0,37 % de CTR y una caída del 6,45 % de
+# suscriptores en 30 días.
+#
+# El push apunta SIEMPRE al artículo de mundomotor.bike: la web es el
+# producto, no un escaparate de las redes.
+#
+# Hora: mediodía. Los datos propios NO muestran patrón horario (un envío a
+# las 12:22 rindió 1,16 % y otro a las 12:19 dio 0,00 %); lo que separa el
+# éxito del fracaso es el tema, no la hora. Se elige el mediodía por criterio
+# -- pausa del almuerzo, celular en mano -- y para no amontonarlo con el
+# carrusel de la tarde.
+on:
+  schedule:
+    - cron: "27 17 * * 1-5"   # 12:27 Bogotá, L-V
+  workflow_dispatch:
+    inputs:
+      simular:
+        description: "Mostrar el push sin enviarlo"
+        type: boolean
+        default: true
+
+permissions:
+  contents: read
+
+concurrency:
+  group: push-onesignal
+  cancel-in-progress: false
+
+jobs:
+  notificar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Determinar el modo
+        id: modo
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ inputs.simular }}" = "true" ]; then
+            echo "simular=si" >> $GITHUB_OUTPUT
+          else
+            echo "simular=no" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Elegir la pieza del día
+        id: pieza
+        run: |
+          if ! SLUG=$(python cola.py siguiente --slug); then
+            echo "hay=no" >> $GITHUB_OUTPUT
+            echo "::warning::No hay pieza hoy, así que tampoco hay push."
+            exit 0
+          fi
+          echo "slug=$SLUG" >> $GITHUB_OUTPUT
+          echo "hay=si" >> $GITHUB_OUTPUT
+
+      - name: Enviar la notificación
+        if: steps.pieza.outputs.hay == 'si'
+        env:
+          ONESIGNAL_APP_ID: ${{ vars.ONESIGNAL_APP_ID }}
+          ONESIGNAL_API_KEY: ${{ secrets.ONESIGNAL_API_KEY }}
+          BASE_URL: ${{ vars.BASE_URL }}
+        run: |
+          ARCHIVO="banco/pendientes/${{ steps.pieza.outputs.slug }}.json"
+          if [ "${{ steps.modo.outputs.simular }}" = "si" ]; then
+            python push_onesignal.py "$ARCHIVO" --simular
+          else
+            python push_onesignal.py "$ARCHIVO"
+          fi
+
+      - name: Avisar por WhatsApp si falló
+        if: failure()
+        env:
+          TEL: ${{ secrets.CALLMEBOT_PHONE }}
+          KEY: ${{ secrets.CALLMEBOT_APIKEY }}
+        run: |
+          if [ -z "$TEL" ] || [ -z "$KEY" ]; then
+            echo "Sin CallMebot configurado."; exit 0
+          fi
+          M="⚠️ Mundo Motor: falló el push de hoy (pieza ${{ steps.pieza.outputs.slug }}). Revisa: github.com/Spartan3003/mundomotor-social/actions"
+          curl -sG "https://api.callmebot.com/whatsapp.php" \
+            -d "phone=$TEL" -d "apikey=$KEY" --data-urlencode "text=$M" \
+            --max-time 30 || echo "(no pude enviar el WhatsApp)"

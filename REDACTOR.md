@@ -75,6 +75,29 @@ ahorra plata, tiempo o un problema legal al motociclista— es el que se reenví
   lectores de pantalla, así que descríbelo para alguien que no ve la imagen.
 - El copy total (gancho + cuerpo + CTA) no debe pasar de 620 caracteres.
 
+## El push (opcional, y opt-in a propósito)
+
+Si —y solo si— la pieza merece **interrumpir a alguien en el celular**, añade
+dentro de `publicacion` un bloque `push` con `titulo` y `texto`. Sin ese
+bloque no se envía notificación, y eso está bien: es la salvaguarda contra
+lo que pasaba antes, cuando el plugin mandaba una por cada artículo.
+
+Los datos propios son inequívocos sobre qué merece push: los únicos envíos
+con clics fueron **de servicio** (licencia A1/A2 2,30 %, casco certificado
+1,16 %), mientras que MotoGP, Ducati, Triumph, Royal Enfield y los
+lanzamientos internacionales dieron **0,00 %** sin una sola excepción.
+
+Regla: lleva push lo que le **ahorra plata, tiempo o un problema legal** al
+motociclista. Una noticia de competición o un lanzamiento de otro continente,
+no.
+
+- `titulo`: máximo **60 caracteres**, o Chrome lo corta.
+- `texto`: máximo **120 caracteres**. Que se entienda sin abrir nada.
+- No repitas el titular del artículo: en la pantalla de bloqueo compite con
+  WhatsApp y con las notificaciones del banco. Da la razón para tocar.
+- El clic lleva **al artículo de mundomotor.bike**, nunca a una red. La web
+  es el producto.
+
 ## Vigencia
 
 Declara cuánto dura la pieza, porque el banco no publica nada caducado:

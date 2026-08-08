@@ -27,7 +27,11 @@
       "Lista de lo que hay que llevar al CDA: licencia de tránsito, SOAT vigente y un chequeo propio de la moto una semana antes.",
       "Sobre una foto de un agente de tránsito escribiendo un comparendo apoyado en el capó de un vehículo, el recuadro amarillo que advierte que circular con la tecnomecánica vencida implica multa e inmovilización, más grúa y patios.",
       "Lámina de cierre con el logo de Mundo Motor y la invitación a leer la guía completa en mundomotor.bike."
-    ]
+    ],
+    "push": {
+      "titulo": "Tecnomecánica 2026: cuánto puede cobrarle el CDA",
+      "texto": "La tarifa está regulada y hay un tope. Revise el valor que le corresponde según la edad de su moto."
+    }
   },
   "laminas": [
     {
