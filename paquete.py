@@ -130,7 +130,8 @@ def revisa(cfg: dict, caption: str, n_imagenes: int) -> tuple:
     # Cebo de interaccion: pedir interaccion a cambio de algo. Instagram lo castiga.
     # Ojo: preguntar de verdad NO es cebo; lo es condicionar o regalar.
     cebos = [r"comenta\s+[\"']?\w+[\"']?\s+(y|para)\s+te\s+(mando|env[ií]o)",
-             r"etiqueta a \d+", r"dale like si", r"sigueme para",
+             r"etiqueta a (?:\d+|dos|tres|cinco) (?:amigos?|personas?|cuentas?|panas?|parceros?)",
+             r"dale like si", r"s[ií]gueme para", r"sigueme para",
              r"comparte para participar", r"comenta para recibir"]
     for c in cebos:
         if re.search(c, caption, re.I):

@@ -43,6 +43,10 @@ MARCAS = [
 ]
 
 
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+
+
 def pedir(url: str, cabeceras: dict = None):
     req = urllib.request.Request(url, headers=cabeceras or {"User-Agent": UA})
     with urllib.request.urlopen(req, timeout=45) as r:

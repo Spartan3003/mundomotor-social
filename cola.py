@@ -29,6 +29,7 @@ Comandos:
 import datetime as dt
 import json
 import pathlib
+import shutil
 import sys
 import urllib.parse
 import urllib.request
@@ -62,7 +63,14 @@ def asegura_carpetas():
 
 def historial() -> dict:
     asegura_carpetas()
-    return json.loads(HISTORIAL.read_text(encoding="utf-8"))
+    try:
+        datos = json.loads(HISTORIAL.read_text(encoding="utf-8"))
+    except Exception as e:
+        print(f"  (aviso) historial ilegible ({e}); parto de uno vacio",
+              file=sys.stderr)
+        return {"publicadas": []}
+    datos.setdefault("publicadas", [])
+    return datos
 
 
 def caduca_el(pieza: dict):
@@ -86,7 +94,7 @@ def carga_pendientes() -> list:
         try:
             p = json.loads(f.read_text(encoding="utf-8"))
         except json.JSONDecodeError:
-            print(f"  (aviso) {f.name} no es JSON valido, lo ignoro")
+            print(f"  (aviso) {f.name} no es JSON valido, lo ignoro", file=sys.stderr)
             continue
         p["_archivo"] = f
         piezas.append(p)
@@ -192,7 +200,9 @@ def cmd_publicada(slug: str):
     })
     HISTORIAL.write_text(json.dumps(h, ensure_ascii=False, indent=2), encoding="utf-8")
     destino = PUBLICADAS / p["_archivo"].name
-    p["_archivo"].rename(destino)
+    if destino.exists():
+        destino = PUBLICADAS / f"{destino.stem}-{hoy():%Y%m%d}{destino.suffix}"
+    shutil.move(str(p["_archivo"]), str(destino))
     print(f"Registrada '{slug}' como publicada el {hoy():%d/%m/%Y}.")
     print(f"Movida a {destino}")
     return 0
@@ -241,7 +251,7 @@ def pedir(url: str):
         with urllib.request.urlopen(req, timeout=45) as r:
             return json.loads(r.read().decode("utf-8"))
     except Exception as e:
-        print(f"  (error consultando el sitio: {e})")
+        print(f"  (error consultando el sitio: {e})", file=sys.stderr)
         return None
 
 

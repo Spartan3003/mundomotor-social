@@ -27,8 +27,12 @@ def historial() -> dict:
     f = BASE / "banco" / "historial.json"
     if not f.exists():
         return {}
-    datos = json.loads(f.read_text(encoding="utf-8"))
-    return {p["slug"]: p for p in datos.get("publicadas", [])}
+    try:
+        datos = json.loads(f.read_text(encoding="utf-8"))
+        return {p["slug"]: p for p in datos.get("publicadas", [])
+                if isinstance(p, dict) and p.get("slug")}
+    except Exception:
+        return {}
 
 
 def bonita(iso: str) -> str:
@@ -60,11 +64,13 @@ def main():
         if paq.exists():
             try:
                 p = json.loads(paq.read_text(encoding="utf-8"))
+                if not isinstance(p, dict):
+                    raise ValueError("paquete.json no es un objeto")
                 datos["caption"] = p.get("caption", "")
                 datos["origen"] = p.get("origen", "")
                 datos["alts"] = {i["archivo"]: i.get("alt", "")
                                  for i in p.get("imagenes", [])}
-            except json.JSONDecodeError:
+            except Exception:
                 pass
         h = hist.get(slug, {})
         datos["fecha"] = h.get("fecha", "")

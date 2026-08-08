@@ -5,39 +5,39 @@
   "ubicacion": "Bogotá, Colombia",
   "imagenes": [
     {
-      "archivo": "01.png",
+      "archivo": "01.jpg",
       "alt": "Portada del carrusel sobre fondo negro con el titular 'Casco certificado: qué exige la norma' y la etiqueta 'Guía de compra', con el logo de Mundo Motor."
     },
     {
-      "archivo": "02.png",
+      "archivo": "02.jpg",
       "alt": "La cifra 633.200 pesos destacada en amarillo, valor de la infracción C.24 por no usar el casco o usarlo mal, con inmovilización de la motocicleta."
     },
     {
-      "archivo": "03.png",
+      "archivo": "03.jpg",
       "alt": "Lista de las tres normas que acepta Colombia: NTC 4533 de 2017, Reglamento 22.05 de Naciones Unidas y FMVSS 218, identificable por la sigla DOT."
     },
     {
-      "archivo": "04.png",
+      "archivo": "04.jpg",
       "alt": "Lista de los seis datos mínimos que debe traer la etiqueta del casco: nombre del producto, talla, país de origen, norma que cumple, importador o fabricante, y lote con fecha de producción."
     },
     {
-      "archivo": "05.png",
+      "archivo": "05.jpg",
       "alt": "Recuadro amarillo que indica que la etiqueta debe ir adherida por dentro del casco y no en el empaque, en un lugar visible y de fácil consulta."
     },
     {
-      "archivo": "06.png",
+      "archivo": "06.jpg",
       "alt": "Comparación en dos columnas entre el Reglamento 22.05, que es la referencia de la norma colombiana, y el 22.06, que rige en Europa y es más exigente en impacto rotacional y visor."
     },
     {
-      "archivo": "07.png",
+      "archivo": "07.jpg",
       "alt": "Lista de cinco pasos para revisar un casco en el punto de venta: buscar la etiqueta interna, confirmar la norma, verificar la razón social, revisar lote y fecha, y pedir el certificado de conformidad."
     },
     {
-      "archivo": "08.png",
+      "archivo": "08.jpg",
       "alt": "Lista de los cuatro errores más frecuentes al comprar casco: confiar en el adhesivo exterior, comprar una talla mayor, cambiar el visor por uno genérico y reutilizar un casco golpeado."
     },
     {
-      "archivo": "09.png",
+      "archivo": "09.jpg",
       "alt": "Lámina de cierre con el logo de Mundo Motor y la invitación a leer la guía completa en mundomotor.bike."
     }
   ]
