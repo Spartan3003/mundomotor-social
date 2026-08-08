@@ -15,6 +15,11 @@ on:
   schedule:
     - cron: "13 14 * * 1"   # lunes, 09:13 Bogotá
   workflow_dispatch:
+    inputs:
+      probar_aviso:
+        description: "Enviar un WhatsApp de prueba para comprobar el canal"
+        type: boolean
+        default: false
 
 permissions:
   contents: read
@@ -25,6 +30,25 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
+      # Sirve para comprobar que el canal de aviso funciona sin esperar a que
+      # algo se rompa de verdad.
+      - name: WhatsApp de prueba
+        if: inputs.probar_aviso
+        env:
+          TEL: ${{ secrets.CALLMEBOT_PHONE }}
+          KEY: ${{ secrets.CALLMEBOT_APIKEY }}
+        run: |
+          if [ -z "$TEL" ] || [ -z "$KEY" ]; then
+            echo "::error::Faltan los secrets de CallMebot."; exit 1
+          fi
+          M="✅ Mundo Motor: prueba del canal de avisos. Si lees esto, el sistema podrá avisarte si falla la publicación, si el banco se vacía o si el token va a caducar."
+          RESP=$(curl -sG "https://api.callmebot.com/whatsapp.php" \
+            -d "phone=$TEL" -d "apikey=$KEY" --data-urlencode "text=$M" --max-time 30)
+          echo "Respuesta de CallMebot: $RESP"
+          echo "$RESP" | grep -qi "queued\|sent\|Message.*Sent\|success" \
+            && echo "Aviso enviado correctamente." \
+            || { echo "::error::CallMebot no confirmó el envío."; exit 1; }
 
       - name: Comprobar el token y su antigüedad
         id: check
