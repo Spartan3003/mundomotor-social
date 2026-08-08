@@ -46,6 +46,9 @@ OFICIALES = {
     "yamahamotorcolombia.com", "suzuki.com.co",
 }
 
+# Fuente propia: la biblioteca de medios del medio. Es la preferente.
+PROPIAS = {"mundomotor.bike"}
+
 PROHIBIDO, OFICIAL, REVISAR = "PROHIBIDO", "OFICIAL", "REVISAR"
 
 
@@ -57,6 +60,9 @@ def dominio(url: str) -> str:
 def clasifica(url: str):
     """Devuelve (estado, dominio, explicacion)."""
     d = dominio(url)
+    for propia in PROPIAS:
+        if d == propia or d.endswith("." + propia):
+            return OFICIAL, d, "biblioteca de medios propia"
     for mal in COMPETENCIA:
         if d == mal or d.endswith("." + mal):
             return PROHIBIDO, d, "es un medio de comunicacion; la regla lo prohibe"

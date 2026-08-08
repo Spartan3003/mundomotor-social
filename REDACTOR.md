@@ -100,21 +100,25 @@ Ante la duda, la vigencia más corta.
    atribución**, así que la foto obliga a declarar `credito` con autor y
    licencia.
 
-**La regla que de verdad importa: una foto que no corresponde es tan falsa como
-un dato inventado.**
+**Las fotos son apoyo visual, no evidencia.** Criterio de Nicolás: basta con
+que conecten con el tema; no tienen que documentar un dato concreto.
 
-Esto se descubrió probando el sistema: se etiquetaron tres fotos como
-"integral", "abatible" y "abierto" sin mirarlas, y ninguna mostraba lo que la
-etiqueta afirmaba. El validador no lo detecta, porque no ve las imágenes. Así
-que la salvaguarda es tuya:
+De ahí sale la única línea que no se cruza: **una foto puede acompañar, pero
+nunca afirmar**.
 
-- **Las fotos ilustran, no afirman.** Por defecto van sin etiqueta descriptiva:
-  acompañan al texto, no sostienen un dato.
-- **Si vas a etiquetar una foto** (decir que eso es un casco integral, que esa
-  es la moto X), **primero mírala**. Descárgala y ábrela. Si no puedes
-  confirmar que muestra lo que dices, quita la etiqueta o cambia la foto.
+- **Por defecto van sin etiqueta descriptiva.** Ambientan la lámina y ya. En el
+  mosaico, deja `titulo` y `nota` vacíos salvo que se cumpla lo siguiente.
+- **Solo se etiqueta una foto si la miraste.** Si vas a escribir que eso es un
+  casco integral o que esa es la moto X, descarga la imagen, ábrela y
+  confirma. Si no puedes confirmarlo, quita la etiqueta: la foto se queda,
+  la afirmación no. (Esto salió de una prueba real: se etiquetaron tres fotos
+  como "integral", "abatible" y "abierto" sin mirarlas, y ninguna mostraba lo
+  que decía la etiqueta.)
+- **No debe contradecir el texto.** Sin etiqueta el listón es bajo, pero sigue
+  existiendo: nada de una Yamaha ilustrando una nota de Honda, ni una moto de
+  pista en una guía de mensajería urbana.
 - **Sin preferencia de marca** en los temas genéricos (cascos, trámites,
-  mantenimiento): descarta las fotos donde una marca sea el sujeto o su logo
+  mantenimiento): evita las fotos donde una marca sea el sujeto o su logo
   domine el encuadre. `imagenes.py` avisa si detecta una marca en el título,
   pero muchos logos solo se ven mirando la imagen.
 - **Calidad:** nada por debajo de 900 px de ancho, o se ve pixelado al llevarlo

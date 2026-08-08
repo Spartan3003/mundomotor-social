@@ -17,21 +17,23 @@
     "ubicacion": "Bogotá, Colombia",
     "menciones": [],
     "alt": [
-      "Portada del carrusel sobre fondo negro con el titular 'Tecnomecánica: el precio tope en 2026' y la etiqueta 'Guía 2026', con el logo de Mundo Motor.",
+      "Portada del carrusel sobre una foto en primer plano de la rueda delantera de una moto, con la llanta labrada, el disco de freno y la mordaza a la vista; encima, el titular 'Tecnomecánica: el precio tope en 2026' y la etiqueta 'Guía 2026'.",
       "La cifra 247.490 pesos en amarillo sobre fondo negro, tope máximo de la tecnomecánica de moto en 2026 para vehículos de 8 a 16 años.",
       "Tabla de tarifas 2026 por antigüedad de la moto: de 0 a 2 años entre 217.781 y 246.890 pesos, de 3 a 7 años entre 218.081 y 247.190, de 8 a 16 años entre 218.381 y 247.490, y de 17 años o más entre 218.081 y 247.190 pesos.",
       "Recuadro amarillo que indica que la tarifa ya incluye el IVA del 19 %, la tasa RUNT, el sistema SICOV, el recaudo bancario y la tarifa de la ANSV.",
       "Comparativa a dos columnas entre la moto de combustión, que paga entre 217.781 y 247.490 pesos, y el vehículo eléctrico particular, que paga entre 240.301 y 276.508 pesos y no hace prueba de emisiones.",
-      "Recuadro amarillo con el plazo de la revisión: la primera a los 2 años desde la matrícula y luego cada año.",
+      "Sobre una foto de las manos de un mecánico trabajando en el motor de una moto, el recuadro amarillo con el plazo de la revisión: la primera a los 2 años desde la matrícula y luego cada año.",
       "Lista numerada de los seis puntos que revisan en el CDA: frenos, luces y señalización, dirección y suspensión, llantas, emisiones y escape, y chasis y elementos de seguridad.",
       "Lista de lo que hay que llevar al CDA: licencia de tránsito, SOAT vigente y un chequeo propio de la moto una semana antes.",
-      "Recuadro amarillo que advierte que circular con la tecnomecánica vencida implica multa e inmovilización, más grúa y patios.",
+      "Sobre una foto de un agente de tránsito escribiendo un comparendo apoyado en el capó de un vehículo, el recuadro amarillo que advierte que circular con la tecnomecánica vencida implica multa e inmovilización, más grúa y patios.",
       "Lámina de cierre con el logo de Mundo Motor y la invitación a leer la guía completa en mundomotor.bike."
     ]
   },
   "laminas": [
     {
-      "tipo": "portada",
+      "tipo": "foto",
+      "imagen": "https://mundomotor.bike/wp-content/uploads/2025/06/Portada-PX-Mundo-Motor-9.png",
+      "credito": "Mundo Motor",
       "kicker": "Trámites · Colombia",
       "etiqueta": "Guía 2026",
       "titulo": "Tecnomecánica: el <em>precio tope</em> en 2026",
@@ -111,6 +113,8 @@
     },
     {
       "tipo": "destacado",
+      "imagen": "https://mundomotor.bike/wp-content/uploads/2024/03/Mantenimiento-basico-de-tu-moto.webp",
+      "credito": "Mundo Motor",
       "titulo": "Cada cuánto le <em>toca</em>",
       "caja_titulo": "2 años y luego cada año",
       "caja_texto": "La primera revisión va a los 2 años contados desde la fecha de matrícula en el Registro Nacional Automotor. Después, cada año sin excepción.",
@@ -178,6 +182,8 @@
     },
     {
       "tipo": "destacado",
+      "imagen": "https://mundomotor.bike/wp-content/uploads/2024/07/vs-futbol-18-1.webp",
+      "credito": "Mundo Motor",
       "titulo": "Con la tecnomecánica <em>vencida</em>",
       "caja_titulo": "Multa e inmovilización",
       "caja_texto": "A la infracción se suman los costos adicionales de grúa y patios.",

@@ -112,17 +112,29 @@ def main(ruta: str) -> int:
 
     imgs, problemas_img, avisos_img = [], [], []
     for i, lam in enumerate(cfg["laminas"], 1):
-        if not lam.get("imagen"):
-            continue
-        imgs.append(lam["imagen"])
-        if not lam.get("credito"):
-            problemas_img.append(f"lamina {i}: foto sin credito declarado")
-            continue
-        estado, dom, motivo = fu.clasifica(lam["imagen"])
-        if estado == fu.PROHIBIDO:
-            problemas_img.append(f"lamina {i}: {dom} {motivo}")
-        elif estado == fu.REVISAR:
-            avisos_img.append(f"lamina {i}: {dom} — {motivo}")
+        # Una foto puede estar de fondo (imagen), dentro de un mosaico (fotos)
+        # o en una lamina foto_texto (foto). Todas pasan por el mismo control.
+        candidatas = []
+        if lam.get("imagen"):
+            candidatas.append(lam)
+        if lam.get("foto"):
+            candidatas.append(lam["foto"])
+        candidatas += lam.get("fotos", [])
+
+        for f in candidatas:
+            url = f.get("imagen")
+            if not url:
+                continue
+            imgs.append(url)
+            # Las propias del medio no necesitan credito; el resto si.
+            if not f.get("propia") and not f.get("credito"):
+                problemas_img.append(f"lamina {i}: foto sin credito declarado")
+                continue
+            estado, dom, motivo = fu.clasifica(url)
+            if estado == fu.PROHIBIDO:
+                problemas_img.append(f"lamina {i}: {dom} {motivo}")
+            elif estado == fu.REVISAR:
+                avisos_img.append(f"lamina {i}: {dom} — {motivo}")
 
     print(f"Fuente: {origen}")
     print(f"Datos factuales detectados en el carrusel: {len(hallados)}")

@@ -17,11 +17,12 @@
     "ubicacion": "Bogotá, Colombia",
     "menciones": [],
     "alt": [
-      "Portada del carrusel sobre fondo negro con el titular '¿Cada cuántos cambiar el aceite?' y la etiqueta 'Guía práctica', con el logo de Mundo Motor.",
+      "Portada sobre una foto de aceite usado cayendo en un chorro fino desde el cárter de una moto hacia una bandeja metálica, con el titular '¿Cada cuántos cambiar el aceite?' y la etiqueta 'Guía práctica'.",
       "Recuadro amarillo con el mensaje 'Mismo modelo, mismo kilometraje': dos motos iguales pueden necesitar ritmos de cambio distintos.",
       "Lista de cuatro cosas que el manual no puede saber: horas en tráfico detenido, calor acumulado en ciudad, parrillero a diario y filtro de aire semiobstruido.",
       "La viscosidad 10W-40 destacada en amarillo como ejemplo, con la explicación de que describe el comportamiento del aceite en frío y en caliente.",
       "Recuadro amarillo con la norma JASO MA o MA2, la que casi siempre pide el fabricante en motos, junto a la especificación API.",
+      "Dos fotos bajo el título 'El aceite, en la moto': en una, unas manos vierten aceite en el motor de una moto con un embudo; en la otra, una mano trabaja sobre el motor de una moto.",
       "Lista de cuatro señales para adelantar el cambio: tráfico urbano denso, trayectos cortos repetidos, polvo o caminos destapados y aceite mineral en uso intenso.",
       "Comparación en dos columnas entre uso mixto, donde se sigue el intervalo del fabricante, y uso urbano, donde conviene acortarlo y priorizar los meses.",
       "Lista de cuatro errores caros al cambiar el aceite: completar con otro aceite, sobrellenar, ignorar fugas pequeñas y guiarse solo por el color.",
@@ -30,7 +31,9 @@
   },
   "laminas": [
     {
-      "tipo": "portada",
+      "tipo": "foto",
+      "imagen": "https://mundomotor.bike/wp-content/uploads/2026/07/Portadas-Mundo-Motor-1-1.webp",
+      "credito": "Mundo Motor",
       "kicker": "Mantenimiento · Moto tips",
       "etiqueta": "Guía práctica",
       "titulo": "¿Cada cuántos <em>cambiar el aceite</em>?",
@@ -85,6 +88,20 @@
       "caja_titulo": "JASO MA o MA2",
       "caja_texto": "La norma que casi siempre pide el fabricante en motos, junto con la especificación API.",
       "bajada": "Un aceite de auto con <strong>modificadores de fricción</strong> puede hacer patinar el embrague en baño de aceite."
+    },
+    {
+      "tipo": "galeria",
+      "titulo": "El aceite, <em>en la moto</em>",
+      "fotos": [
+        {
+          "imagen": "https://mundomotor.bike/wp-content/uploads/2025/07/Portada-PX-Mundo-Motor-13.png",
+          "propia": true
+        },
+        {
+          "imagen": "https://mundomotor.bike/wp-content/uploads/2024/03/Mantenimiento-basico-de-tu-moto.webp",
+          "propia": true
+        }
+      ]
     },
     {
       "tipo": "lista",
