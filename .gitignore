@@ -1,0 +1,6 @@
+# Se regenera en cada ejecución
+salida/
+_tmp/
+pruebas/
+# Caché de imágenes descargadas
+imagenes/

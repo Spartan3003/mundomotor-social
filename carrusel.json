@@ -1,0 +1,164 @@
+{
+  "slug": "multas-motos-2026",
+  "origen": "https://mundomotor.bike/moto-tips/multas-transito-motos-colombia-2026/",
+  "publicacion": {
+    "gancho": "Si le muestran una tabla de multas calculada en salarios mínimos, le están cobrando de más.",
+    "cuerpo": [
+      "Desde 2026 los comparendos ya no se calculan sobre el salario mínimo, sino sobre la UVB: $12.110.",
+      "Una infracción tipo C —sin SOAT, sin tecnomecánica, casco mal puesto o celular en la mano— vale $633.200 y lleva inmovilización. Conducir sin licencia, $1.266.100."
+    ],
+    "cta": "Guarde el carrusel: adentro está la tabla completa y la cuenta para verificar cualquier cifra. ¿Cuál de estos comparendos ve más en la calle?",
+    "fuente_texto": "Fuentes: Ministerio de Hacienda y Ministerio de Transporte. Guía completa, en el enlace de la biografía.",
+    "hashtags": [
+      "#MotosColombia",
+      "#SOAT",
+      "#Comparendos"
+    ],
+    "ubicacion": "Bogotá, Colombia",
+    "menciones": [],
+    "alt": [
+      "Portada del carrusel sobre fondo negro con el titular 'Multas de moto: los valores reales' y la etiqueta 'Guía rápida 2026', con el logo de Mundo Motor.",
+      "La cifra 12.110 pesos destacada en amarillo, valor de la Unidad de Valor Básico con la que se calculan los comparendos en 2026.",
+      "Recuadro amarillo que explica que el salario mínimo subió 23 % mientras los comparendos solo se ajustaron 4,83 %.",
+      "Tabla con los cinco tipos de infracción y su valor en 2026: tipo A 168.900 pesos, B 337.800, C 633.200, D 1.266.100 y E 1.899.300 pesos.",
+      "Lista de los cuatro códigos que más afectan al motociclista: C.14 sin SOAT, C.24 casco mal usado, C.35 sin tecnomecánica y D.02 sin licencia, todos con inmovilización.",
+      "Recuadro que advierte que conducir usando el celular cuesta 633.200 pesos, lo mismo que circular sin SOAT.",
+      "Las dos ventanas de descuento por pronto pago: 50 % dentro de los cinco días hábiles y 25 % entre el día seis y el veinte, con curso pedagógico.",
+      "Fórmula para calcular cualquier comparendo: las UVB del tipo de infracción multiplicadas por 12.110 pesos.",
+      "Lámina de cierre con el logo de Mundo Motor y la invitación a leer la guía completa en mundomotor.bike."
+    ]
+  },
+  "laminas": [
+    {
+      "tipo": "portada",
+      "kicker": "Normativa · Colombia",
+      "etiqueta": "Guía rápida 2026",
+      "titulo": "Multas de moto: los <em>valores reales</em>",
+      "bajada": "Cambió la base de cálculo. Las tablas que circulan en salarios mínimos <strong>cobran de más</strong>."
+    },
+    {
+      "tipo": "cifra",
+      "kicker": "La nueva base de cálculo",
+      "cifra": "$12.110",
+      "nota": "Valor de la UVB para 2026",
+      "bajada": "Desde este año los comparendos se liquidan sobre la <strong>Unidad de Valor Básico</strong>, no sobre el salario mínimo diario.",
+      "fuente": "Resolución 3488 de 2025, Ministerio de Hacienda y Crédito Público."
+    },
+    {
+      "tipo": "destacado",
+      "titulo": "Por qué le <em>conviene</em>",
+      "caja_titulo": "El salario mínimo subió 23 %",
+      "caja_texto": "Los comparendos solo se ajustaron 4,83 %, la variación del IPC sin alimentos ni regulados medida por el DANE.",
+      "bajada": "Con el esquema anterior, cada alza del salario mínimo se trasladaba íntegra a las multas. La UVB ató el aumento a la inflación."
+    },
+    {
+      "tipo": "tabla",
+      "titulo": "Cuánto vale cada <em>tipo</em> de multa",
+      "columnas": [
+        "Tipo",
+        "Equivalencia en UVB",
+        "Valor 2026"
+      ],
+      "filas": [
+        [
+          "A",
+          "13,95 UVB",
+          "$168.900"
+        ],
+        [
+          "B",
+          "27,86 UVB",
+          "$337.800"
+        ],
+        [
+          "C",
+          "52,29 UVB",
+          "$633.200"
+        ],
+        [
+          "D",
+          "104,55 UVB",
+          "$1.266.100"
+        ],
+        [
+          "E",
+          "156,84 UVB",
+          "$1.899.300"
+        ]
+      ],
+      "nota": "Las sanciones por conducir bajo efectos del alcohol se rigen por una escala aparte.",
+      "fuente": "Código Nacional de Tránsito · Circular Externa 20264000000037 del Ministerio de Transporte."
+    },
+    {
+      "tipo": "lista",
+      "titulo": "Las que más golpean al <em>motociclista</em>",
+      "items": [
+        {
+          "marca": "C.14",
+          "titulo": "Transitar sin el SOAT vigente",
+          "texto": "$633.200 · con inmovilización"
+        },
+        {
+          "marca": "C.24",
+          "titulo": "No usar el casco correctamente",
+          "texto": "$633.200 · con inmovilización"
+        },
+        {
+          "marca": "C.35",
+          "titulo": "Sin revisión técnico-mecánica vigente",
+          "texto": "$633.200 · con inmovilización"
+        },
+        {
+          "marca": "D.02",
+          "titulo": "Conducir sin haber obtenido licencia",
+          "texto": "$1.266.100 · con inmovilización"
+        }
+      ],
+      "nota": "Al comparendo se suman grúa y patios, que se cobran por día y varían según el municipio."
+    },
+    {
+      "tipo": "destacado",
+      "titulo": "Usar el <em>celular</em> cuesta lo mismo que no tener SOAT",
+      "caja_titulo": "$633.200",
+      "caja_texto": "Conducir con el celular sin manos libres es tipo C: la misma categoría y el mismo valor que circular sin SOAT.",
+      "bajada": "En el tipo C también caen el exceso de velocidad y el estacionamiento en sitio prohibido."
+    },
+    {
+      "tipo": "lista",
+      "titulo": "Pague rápido y pague <em>menos</em>",
+      "items": [
+        {
+          "marca": "50%",
+          "titulo": "Dentro de los 5 días hábiles",
+          "texto": "Descuento sobre el comparendo, condicionado a tomar el curso pedagógico."
+        },
+        {
+          "marca": "25%",
+          "titulo": "Entre el día hábil 6 y el 20",
+          "texto": "Pasado ese plazo se paga el valor pleno."
+        }
+      ],
+      "nota": "En un tipo C, reaccionar en la primera semana o dejarlo correr son más de $300.000 de diferencia. El descuento no cubre grúa ni patios."
+    },
+    {
+      "tipo": "destacado",
+      "titulo": "Verifique usted mismo <em>cualquier cifra</em>",
+      "caja_titulo": "UVB del tipo × $12.110",
+      "caja_texto": "Tipo C: 52,29 × $12.110 = $633.200. Tipo D: 104,55 × $12.110 = $1.266.100.",
+      "bajada": "Si un valor que le muestran no cuadra con esa multiplicación, está calculado sobre el salario mínimo y está desactualizado."
+    },
+    {
+      "tipo": "cierre",
+      "titulo": "La guía completa está en la web",
+      "texto": "Comparendo y multa no son lo mismo, y esa diferencia le da margen para actuar. Lo explicamos entero en Mundo Motor.",
+      "url": "mundomotor.bike",
+      "acciones": [
+        "<b>Guarda</b> esta guía",
+        "<b>Compártela</b> con un parcero"
+      ]
+    }
+  ],
+  "vigencia": "anual",
+  "anio": 2026,
+  "creada": "2026-08-07"
+}

@@ -1,0 +1,119 @@
+name: Publicar carrusel en Instagram
+
+# Un carrusel al día, de lunes a viernes.
+# Los cron van en UTC; Bogotá es UTC-5. Las franjas salen del estudio de
+# horarios: martes 20:00 es el pico más consistente y el miércoles al mediodía
+# es la única hora que también alcanza a España.
+on:
+  schedule:
+    - cron: "0 0 * * 2"    # lunes    19:00 Bogotá
+    - cron: "0 1 * * 3"    # martes   20:00 Bogotá  <- la mejor pieza de la semana
+    - cron: "30 17 * * 3"  # miércoles 12:30 Bogotá
+    - cron: "0 23 * * 4"   # jueves   18:00 Bogotá
+    - cron: "0 22 * * 5"   # viernes  17:00 Bogotá
+  workflow_dispatch:
+    inputs:
+      simular:
+        description: "Generar y verificar sin publicar en Instagram"
+        type: boolean
+        default: true
+
+permissions:
+  contents: write
+
+concurrency:
+  group: publicar-instagram
+  cancel-in-progress: false
+
+jobs:
+  publicar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Comprobar que hay Chrome
+        run: google-chrome --version
+
+      - name: Elegir la pieza del día
+        id: pieza
+        run: |
+          if ! SLUG=$(python cola.py siguiente --slug); then
+            echo "El banco está vacío o todo está caducado. Hoy no se publica."
+            echo "hay=no" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+          echo "Pieza de hoy: $SLUG"
+          echo "slug=$SLUG" >> $GITHUB_OUTPUT
+          echo "hay=si" >> $GITHUB_OUTPUT
+
+      - name: Verificar, generar y armar el paquete
+        if: steps.pieza.outputs.hay == 'si'
+        run: python producir.py "banco/pendientes/${{ steps.pieza.outputs.slug }}.json"
+
+      - name: Publicar las imágenes en GitHub Pages
+        if: steps.pieza.outputs.hay == 'si'
+        run: |
+          SLUG="${{ steps.pieza.outputs.slug }}"
+          mkdir -p docs/$SLUG
+          cp salida/$SLUG/*.png docs/$SLUG/
+          git config user.name "Mundo Motor bot"
+          git config user.email "actions@github.com"
+          git add docs/$SLUG
+          git commit -m "Imágenes del carrusel $SLUG" || echo "sin cambios"
+          git push
+
+      - name: Esperar a que las imágenes estén accesibles
+        if: steps.pieza.outputs.hay == 'si' && !inputs.simular
+        run: |
+          SLUG="${{ steps.pieza.outputs.slug }}"
+          URL="${{ vars.BASE_URL }}/$SLUG/01.png"
+          echo "Esperando a $URL"
+          for i in $(seq 1 40); do
+            CODIGO=$(curl -s -o /dev/null -w "%{http_code}" "$URL")
+            if [ "$CODIGO" = "200" ]; then
+              echo "Disponible tras $((i*15))s"
+              exit 0
+            fi
+            sleep 15
+          done
+          echo "Las imágenes no quedaron públicas a tiempo. No se publica."
+          exit 1
+
+      - name: Publicar en Instagram
+        if: steps.pieza.outputs.hay == 'si'
+        env:
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          IG_TOKEN: ${{ secrets.IG_TOKEN }}
+          BASE_URL: ${{ vars.BASE_URL }}
+          GRAPH_VERSION: ${{ vars.GRAPH_VERSION }}
+        run: |
+          SLUG="${{ steps.pieza.outputs.slug }}"
+          if [ "${{ inputs.simular }}" = "true" ]; then
+            python publicar_ig.py "salida/$SLUG/paquete.json" --simular
+          else
+            python publicar_ig.py "salida/$SLUG/paquete.json"
+          fi
+
+      - name: Marcar la pieza como publicada
+        if: steps.pieza.outputs.hay == 'si' && !inputs.simular
+        run: |
+          python cola.py publicada "${{ steps.pieza.outputs.slug }}"
+          git add banco
+          git commit -m "Publicada ${{ steps.pieza.outputs.slug }}" || echo "sin cambios"
+          git push
+
+      - name: Avisar si el banco se está quedando corto
+        if: steps.pieza.outputs.hay == 'si'
+        run: python cola.py estado
+
+      - name: Guardar la pieza como artefacto
+        if: steps.pieza.outputs.hay == 'si'
+        uses: actions/upload-artifact@v4
+        with:
+          name: carrusel-${{ steps.pieza.outputs.slug }}
+          path: salida/${{ steps.pieza.outputs.slug }}/
+          retention-days: 30
