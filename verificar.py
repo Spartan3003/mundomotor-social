@@ -32,7 +32,13 @@ PATRONES = [
     (r"\b\d{1,3}\s?%", "porcentaje"),
     (r"\b\d{1,3},\d{1,2}\b", "cifra decimal"),
     (r"\b[A-E]\.\d{2}\b", "codigo de infraccion"),
-    (r"\b(?:Resoluci[oó]n|Ley|Circular|Decreto|NTC)\s+[\w.\-]+", "norma citada"),
+    (r"\b(?:Resoluci[oó]n|Ley|Circular|Decreto|NTC|FMVSS)\s+[\w.\-]+", "norma citada"),
+    # Especificaciones tecnicas: son datos duros aunque no parezcan cifras.
+    (r"\b\d{1,2}W-\d{2}\b", "viscosidad SAE"),
+    (r"\bJASO\s+M[AB]\d?\b", "norma de aceite"),
+    (r"\b\d{2,4}\s?cc\b", "cilindrada"),
+    (r"\b\d{1,3}(?:[.,]\d{1,3})?\s?(?:mm|kg|km|HP|Nm)\b", "medida tecnica"),
+    (r"\b\d{1,2}[.,]\d{2}\b(?!\s?%)", "referencia numerica"),
 ]
 
 # Ruido que no es dato factual y no exige respaldo.
@@ -134,6 +140,11 @@ def main(ruta: str) -> int:
         print("\n  NO PUBLICAR. Las fotos van de la marca o del concesionario, "
               "nunca de un medio de la competencia.")
         return 1
+
+    if not hallados:
+        print("\n  AVISO: no se detecto ningun dato factual en esta pieza. Puede ser "
+              "correcto (contenido puramente explicativo), pero revisa a mano que "
+              "no se haya colado un dato que los patrones no cubren.")
 
     if faltan:
         print(f"\n  *** {len(faltan)} DATO(S) SIN RESPALDO EN EL ARTICULO ***")

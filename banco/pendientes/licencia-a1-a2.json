@@ -148,21 +148,21 @@
       "tipo": "tabla",
       "titulo": "Cuánto le <em>dura</em> la licencia",
       "columnas": [
-        "Edad del conductor",
-        "Vigencia particular"
+        "Vigencia",
+        "Edad del conductor"
       ],
       "filas": [
         [
-          "Menor de 60",
-          "10 años"
+          "10 años",
+          "Menor de 60 años"
         ],
         [
-          "Entre 60 y 80",
-          "5 años"
+          "5 años",
+          "Entre 60 y 80 años"
         ],
         [
-          "Mayor de 80",
-          "1 año"
+          "1 año",
+          "Mayor de 80 años"
         ]
       ],
       "nota": "Renovar exige repetir el examen físico, mental y de coordinación motriz en un CRC. No hay que volver a hacer el curso de conducción.",

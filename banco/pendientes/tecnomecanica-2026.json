@@ -50,7 +50,7 @@
       "tipo": "tabla",
       "titulo": "Cuánto vale según la <em>antigüedad</em>",
       "columnas": [
-        "Antigüedad de la moto",
+        "Antigüedad",
         "Mínimo",
         "Máximo"
       ],
