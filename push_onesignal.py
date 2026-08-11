@@ -41,6 +41,20 @@ import urllib.request
 
 BASE = pathlib.Path(__file__).parent
 API = "https://api.onesignal.com/notifications"
+API_SEGMENTOS = "https://api.onesignal.com/apps/{app_id}/segments?limit=100"
+
+# Nombres de segmento que OneSignal ha usado como "todo el mundo" segun la
+# epoca en que se creo la app. El 10-ago-2026 el push fallo con
+# "All included players are not subscribed" porque el script mandaba al
+# segmento "Subscribed Users", que en esta app NO existe (las apps recientes
+# lo llaman "Total Subscriptions"). Por eso ahora los segmentos se LEEN de la
+# API y esta lista solo define el orden de preferencia / el plan B.
+SEGMENTOS_CONOCIDOS = [
+    "Total Subscriptions",
+    "Subscribed Users",
+    "Active Subscriptions",
+    "Active Users",
+]
 
 # Lo que Chrome muestra antes de cortar. No son limites duros de la API:
 # son los limites de lo que la persona llega a leer.
@@ -52,6 +66,55 @@ def limpia(s: str) -> str:
     """Quita el marcado de las laminas: en un push no se ve nada de eso."""
     s = re.sub(r"<[^>]+>", "", s or "")
     return re.sub(r"\s+", " ", s).strip()
+
+
+def peticion(url: str, api_key: str, datos=None):
+    """GET (o POST si hay datos) contra OneSignal, probando los dos esquemas
+    de Authorization: las claves nuevas usan `Key ...` y las Legacy -- como la
+    del plugin de WordPress -- usan `Basic ...`.
+
+    Devuelve (respuesta_json, None) si funciono, o (None, detalle_del_error).
+    """
+    ultimo = ""
+    for esquema in ("Key", "Basic"):
+        req = urllib.request.Request(
+            url,
+            data=json.dumps(datos).encode("utf-8") if datos is not None else None,
+            headers={"Authorization": f"{esquema} {api_key}",
+                     "Content-Type": "application/json"},
+            method="POST" if datos is not None else "GET")
+        try:
+            with urllib.request.urlopen(req, timeout=60) as r:
+                return json.loads(r.read().decode()), None
+        except urllib.error.HTTPError as e:
+            detalle = e.read().decode("utf-8", "ignore")
+            ultimo = f"{e.code}: {detalle}"
+            if e.code in (401, 403):
+                continue  # la clave no vale con este esquema: probar el otro
+            return None, ultimo
+        except Exception as e:
+            return None, str(e)
+    return None, ultimo
+
+
+def segmentos_a_probar(app_id: str, api_key: str):
+    """Lee de la API los segmentos REALES de la app y los devuelve en orden
+    de preferencia. Si la lectura falla, devuelve los nombres conocidos.
+
+    Leerlos en vez de fijarlos es lo que evita que esto vuelva a romperse si
+    OneSignal renombra sus segmentos por defecto o alguien los edita en el
+    panel.
+    """
+    resp, err = peticion(API_SEGMENTOS.format(app_id=app_id), api_key)
+    if not resp or not resp.get("segments"):
+        print(f"  (aviso) no pude listar los segmentos ({err or 'respuesta vacia'}); "
+              f"pruebo los nombres estandar.")
+        return list(SEGMENTOS_CONOCIDOS)
+    nombres = [s.get("name") for s in resp["segments"] if s.get("name")]
+    print(f"Segmentos reales de la app: {nombres}")
+    preferidos = [n for n in SEGMENTOS_CONOCIDOS if n in nombres]
+    resto = [n for n in nombres if n not in SEGMENTOS_CONOCIDOS]
+    return preferidos + resto
 
 
 def arma_push(cfg: dict):
@@ -116,7 +179,6 @@ def main() -> int:
 
     cuerpo = {
         "app_id": app_id,
-        "included_segments": ["Subscribed Users"],
         "headings": {"en": p["titulo"], "es": p["titulo"]},
         "contents": {"en": p["texto"], "es": p["texto"]},
         "url": destino,
@@ -127,45 +189,31 @@ def main() -> int:
         cuerpo["chrome_web_image"] = imagen
         cuerpo["big_picture"] = imagen
 
-    # OneSignal convive con dos formatos de clave: las nuevas usan
-    # `Authorization: Key ...` y las "Legacy" -- que es la que tiene puesta
-    # el plugin de WordPress -- usan `Basic ...`. Se prueban las dos para no
-    # depender de cual pegue Nicolas en el secret.
-    resp = None
-    ultimo = ""
-    for esquema in ("Key", "Basic"):
-        req = urllib.request.Request(
-            API, data=json.dumps(cuerpo).encode("utf-8"),
-            headers={"Authorization": f"{esquema} {api_key}",
-                     "Content-Type": "application/json"},
-            method="POST")
-        try:
-            with urllib.request.urlopen(req, timeout=60) as r:
-                resp = json.loads(r.read().decode())
-            break
-        except urllib.error.HTTPError as e:
-            detalle = e.read().decode("utf-8", "ignore")
-            ultimo = f"{e.code}: {detalle}"
-            if e.code in (401, 403):
-                print(f"  (la clave no funciono como '{esquema}', pruebo el otro formato)")
-                continue
-            print(f"\nOneSignal respondio {ultimo}")
+    # Se intenta segmento por segmento. Si OneSignal responde que el segmento
+    # no tiene suscriptores (el error del 10-ago-2026), se pasa al siguiente;
+    # cualquier otro error corta. Solo puede haber UN envio: al primer exito
+    # se termina.
+    ultimo_error = ""
+    for segmento in segmentos_a_probar(app_id, api_key):
+        cuerpo["included_segments"] = [segmento]
+        resp, err = peticion(API, api_key, cuerpo)
+        if resp is None:
+            print(f"\nOneSignal no acepto la peticion: {err}")
             return 1
-        except Exception as e:
-            print(f"\nNo pude contactar con OneSignal: {e}")
-            return 1
+        errores = resp.get("errors") or []
+        if not errores:
+            print(f"\nPUSH ENVIADO. segmento: {segmento}   id: {resp.get('id')}   "
+                  f"destinatarios: {resp.get('recipients', '?')}")
+            return 0
+        ultimo_error = f"[{segmento}] {errores}"
+        texto_err = " ".join(str(e) for e in errores).lower()
+        if "not subscribed" in texto_err or "segment" in texto_err:
+            print(f"  (el segmento '{segmento}' no sirvio: {errores}; pruebo el siguiente)")
+            continue
+        break  # error de otra naturaleza: reintentar no lo arregla
 
-    if resp is None:
-        print(f"\nOneSignal rechazo la clave en los dos formatos.\n{ultimo}")
-        return 1
-
-    if resp.get("errors"):
-        print(f"\nOneSignal devolvio errores: {resp['errors']}")
-        return 1
-
-    print(f"\nPUSH ENVIADO. id: {resp.get('id')}   "
-          f"destinatarios: {resp.get('recipients', '?')}")
-    return 0
+    print(f"\nOneSignal devolvio errores: {ultimo_error}")
+    return 1
 
 
 if __name__ == "__main__":

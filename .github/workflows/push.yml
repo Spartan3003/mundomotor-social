@@ -72,6 +72,10 @@ jobs:
             if [ "$CODIGO" = "200" ]; then
               echo "La clave autentica correctamente como '$ESQUEMA'."
               grep -o '"total_count":[0-9]*' /tmp/os.json | head -1
+              echo "Segmentos de la app (a uno de estos se manda el push):"
+              curl -s -H "Authorization: $ESQUEMA $KEY" \
+                "https://api.onesignal.com/apps/$APP/segments?limit=100" \
+                | grep -o '"name":"[^"]*"' || echo "(no pude listarlos)"
               exit 0
             fi
           done
