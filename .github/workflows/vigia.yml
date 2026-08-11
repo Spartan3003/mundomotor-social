@@ -1,0 +1,63 @@
+name: Vigilar que lo programado corrió
+
+# GitHub puede retrasar o directamente PERDER una ejecución programada. El
+# lunes 10-ago-2026 perdió la del carrusel y nadie se enteró en todo el día,
+# porque un workflow que no arranca no falla: simplemente no existe, y ningún
+# aviso se dispara. Este vigía cierra ese hueco.
+#
+# Cada mañana revisa que el carrusel y el push de la víspera hayan ARRANCADO
+# (cualquier resultado: si arrancaron y fallaron, su propia alerta ya sonó;
+# lo que nadie más detecta es el silencio). Si algo ni siquiera corrió, lo
+# dice por WhatsApp.
+#
+# Corre de martes a sábado (en UTC) porque las franjas de lunes a viernes de
+# Bogotá caen en esos días UTC.
+on:
+  schedule:
+    - cron: "41 15 * * 2-6"   # 10:41 Bogotá, martes a sábado
+  workflow_dispatch:
+
+permissions:
+  actions: read
+
+jobs:
+  vigiar:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Revisar las últimas 24 horas
+        id: rev
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          CORTE=$(date -u -d "24 hours ago" +%Y-%m-%dT%H:%M:%SZ)
+          FALTAN=""
+          for W in publicar.yml push.yml; do
+            N=$(gh run list -R "${{ github.repository }}" --workflow=$W \
+                  --event=schedule --limit 30 \
+                  --json createdAt -q "[.[] | select(.createdAt >= \"$CORTE\")] | length")
+            echo "$W: ${N:-0} ejecuciones programadas desde $CORTE"
+            if [ "${N:-0}" -eq 0 ]; then FALTAN="$FALTAN $W"; fi
+          done
+          echo "faltan=${FALTAN# }" >> $GITHUB_OUTPUT
+
+      - name: Avisar por WhatsApp si algo no llegó a correr
+        if: steps.rev.outputs.faltan != ''
+        env:
+          TEL: ${{ secrets.CALLMEBOT_PHONE }}
+          KEY: ${{ secrets.CALLMEBOT_APIKEY }}
+          FALTAN: ${{ steps.rev.outputs.faltan }}
+        run: |
+          if [ -z "$TEL" ] || [ -z "$KEY" ]; then
+            echo "Sin CallMebot configurado."; exit 0
+          fi
+          QUE=""
+          for w in $FALTAN; do
+            case $w in
+              publicar.yml) QUE="$QUE carrusel de Instagram," ;;
+              push.yml)     QUE="$QUE push de OneSignal," ;;
+            esac
+          done
+          M="🕳️ Mundo Motor: en las últimas 24 h NO llegó a correr lo programado de:${QUE%,}. GitHub se saltó el cron (no es que fallara). Revisa: github.com/Spartan3003/mundomotor-social/actions"
+          curl -sG "https://api.callmebot.com/whatsapp.php" \
+            -d "phone=$TEL" -d "apikey=$KEY" --data-urlencode "text=$M" \
+            --max-time 30 || echo "(no pude enviar el WhatsApp)"

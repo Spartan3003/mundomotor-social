@@ -16,7 +16,11 @@ name: Notificación push del día
 # carrusel de la tarde.
 on:
   schedule:
-    - cron: "27 17 * * 1-5"   # 12:27 Bogotá, L-V
+    # Dos cron por día: el titular y un RESCATE ~2,5 h después. GitHub puede
+    # perder una ejecución programada en horas de carga (el 10-ago-2026
+    # perdió la del carrusel). La guardia de abajo evita el envío doble.
+    - cron: "27 17 * * 1-5"   # 12:27 Bogotá, L-V (titular)
+    - cron: "53 19 * * 1-5"   # 14:53 Bogotá, L-V (rescate)
   workflow_dispatch:
     inputs:
       simular:
@@ -30,6 +34,7 @@ on:
 
 permissions:
   contents: read
+  actions: read   # la guardia del rescate consulta los runs del día
 
 concurrency:
   group: push-onesignal
@@ -83,9 +88,31 @@ jobs:
           cat /tmp/os.json
           exit 1
 
+      # GUARDIA del cron de rescate: si un run programado de HOY ya terminó
+      # bien, el push ya salió (o ya se decidió que no había pieza) y aquí no
+      # hay nada que hacer. El push no deja rastro en el repo, así que la
+      # fuente de verdad son los runs del propio workflow. Solo aplica al
+      # cron; un lanzamiento manual no se bloquea.
+      - name: ¿Ya corrió el push de hoy?
+        id: previo
+        if: github.event_name == 'schedule'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          HOY=$(date -u +%F)
+          N=$(gh run list -R "${{ github.repository }}" --workflow=push.yml \
+                --event=schedule --status=success --created "$HOY" \
+                --json databaseId -q 'length')
+          if [ "${N:-0}" -gt 0 ]; then
+            echo "repetido=si" >> $GITHUB_OUTPUT
+            echo "Hoy ya hubo una ejecución programada con éxito: no se reenvía."
+          else
+            echo "repetido=no" >> $GITHUB_OUTPUT
+          fi
+
       - name: Elegir la pieza del día
         id: pieza
-        if: '!inputs.probar_clave'
+        if: ${{ !inputs.probar_clave && steps.previo.outputs.repetido != 'si' }}
         run: |
           if ! SLUG=$(python cola.py siguiente --slug); then
             echo "hay=no" >> $GITHUB_OUTPUT

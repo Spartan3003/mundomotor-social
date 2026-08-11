@@ -24,6 +24,9 @@ Comandos:
   python cola.py siguiente     que se publica hoy (no marca nada)
   python cola.py publicada X   registra la pieza X como publicada
   python cola.py candidatos    articulos del archivo aptos para pieza nueva
+  python cola.py publicada-reciente [--horas N]
+                               sale con 0 si la ultima publicacion fue hace
+                               menos de N horas (guardia del cron de rescate)
 """
 
 import datetime as dt
@@ -197,6 +200,9 @@ def cmd_publicada(slug: str):
         "origen": origen,
         "post_id": id_de_url(origen),
         "fecha": hoy().isoformat(),
+        # Hora exacta (UTC): es lo que usa 'publicada-reciente' para que el
+        # cron de rescate no duplique una publicacion que si salio.
+        "publicada_en": dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
     })
     HISTORIAL.write_text(json.dumps(h, ensure_ascii=False, indent=2), encoding="utf-8")
     destino = PUBLICADAS / p["_archivo"].name
@@ -206,6 +212,49 @@ def cmd_publicada(slug: str):
     print(f"Registrada '{slug}' como publicada el {hoy():%d/%m/%Y}.")
     print(f"Movida a {destino}")
     return 0
+
+
+def cmd_publicada_reciente():
+    """Sale con 0 si la ultima publicacion fue hace menos de --horas (6 por
+    defecto); con 1 si no.
+
+    POR QUE EXISTE: GitHub puede retrasar o directamente PERDER una ejecucion
+    programada (el lunes 10-ago-2026 perdio la del carrusel y ese dia no se
+    publico nada). Por eso cada franja tiene un segundo cron de RESCATE un par
+    de horas despues, y esta comprobacion es lo que impide que ese segundo
+    intento duplique la publicacion cuando el primero si salio.
+    """
+    horas = 6.0
+    if "--horas" in sys.argv:
+        try:
+            horas = float(sys.argv[sys.argv.index("--horas") + 1])
+        except (IndexError, ValueError):
+            print("Uso: python cola.py publicada-reciente [--horas N]")
+            return 1
+    ahora = dt.datetime.now(dt.timezone.utc)
+    ultima = None
+    for x in historial()["publicadas"]:
+        try:
+            marca = x.get("publicada_en")
+            if marca:
+                t = dt.datetime.strptime(marca, "%Y-%m-%dT%H:%M:%SZ").replace(
+                    tzinfo=dt.timezone.utc)
+            else:
+                # Registros de antes de que se guardara la hora: se toma la
+                # medianoche de su fecha. Sesga hacia "ya paso el umbral",
+                # o sea hacia publicar; solo afecta a los registros viejos.
+                t = dt.datetime.fromisoformat(x["fecha"]).replace(
+                    tzinfo=dt.timezone.utc)
+        except Exception:
+            continue
+        if ultima is None or t > ultima:
+            ultima = t
+    if ultima is None:
+        print("No hay ninguna publicacion registrada.")
+        return 1
+    edad = (ahora - ultima).total_seconds() / 3600
+    print(f"Ultima publicacion hace {edad:.1f} h (umbral: {horas:g} h).")
+    return 0 if edad < horas else 1
 
 
 def id_de_url(url: str) -> str:
@@ -255,7 +304,9 @@ def pedir(url: str):
         return None
 
 
-COMANDOS = {"estado": cmd_estado, "siguiente": cmd_siguiente, "candidatos": cmd_candidatos}
+COMANDOS = {"estado": cmd_estado, "siguiente": cmd_siguiente,
+            "candidatos": cmd_candidatos,
+            "publicada-reciente": cmd_publicada_reciente}
 
 if __name__ == "__main__":
     arg = sys.argv[1] if len(sys.argv) > 1 else "estado"
