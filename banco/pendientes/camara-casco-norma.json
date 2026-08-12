@@ -1,0 +1,162 @@
+{
+  "slug": "camara-casco-norma",
+  "origen": "https://mundomotor.bike/moto-tips/camara-casco-moto-colombia-norma/",
+  "publicacion": {
+    "gancho": "Llevar cámara en el casco no está prohibido en Colombia. Lo que sí puede costarle $633.200 es cómo la monta.",
+    "cuerpo": [
+      "Ninguna norma nacional menciona las cámaras de acción para prohibirlas. La que existe es la Resolución 23385 de 2020, que regula cómo debe portarse el casco.",
+      "El punto crítico no es el accesorio: es perforar el casquete. Un casco intervenido deja de responder a las condiciones bajo las cuales se certificó."
+    ],
+    "cta": "Guarde esta guía antes de instalar el soporte. ¿Usted monta la cámara en el casco o en la moto?",
+    "fuente_texto": "Fuentes: Ministerio de Transporte y Código Nacional de Tránsito. Guía completa, en el enlace de la biografía.",
+    "hashtags": [
+      "#CascoDeMoto",
+      "#MotosColombia",
+      "#SeguridadVial"
+    ],
+    "ubicacion": "Bogotá, Colombia",
+    "menciones": [],
+    "alt": [
+      "Portada del carrusel sobre una foto de un casco integral negro con un intercomunicador adherido al lateral, apoyado sobre una moto. Titular: 'Cámara en el casco: no está prohibida', con el logo de Mundo Motor.",
+      "La cifra $633.200 destacada en amarillo sobre fondo negro: el valor de una infracción tipo C en 2026 si el casco no cumple las condiciones de uso.",
+      "Lista de las obligaciones de la Resolución 23385 de 2020: casco ajustado y firme, sistema de retención abrochado, nada entre la cabeza y el casco salvo manos libres, y mentón cerrado en los abatibles.",
+      "Recuadro amarillo que explica que la norma restringe lo que va entre la cabeza y el casco: una cámara montada por fuera del casquete no encaja en esa descripción, un auricular bajo el acolchado sí.",
+      "Recuadro que advierte que perforar el casquete altera la certificación de la Resolución 1080 de 2019 y la norma NTC 4533, y que la protección deja de ser la que el fabricante ensayó.",
+      "Lista de prácticas de montaje que no comprometen el casco: base adhesiva en vez de tornillos, lateral o mentón antes que la coronilla, limpieza con agua y jabón neutro, campo visual libre y atención al peso.",
+      "Comparación en dos columnas entre montar la cámara en el casco, donde la imagen sigue la mirada del conductor, y montarla en la moto, que queda por fuera del alcance de la norma pero con encuadre fijo.",
+      "Recuadro que explica por qué circulan dos cifras de multa: $711.750 era el cálculo viejo sobre salarios mínimos; desde este año se liquida sobre la UVB de $12.110 y la tipo C equivale a 52,29 UVB.",
+      "Lámina de cierre con el logo de Mundo Motor y la invitación a leer la guía completa en mundomotor.bike."
+    ],
+    "push": {
+      "titulo": "¿Cámara en el casco? Esto dice la norma",
+      "texto": "No está prohibida. El riesgo es el montaje: perforar el casquete puede costarle $633.200 en 2026."
+    }
+  },
+  "laminas": [
+    {
+      "tipo": "foto",
+      "imagen": "https://mundomotor.bike/wp-content/uploads/2024/12/El-texto-del-parrafo-_3_-1.webp",
+      "credito": "Mundo Motor",
+      "kicker": "Normativa · Colombia",
+      "etiqueta": "Accesorios y norma",
+      "titulo": "Cámara en el casco: <em>no está prohibida</em>",
+      "bajada": "El riesgo de comparendo no está en el accesorio: está en <strong>cómo se monta</strong>."
+    },
+    {
+      "tipo": "cifra",
+      "kicker": "Si el casco no cumple la norma",
+      "cifra": "$633.200",
+      "nota": "Infracción tipo C en 2026",
+      "bajada": "Es la misma categoría de la sanción por <strong>no usar el casco correctamente</strong>.",
+      "fuente": "Literal C del artículo 131 de la Ley 769 de 2002 · Resolución 23385 de 2020."
+    },
+    {
+      "tipo": "lista",
+      "titulo": "Lo que <em>sí exige</em> la norma",
+      "items": [
+        {
+          "titulo": "Ajuste completo",
+          "texto": "El casco debe ajustar a la cabeza y permanecer firme durante la marcha."
+        },
+        {
+          "titulo": "Retención abrochada",
+          "texto": "El sistema de retención debe ir correctamente abrochado."
+        },
+        {
+          "titulo": "Nada por dentro",
+          "texto": "No se interponen dispositivos entre la cabeza y el casco, con excepción de los manos libres."
+        },
+        {
+          "titulo": "Abatibles, cerrados",
+          "texto": "El mentón va cerrado y asegurado mientras la moto está en movimiento."
+        }
+      ],
+      "fuente": "Resolución 23385 de 2020, Ministerio de Transporte."
+    },
+    {
+      "tipo": "destacado",
+      "titulo": "El punto que <em>más se cita mal</em>",
+      "caja_titulo": "Por fuera sí, por dentro no",
+      "caja_texto": "La norma restringe lo que va entre la cabeza y el casco. Una cámara montada por fuera del casquete no encaja en esa descripción. Un auricular improvisado metido bajo el acolchado, sí.",
+      "bajada": "La norma colombiana regula el uso del casco, <strong>no los accesorios que se instalan sobre él</strong>."
+    },
+    {
+      "tipo": "destacado",
+      "titulo": "El riesgo real: <em>perforar</em>",
+      "caja_titulo": "Adiós a la certificación",
+      "caja_texto": "Los cascos que se venden legalmente cumplen la Resolución 1080 de 2019, apoyada en la norma NTC 4533. Esa certificación se otorga sobre el casco íntegro: atornillar un soporte altera esas condiciones.",
+      "bajada": "Frente a un golpe real, la protección <strong>deja de ser la que el fabricante ensayó</strong>."
+    },
+    {
+      "tipo": "lista",
+      "titulo": "Montaje que <em>no compromete</em>",
+      "items": [
+        {
+          "titulo": "Base adhesiva",
+          "texto": "Soportes diseñados para casco, no herrajes atornillados: la base pegada no perfora el casquete."
+        },
+        {
+          "titulo": "Lateral o mentón",
+          "texto": "Antes que la coronilla: la zona superior es la que más recibe carga en un impacto."
+        },
+        {
+          "titulo": "Limpieza suave",
+          "texto": "Agua y jabón neutro antes de pegar. Los disolventes fuertes atacan el policarbonato."
+        },
+        {
+          "titulo": "Campo visual libre",
+          "texto": "Que nada obstruya la vista ni el movimiento de la cabeza."
+        },
+        {
+          "titulo": "Ojo al peso",
+          "texto": "Un accesorio pesado en voladizo cansa el cuello en trayectos largos."
+        }
+      ]
+    },
+    {
+      "tipo": "comparativa",
+      "titulo": "¿En el casco o <em>en la moto</em>?",
+      "columnas": [
+        {
+          "titulo": "En el casco",
+          "datos": [
+            "La imagen <b>sigue la mirada</b> del conductor",
+            "Vale más al reconstruir un siniestro",
+            "Suma masa sobre las cervicales",
+            "Expone el casco al escrutinio del agente"
+          ]
+        },
+        {
+          "titulo": "En la moto",
+          "datos": [
+            "Queda <b>por fuera del alcance</b> de la norma",
+            "Se retira sin tocar el equipo de protección",
+            "Encuadre fijo: registra hacia donde apunta la moto",
+            "Expuesta a la vibración del motor y del piso"
+          ]
+        }
+      ],
+      "nota": "Para uso urbano cotidiano, el montaje en la moto resuelve la mayoría de necesidades sin comprometer nada."
+    },
+    {
+      "tipo": "destacado",
+      "titulo": "Por qué circulan <em>dos cifras</em>",
+      "caja_titulo": "$711.750 ya no aplica",
+      "caja_texto": "Ese era el cálculo sobre salarios mínimos diarios. Desde este año los comparendos se liquidan sobre la UVB, fijada en $12.110: una infracción tipo C equivale a 52,29 UVB.",
+      "bajada": "Cualquier valor liquidado sobre salarios mínimos diarios <strong>sobreestima el monto real</strong> del comparendo."
+    },
+    {
+      "tipo": "cierre",
+      "titulo": "La guía completa está en la web",
+      "texto": "El caso de los intercomunicadores, las preguntas frecuentes y el vacío que deja la norma, en Mundo Motor.",
+      "url": "mundomotor.bike",
+      "acciones": [
+        "<b>Guarda</b> esta guía",
+        "<b>Compártela</b> con un parcero"
+      ]
+    }
+  ],
+  "vigencia": "anual",
+  "anio": 2026,
+  "creada": "2026-08-12"
+}

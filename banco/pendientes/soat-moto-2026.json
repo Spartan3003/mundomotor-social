@@ -1,0 +1,186 @@
+{
+  "slug": "soat-moto-2026",
+  "origen": "https://mundomotor.bike/moto-tips/soat-moto-2026-precio-cilindraje/",
+  "publicacion": {
+    "gancho": "Una moto de 125 paga $343.300 de SOAT en 2026; una de 250, $761.400. El salto ocurre por un solo centímetro cúbico.",
+    "cuerpo": [
+      "Las tarifas las fija la Superintendencia Financiera mediante la Circular 022 de 2025 y son idénticas en todas las aseguradoras autorizadas: el SOAT no baja por negociar.",
+      "Un precio muy inferior a la tabla es la señal más común de una póliza falsa. Lo que protege al comprador es confirmar en el RUNT que quedó registrada con su placa."
+    ],
+    "cta": "Guarde la tabla para la próxima renovación. ¿Su SOAT está al día?",
+    "fuente_texto": "Fuentes: Superintendencia Financiera de Colombia, ADRES y RUNT. Guía completa, en el enlace de la biografía.",
+    "hashtags": [
+      "#SOAT",
+      "#MotosColombia",
+      "#SOATMoto"
+    ],
+    "ubicacion": "Bogotá, Colombia",
+    "menciones": [],
+    "alt": [
+      "Portada del carrusel sobre una foto de una mano que sostiene un celular con un SOAT digital en pantalla; al fondo, un agente de tránsito revisa documentos junto a una moto. Titular: 'SOAT de moto: tarifas 2026', con el logo de Mundo Motor.",
+      "La cifra $343.300 destacada en amarillo sobre fondo negro: lo que paga en 2026 una moto del rango de 100 a 200 centímetros cúbicos.",
+      "Tabla con la tarifa 2026 por clase de vehículo: ciclomotor $124.100, moto de menos de 100 cc $256.200, de 100 a 200 cc $343.300, de más de 200 cc $761.400 y motocarro, tricimoto y cuadriciclo $386.900.",
+      "Recuadro amarillo que explica las tres partes del precio: la prima de la aseguradora, la contribución a la ADRES equivalente al 52 % de esa prima y la tasa del RUNT de $2.400.",
+      "Comparación en dos columnas entre las motos de hasta 200 cc, con tarifa diferencial del Decreto 2497 de 2022, y las de más de 200 cc, que pagan tarifa plena: más de $418.000 de diferencia anual.",
+      "Comparación en dos columnas entre lo que cubre el SOAT (gastos médicos, incapacidad permanente, muerte y transporte de víctimas) y lo que no cubre (los daños de la moto, los daños a bienes ajenos y el robo).",
+      "Recuadro que advierte que circular sin SOAT es una infracción tipo C de $633.200 en 2026 e implica inmovilización, a la que se suman grúa y parqueo en patios.",
+      "Lista de verificación antes de pagar el SOAT: comprar a vigilados por la Superintendencia Financiera, desconfiar del precio bajo, confirmar el registro en el RUNT y revisar placa, cilindraje y fechas.",
+      "Lámina de cierre con el logo de Mundo Motor y la invitación a leer la guía completa en mundomotor.bike."
+    ],
+    "push": {
+      "titulo": "SOAT 2026: la tabla por cilindraje",
+      "texto": "Una 125 paga $343.300; desde 201 cc, $761.400. Y el 'descuento' grande suele ser póliza falsa."
+    }
+  },
+  "laminas": [
+    {
+      "tipo": "foto",
+      "imagen": "https://mundomotor.bike/wp-content/uploads/2024/12/El-texto-del-parrafo.webp",
+      "credito": "Mundo Motor",
+      "kicker": "Trámites · Colombia",
+      "etiqueta": "Guía 2026",
+      "titulo": "SOAT de moto: <em>tarifas 2026</em>",
+      "bajada": "Lo que paga cada cilindraje, qué incluye el precio y cómo detectar una <strong>póliza falsa</strong> antes de pagar."
+    },
+    {
+      "tipo": "cifra",
+      "kicker": "Lo que paga una 125 en 2026",
+      "cifra": "$343.300",
+      "nota": "Rango de 100 a 200 cc",
+      "bajada": "La misma tarifa cubre las 100, 110, 125, 150, 160 y 180 cc: <strong>el grueso del parque colombiano</strong>.",
+      "fuente": "Circular 022 de 2025, Superintendencia Financiera de Colombia."
+    },
+    {
+      "tipo": "tabla",
+      "titulo": "La tabla <em>completa</em>",
+      "columnas": [
+        "Cilindraje",
+        "Total 2026"
+      ],
+      "filas": [
+        [
+          "Ciclomotor",
+          "$124.100"
+        ],
+        [
+          "Menos de 100",
+          "$256.200"
+        ],
+        [
+          "100 a 200",
+          "$343.300"
+        ],
+        [
+          "Más de 200",
+          "$761.400"
+        ],
+        [
+          "Motocarro",
+          "$386.900"
+        ]
+      ],
+      "nota": "Cilindraje en cc; el motocarro incluye tricimoto y cuadriciclo. Tarifas máximas vigentes desde el 1 de enero de 2026, idénticas en todas las aseguradoras.",
+      "fuente": "Circular 022 de 2025, Superintendencia Financiera de Colombia."
+    },
+    {
+      "tipo": "destacado",
+      "titulo": "Por qué <em>no baja</em> por negociar",
+      "caja_titulo": "Tres partes fijas",
+      "caja_texto": "La prima de la aseguradora, la contribución a la ADRES equivalente al 52 % de esa prima y la tasa del RUNT de $2.400, igual para todos los vehículos del país.",
+      "bajada": "Un punto de venta que ofrezca el SOAT por debajo de la tarifa oficial no está haciendo un descuento: <strong>está vendiendo un documento que probablemente no quedará registrado</strong>."
+    },
+    {
+      "tipo": "comparativa",
+      "titulo": "El salto de <em>200 a 201 cc</em>",
+      "columnas": [
+        {
+          "titulo": "Hasta 200 cc",
+          "datos": [
+            "<b>$343.300</b> (100 a 200 cc)",
+            "Tarifa diferencial del Decreto 2497 de 2022",
+            "Reduce cerca de la mitad el valor",
+            "Pensada para la moto de trabajo"
+          ]
+        },
+        {
+          "titulo": "Más de 200 cc",
+          "datos": [
+            "<b>$761.400</b>",
+            "Tarifa plena",
+            "Cercana a la de un automóvil familiar",
+            "Más de $418.000 de diferencia anual"
+          ]
+        }
+      ],
+      "nota": "Al comparar una 200 con una 250, ese costo rara vez aparece en la cotización del concesionario. Inclúyalo en la cuenta."
+    },
+    {
+      "tipo": "comparativa",
+      "titulo": "Qué <em>cubre</em> y qué no",
+      "columnas": [
+        {
+          "titulo": "Cubre",
+          "datos": [
+            "Gastos médicos y hospitalarios",
+            "Incapacidad permanente",
+            "Muerte y gastos funerarios",
+            "Transporte de las víctimas"
+          ]
+        },
+        {
+          "titulo": "No cubre",
+          "datos": [
+            "Los daños de su moto",
+            "Daños a otro vehículo o bien ajeno",
+            "El robo",
+            "Para eso están las pólizas voluntarias"
+          ]
+        }
+      ],
+      "nota": "Ampara a todos los involucrados —conductor, parrillero, ocupantes de otros vehículos y peatones— sin importar quién tuvo la culpa."
+    },
+    {
+      "tipo": "destacado",
+      "titulo": "Circular <em>sin SOAT</em>",
+      "caja_titulo": "$633.200 e inmovilización",
+      "caja_texto": "Es una infracción de tipo C. Al comparendo se suman la grúa y el parqueo en patios, que se cobran por día y varían según el municipio.",
+      "bajada": "Un episodio de inmovilización termina costando más que el SOAT que se dejó de pagar, <strong>incluso en la categoría más cara</strong>."
+    },
+    {
+      "tipo": "lista",
+      "titulo": "Antes de <em>pagar</em>",
+      "items": [
+        {
+          "titulo": "Compre a vigilados",
+          "texto": "Solo a la aseguradora o a un intermediario con vigilancia de la Superintendencia Financiera."
+        },
+        {
+          "titulo": "Desconfíe del precio bajo",
+          "texto": "El margen real de descuento es mínimo: un valor muy inferior es la señal más común de una póliza falsa."
+        },
+        {
+          "titulo": "Confirme en el RUNT",
+          "texto": "Que la póliza quede registrada con su placa. Ese paso define si es válida ante una autoridad de tránsito."
+        },
+        {
+          "titulo": "Revise los datos",
+          "texto": "Placa, cilindraje y fechas de vigencia deben coincidir con los de su moto."
+        }
+      ],
+      "fuente": "El SOAT digital tiene la misma validez que el impreso: lo que cuenta es el registro en el RUNT."
+    },
+    {
+      "tipo": "cierre",
+      "titulo": "La guía completa está en la web",
+      "texto": "El desglose de la tarifa, la zona gris de las motos eléctricas y las preguntas frecuentes, en Mundo Motor.",
+      "url": "mundomotor.bike",
+      "acciones": [
+        "<b>Guarda</b> esta tabla",
+        "<b>Compártela</b> con un parcero"
+      ]
+    }
+  ],
+  "vigencia": "anual",
+  "anio": 2026,
+  "creada": "2026-08-12"
+}

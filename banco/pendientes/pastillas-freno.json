@@ -1,0 +1,129 @@
+{
+  "slug": "pastillas-freno",
+  "origen": "https://mundomotor.bike/moto-tips/senales-de-que-toca-cambiar-las-pastillas-de-freno-antes-de-que-avise-el-disco/",
+  "publicacion": {
+    "gancho": "En frenos, el ahorro mal entendido es el que más caro sale: la pastilla se diseñó para desgastarse; el disco, no.",
+    "cuerpo": [
+      "Cuando se deja pasar el momento, el soporte metálico de la pastilla muerde el disco y un mantenimiento barato se convierte en una reparación doble.",
+      "No hace falta esperar al chirrido: ese ruido a veces llega tarde o no llega. Las señales están en la pastilla y en la maneta."
+    ],
+    "cta": "Guarde esta guía para la próxima revisada. ¿Hace cuánto no mira sus pastillas por la ventana de la pinza?",
+    "fuente_texto": "Guía completa de señales y asentamiento en mundomotor.bike, enlace en la biografía.",
+    "hashtags": [
+      "#FrenosDeMoto",
+      "#MantenimientoDeMoto",
+      "#MotosColombia"
+    ],
+    "ubicacion": "Bogotá, Colombia",
+    "menciones": [],
+    "alt": [
+      "Portada del carrusel sobre una foto en primer plano de un disco de freno de moto con su pinza dorada. Titular: 'El freno avisa antes de fallar', con el logo de Mundo Motor.",
+      "Recuadro amarillo con la regla del sistema: la pastilla se gasta, el disco no. Cuando el soporte metálico muerde el disco, el mantenimiento barato se vuelve reparación doble.",
+      "Lista de lo que hay que mirar en la pastilla: la ranura de desgaste, la inspección visual por la ventana de la pinza con buena luz, comparar la pastilla interior con la exterior y no esperar el chirrido.",
+      "Recuadro que advierte que una pastilla mucho más delgada que la otra indica un problema de pinza, como pistón pegado o deslizadores secos, que hay que resolver antes de montar el juego nuevo.",
+      "Lista de señales al manejar: más recorrido en la maneta o el pedal, pérdida de frenado en caliente, vibración o pulsación, y ruido metálico constante que obliga a parar y revisar.",
+      "Recuadro que recuerda mirar también el disco, con sus surcos y el espesor mínimo grabado en el propio disco, y el líquido de frenos, que absorbe humedad y baja su punto de ebullición.",
+      "Recuadro sobre el asentamiento de las pastillas nuevas: frenadas progresivas en los primeros kilómetros para transferir una capa uniforme de material al disco.",
+      "Lámina de cierre con el logo de Mundo Motor, la regla de que en frenos ante la duda se cambia, y la invitación a leer la guía completa en mundomotor.bike."
+    ],
+    "push": {
+      "titulo": "¿Sus frenos ya piden cambio?",
+      "texto": "Más recorrido en la maneta, vibración o ruido metálico: señales de pastilla al límite, antes de dañar el disco."
+    }
+  },
+  "laminas": [
+    {
+      "tipo": "foto",
+      "imagen": "https://mundomotor.bike/wp-content/uploads/2026/07/Portadas-Mundo-Motor-4-1.webp",
+      "credito": "Mundo Motor",
+      "kicker": "Mantenimiento · Frenos",
+      "etiqueta": "Guía práctica",
+      "titulo": "El freno <em>avisa antes</em> de fallar",
+      "bajada": "Las señales de que las pastillas piden cambio, <strong>antes de que el disco pague la cuenta</strong>."
+    },
+    {
+      "tipo": "destacado",
+      "titulo": "La regla del <em>sistema</em>",
+      "caja_titulo": "La pastilla se gasta; el disco, no",
+      "caja_texto": "Cuando el soporte metálico de la pastilla muerde el disco, baja la capacidad de frenado y el mantenimiento barato se convierte en una reparación doble.",
+      "bajada": "En frenos, el ahorro mal entendido <strong>es el que más caro sale</strong>."
+    },
+    {
+      "tipo": "lista",
+      "titulo": "Qué mirar <em>en la pastilla</em>",
+      "items": [
+        {
+          "titulo": "La ranura de desgaste",
+          "texto": "La mayoría trae una ranura o línea. Si el material de fricción llega a esa marca, es momento de cambiarlas."
+        },
+        {
+          "titulo": "Por la ventana de la pinza",
+          "texto": "Inspección visual con buena luz, sin desarmar nada."
+        },
+        {
+          "titulo": "Interior contra exterior",
+          "texto": "No siempre se gastan igual: compare las dos."
+        },
+        {
+          "titulo": "Sin esperar el chirrido",
+          "texto": "Ese ruido a veces llega tarde o, en pastillas sin indicador acústico, no llega."
+        }
+      ]
+    },
+    {
+      "tipo": "destacado",
+      "titulo": "Desgaste <em>desparejo</em>",
+      "caja_titulo": "El problema está en la pinza",
+      "caja_texto": "Si una pastilla está mucho más delgada que la otra, hay un problema de pinza: pistón pegado o deslizadores secos.",
+      "bajada": "Hay que resolverlo <strong>antes</strong> de poner el juego nuevo."
+    },
+    {
+      "tipo": "lista",
+      "titulo": "Señales <em>al manejar</em>",
+      "items": [
+        {
+          "titulo": "Más recorrido",
+          "texto": "La maneta o el pedal viajan más de lo habitual antes de morder. Puede ser pastilla fina, aire en el circuito o líquido degradado."
+        },
+        {
+          "titulo": "Pérdida de frenado en caliente",
+          "texto": "El compuesto ya no trabaja en su rango o el espesor es insuficiente."
+        },
+        {
+          "titulo": "Vibración o pulsación",
+          "texto": "Disco alabeado o depósito irregular de material en el disco."
+        },
+        {
+          "titulo": "Ruido metálico constante",
+          "texto": "Posible contacto metal-disco. Pare y revise; no 'a ver si se le quita'."
+        }
+      ]
+    },
+    {
+      "tipo": "destacado",
+      "titulo": "No se cambia la pastilla <em>a ciegas</em>",
+      "caja_titulo": "Mire el disco y el líquido",
+      "caja_texto": "Surcos profundos, borde cortante o espesor por debajo del mínimo grabado en el propio disco: el rotor también va a salida. Y el líquido muy oscuro o vencido se purga.",
+      "bajada": "Pastillas nuevas con líquido viejo es <strong>dejar a medias el trabajo</strong>."
+    },
+    {
+      "tipo": "destacado",
+      "titulo": "Después del cambio: <em>asentamiento</em>",
+      "caja_titulo": "Frenadas progresivas",
+      "caja_texto": "Sin dejadas a fondo repetidas en los primeros kilómetros, para transferir una capa uniforme de material al disco.",
+      "bajada": "Saltarse ese proceso causa vibraciones y la sensación de que <strong>las pastillas nuevas frenan peor</strong>."
+    },
+    {
+      "tipo": "cierre",
+      "titulo": "Si hay duda, en frenos se cambia",
+      "texto": "Es el mantenimiento con mejor relación entre minutos invertidos y riesgo evitado. La guía completa, en Mundo Motor.",
+      "url": "mundomotor.bike",
+      "acciones": [
+        "<b>Guarda</b> esta guía",
+        "<b>Compártela</b> con un parcero"
+      ]
+    }
+  ],
+  "vigencia": "permanente",
+  "creada": "2026-08-12"
+}

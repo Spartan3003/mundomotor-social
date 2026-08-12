@@ -1,0 +1,158 @@
+{
+  "slug": "motos-125-2026",
+  "origen": "https://mundomotor.bike/moto-tips/mejores-motos-125-colombia/",
+  "publicacion": {
+    "gancho": "La AKT AK125 NKD casi duplica en matrículas a la segunda 125 del país. Este es el ranking real del primer semestre.",
+    "cuerpo": [
+      "Cinco modelos concentran el grueso del segmento en 2026, según el consolidado de matrículas de Andemos. Y hay un detalle de ficha: la Suzuki que se matricula en volumen es la versión GN125 ABS.",
+      "Adentro: el ranking completo, los costos fijos de cualquier 125 y qué revisar antes de firmar la cotización."
+    ],
+    "cta": "Guarde el ranking para cuando vaya a cotizar. ¿Cuál de estas cinco es la suya?",
+    "fuente_texto": "Fuentes: Andemos, ANDI y Fenalco, y Ministerio de Transporte. Guía completa, en el enlace de la biografía.",
+    "hashtags": [
+      "#Motos125",
+      "#MotosColombia",
+      "#MercadoDeMotos"
+    ],
+    "ubicacion": "Bogotá, Colombia",
+    "menciones": [],
+    "alt": [
+      "Portada del carrusel sobre una foto de perfil de una AKT AK125 NKD gris con detalles amarillos. Titular: 'Las 125 más matriculadas', con el logo de Mundo Motor.",
+      "La cifra 40.720 destacada en amarillo sobre fondo negro: las unidades de la AKT AK125 NKD matriculadas entre enero y junio de 2026, casi el doble que la segunda del ranking.",
+      "Lista con el top 5 de motos de 125 cc por unidades matriculadas en el primer semestre de 2026: AKT AK125 NKD 40.720, Suzuki GN125 20.853, Hero Hunk 125R 20.129, TVS Raider 125 13.696 y Bajaj CT125 13.591.",
+      "Foto de una Suzuki GN125 naranja y negra con marcación ABS, junto al dato de que la versión que se matricula en volumen incorpora sistema antibloqueo según el registro de ANDI y Fenalco.",
+      "Recuadro amarillo que explica que 125 cc es el techo exacto de la licencia A1, que se puede tramitar desde los 16 años con autorización, y que un centímetro cúbico más cambia el trámite de categoría.",
+      "Lista de los costos fijos de una 125 en Colombia: SOAT 2026 de 343.300 pesos en el rango de 100 a 200 cc, primera tecnomecánica a los dos años de la matrícula y los requisitos de la licencia A1.",
+      "Lista de lo que hay que revisar antes de comprar: talleres autorizados en su municipio, precio de los repuestos de desgaste, ABS o CBS por escrito, tabla de mantenimientos con valores y capacidad de carga real.",
+      "Recuadro con el contexto del mercado: en julio de 2026 se registraron 131.936 motocicletas nuevas, el mayor registro mensual de la serie histórica, según ANDI y Fenalco.",
+      "Lámina de cierre con el logo de Mundo Motor y la invitación a leer el análisis completo en mundomotor.bike."
+    ]
+  },
+  "laminas": [
+    {
+      "tipo": "foto",
+      "imagen": "https://mundomotor.bike/wp-content/uploads/2026/01/NKD.webp",
+      "credito": "Mundo Motor",
+      "kicker": "Mercado · Colombia",
+      "etiqueta": "Primer semestre 2026",
+      "titulo": "Las 125 <em>más matriculadas</em>",
+      "bajada": "Cinco modelos concentran el grueso del segmento. El ranking sale de las matrículas, <strong>no de opiniones de marca</strong>."
+    },
+    {
+      "tipo": "cifra",
+      "kicker": "AKT AK125 NKD",
+      "cifra": "40.720",
+      "nota": "Unidades matriculadas entre enero y junio de 2026",
+      "bajada": "Casi duplica a la segunda del ranking. Es un liderazgo consolidado, <strong>no un pico de temporada</strong>.",
+      "fuente": "Consolidado de matrículas de Andemos."
+    },
+    {
+      "tipo": "lista",
+      "titulo": "El <em>top 5</em> del semestre",
+      "items": [
+        {
+          "titulo": "AKT AK125 NKD",
+          "texto": "40.720 unidades matriculadas"
+        },
+        {
+          "titulo": "Suzuki GN125",
+          "texto": "20.853 unidades matriculadas"
+        },
+        {
+          "titulo": "Hero Hunk 125R",
+          "texto": "20.129 unidades matriculadas"
+        },
+        {
+          "titulo": "TVS Raider 125",
+          "texto": "13.696 unidades matriculadas"
+        },
+        {
+          "titulo": "Bajaj CT125",
+          "texto": "13.591 unidades matriculadas"
+        }
+      ],
+      "fuente": "Motocicletas nuevas de 125 cc en Colombia, enero–junio de 2026 · Andemos."
+    },
+    {
+      "tipo": "foto",
+      "imagen": "https://mundomotor.bike/wp-content/uploads/2025/12/GN125-ABS-NARANJA-NEGRO.webp",
+      "credito": "Mundo Motor",
+      "kicker": "Detalle de ficha",
+      "titulo": "La GN125 que se matricula <em>trae ABS</em>",
+      "bajada": "En el registro mensual de ANDI y Fenalco la Suzuki aparece como GN125 ABS. El antibloqueo <strong>todavía no es universal</strong> en el segmento de entrada."
+    },
+    {
+      "tipo": "destacado",
+      "titulo": "Por qué <em>125</em> y no más",
+      "caja_titulo": "El techo exacto de la A1",
+      "caja_texto": "La licencia A1 habilita motocicletas de hasta 125 c.c. y se puede tramitar desde los 16 años con autorización de los padres o tutores. Un centímetro cúbico más y el trámite cambia de categoría.",
+      "bajada": "Por eso el segmento concentra a quien se estrena en moto y a quien la usa como <strong>herramienta de trabajo diaria</strong>.",
+      "fuente": "Resolución 1500 de 2005, Ministerio de Transporte."
+    },
+    {
+      "tipo": "lista",
+      "titulo": "Los costos <em>fijos</em> de una 125",
+      "items": [
+        {
+          "titulo": "SOAT 2026: 343.300 pesos",
+          "texto": "El rango de 100 a 200 cc. Bajar de 150 a 125 no reduce el SOAT: el ahorro solo aparece por debajo de los 100 cc."
+        },
+        {
+          "titulo": "Tecnomecánica",
+          "texto": "La primera revisión, a los dos años contados desde la fecha de matrícula. A partir de ahí, la vigencia es anual."
+        },
+        {
+          "titulo": "Licencia A1",
+          "texto": "Inscripción en el RUNT, no tener multas pendientes y certificados de aptitud física y de formación."
+        }
+      ],
+      "fuente": "Ley 2294 de 2023 · Resolución 1500 de 2005."
+    },
+    {
+      "tipo": "lista",
+      "titulo": "Antes de <em>firmar</em>",
+      "items": [
+        {
+          "titulo": "Talleres en su ciudad",
+          "texto": "Pregunte cuántos autorizados hay en su municipio, no en el país."
+        },
+        {
+          "titulo": "Repuestos de desgaste",
+          "texto": "Kit de arrastre, pastillas, guayas y filtros: pida el precio antes de firmar, no después."
+        },
+        {
+          "titulo": "ABS o CBS por escrito",
+          "texto": "Dentro de una misma referencia conviven versiones distintas: déjelo en la cotización."
+        },
+        {
+          "titulo": "Mantenimiento con valores",
+          "texto": "Solicite la tabla de mantenimientos con precios, no solo los kilometrajes."
+        },
+        {
+          "titulo": "Carga real",
+          "texto": "Si va a trabajar con la moto, revise el peso máximo autorizado y si la parrilla es de fábrica."
+        }
+      ]
+    },
+    {
+      "tipo": "destacado",
+      "titulo": "El contexto del <em>récord</em>",
+      "caja_titulo": "131.936 motos en julio",
+      "caja_texto": "Es el mayor registro mensual de la serie histórica, según ANDI y Fenalco. El segmento de entrada es el motor de ese crecimiento.",
+      "bajada": "¿Y los precios? No hay lista oficial: varían por ciudad, concesionario y promoción. <strong>Pida cotización escrita</strong>."
+    },
+    {
+      "tipo": "cierre",
+      "titulo": "El análisis completo está en la web",
+      "texto": "Qué dicen las cifras modelo por modelo y cómo elegir según el uso, en Mundo Motor.",
+      "url": "mundomotor.bike",
+      "acciones": [
+        "<b>Guarda</b> este ranking",
+        "<b>Compártelo</b> con un parcero"
+      ]
+    }
+  ],
+  "vigencia": "anual",
+  "anio": 2026,
+  "creada": "2026-08-12"
+}
