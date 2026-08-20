@@ -1,0 +1,162 @@
+{
+  "slug": "bateria-moto",
+  "origen": "https://mundomotor.bike/moto-tips/bateria-moto-cuando-cambiarla/",
+  "publicacion": {
+    "gancho": "La batería es el componente que más se cambia por diagnóstico equivocado. Dos mediciones con multímetro lo evitan.",
+    "cuerpo": [
+      "La de reposo dice si la batería sirve; la de motor encendido dice si el sistema de carga la está reponiendo.",
+      "Si la segunda está fuera de rango, la batería nueva se descargará igual."
+    ],
+    "cta": "Guarde esta guía para la próxima vez que el arranque se ponga perezoso. ¿Ya midió el voltaje de la suya?",
+    "fuente_texto": "Valores de referencia de fabricantes de baterías para motocicleta. Guía completa en mundomotor.bike, enlace en la biografía.",
+    "hashtags": [
+      "#BateriaDeMoto",
+      "#MantenimientoDeMoto",
+      "#MotosColombia"
+    ],
+    "ubicacion": "Bogotá, Colombia",
+    "menciones": [],
+    "alt": [
+      "Portada del carrusel sobre una foto en primer plano de una batería de moto con sus bornes y tapones amarillos. Titular: 'Antes de comprar batería, mida', con el logo de Mundo Motor.",
+      "Cifra grande: 12,2 V. Por debajo de esa lectura en reposo toca planificar el reemplazo de la batería.",
+      "Lista con la lectura en reposo y su interpretación: 12,6 a 12,8 V carga completa; 12,3 a 12,5 V carga parcial; menos de 12,2 V al límite.",
+      "Recuadro amarillo sobre la medición con el motor encendido: entre 14 y 14,5 voltios a régimen normal; si no sube de 13 el sistema de carga falla; si supera 15 falla el regulador.",
+      "Tabla con la vida útil estimada por tipo de batería: plomo-ácido 2 a 4 años, AGM 3 a 5, gel 3 a 5, litio 3 a 7.",
+      "Lista de señales que aparecen antes de la falla: arranque lento, luces que caen al accionar el pito, tablero que se reinicia y carcasa deformada.",
+      "Lista de hábitos para alargar la vida de la batería: mantenedor de carga si la moto para más de dos semanas, rodar a régimen sostenido cada semana, bornes limpios y sin accesorios parásitos.",
+      "Lámina de cierre con el logo de Mundo Motor, la frase 'Cambiarla sin medir solo aplaza el problema' y la invitación a leer la guía completa en mundomotor.bike."
+    ],
+    "push": {
+      "titulo": "¿Batería nueva otra vez? Mida primero",
+      "texto": "Dos lecturas con multímetro dicen si la falla es la batería o el regulador. Valores de referencia aquí."
+    }
+  },
+  "laminas": [
+    {
+      "tipo": "foto",
+      "imagen": "https://mundomotor.bike/wp-content/uploads/2026/08/Portadas-Mundo-Motor-13.webp",
+      "propia": true,
+      "credito": "Mundo Motor",
+      "kicker": "Mantenimiento · Eléctrico",
+      "etiqueta": "Guía práctica",
+      "titulo": "Antes de comprar batería, <em>mida</em>",
+      "bajada": "Cuándo cambiarla y cómo saber si el problema <strong>es otro</strong>."
+    },
+    {
+      "tipo": "cifra",
+      "kicker": "Lectura en reposo",
+      "cifra": "12,2 V",
+      "nota": "Por debajo de esa lectura, al límite: planificar el reemplazo.",
+      "bajada": "Se mide con el motor apagado y, <strong>idealmente, tras varias horas sin uso</strong>."
+    },
+    {
+      "tipo": "lista",
+      "titulo": "Qué dice el <em>voltaje</em>",
+      "items": [
+        {
+          "titulo": "12,6 a 12,8 V",
+          "texto": "Carga completa, batería en buen estado."
+        },
+        {
+          "titulo": "12,3 a 12,5 V",
+          "texto": "Carga parcial: recargar y volver a medir."
+        },
+        {
+          "titulo": "Menos de 12,2 V",
+          "texto": "Al límite: planificar el reemplazo."
+        }
+      ],
+      "nota": "Multímetro en la escala de corriente continua, motor apagado."
+    },
+    {
+      "tipo": "destacado",
+      "titulo": "La segunda prueba: <em>motor encendido</em>",
+      "caja_titulo": "Entre 14 y 14,5 voltios",
+      "caja_texto": "Si el valor no sube de 13 voltios, el sistema de carga no repone y una batería nueva se descargará igual. Si supera los 15, el regulador está fallando.",
+      "bajada": "El error más costoso: <strong>cambiar la batería tres veces</strong> sin revisar el regulador."
+    },
+    {
+      "tipo": "tabla",
+      "titulo": "Cuánto <em>dura</em>",
+      "columnas": [
+        "Tipo",
+        "Vida útil"
+      ],
+      "filas": [
+        [
+          "Plomo",
+          "2 a 4 años"
+        ],
+        [
+          "AGM",
+          "3 a 5 años"
+        ],
+        [
+          "Gel",
+          "3 a 5 años"
+        ],
+        [
+          "Litio",
+          "3 a 7 años"
+        ]
+      ],
+      "nota": "Plomo-ácido convencional, AGM sellada, gel y litio. Rangos de fabricantes; trayectos cortos y calor los acortan."
+    },
+    {
+      "tipo": "lista",
+      "titulo": "Señales <em>antes</em> de la falla",
+      "items": [
+        {
+          "titulo": "Arranque lento",
+          "texto": "Sobre todo en la primera puesta en marcha del día."
+        },
+        {
+          "titulo": "Luces que caen",
+          "texto": "El faro pierde intensidad al accionar el pito con el motor apagado."
+        },
+        {
+          "titulo": "Tablero que se reinicia",
+          "texto": "Al pulsar el botón de arranque, en motos con instrumentación digital."
+        },
+        {
+          "titulo": "Carcasa deformada",
+          "texto": "Indicio de sobrecarga o calor excesivo: reemplazo inmediato."
+        }
+      ]
+    },
+    {
+      "tipo": "lista",
+      "titulo": "Para que <em>dure más</em>",
+      "items": [
+        {
+          "titulo": "Mantenedor de carga",
+          "texto": "Si la moto va a estar quieta más de dos semanas."
+        },
+        {
+          "titulo": "Ruede a régimen sostenido",
+          "texto": "Una vez por semana, veinte o treinta minutos."
+        },
+        {
+          "titulo": "Bornes limpios y ajustados",
+          "texto": "El sulfato blanco hace parecer descargada una batería sana."
+        },
+        {
+          "titulo": "Sin accesorios parásitos",
+          "texto": "Alarmas y cargadores USB mal instalados consumen con la moto apagada."
+        }
+      ]
+    },
+    {
+      "tipo": "cierre",
+      "titulo": "Cambiarla sin medir solo aplaza el problema",
+      "texto": "Reposo y motor encendido: cinco minutos que evitan pagar dos veces. La guía completa, en Mundo Motor.",
+      "url": "mundomotor.bike",
+      "acciones": [
+        "<b>Guarda</b> esta guía",
+        "<b>Compártela</b> con un parcero"
+      ]
+    }
+  ],
+  "vigencia": "permanente",
+  "creada": "2026-08-20"
+}

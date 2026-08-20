@@ -1,0 +1,139 @@
+{
+  "slug": "numeros-llantas",
+  "origen": "https://mundomotor.bike/moto-tips/que-significan-los-numeros-en-las-llantas-de-moto-guia-tecnica-y-de-seguridad-para-america-latina/",
+  "publicacion": {
+    "gancho": "El flanco de la llanta es un expediente técnico: ancho, perfil, rin, carga, velocidad y hasta la fecha de fabricación.",
+    "cuerpo": [
+      "Leerlo evita montar una medida que roce el basculante, un índice de carga insuficiente o una llanta con diez años en bodega.",
+      "Guía para descifrar 180/55 ZR 17 M/C (73W) y el código DOT."
+    ],
+    "cta": "Guarde esta guía para la próxima vez que cambie llantas. ¿Sabe de qué semana y año son las suyas?",
+    "fuente_texto": "Nomenclatura ETRTO y DOT. Guía completa en mundomotor.bike, enlace en la biografía.",
+    "hashtags": [
+      "#LlantasDeMoto",
+      "#SeguridadVial",
+      "#MotosColombia"
+    ],
+    "ubicacion": "Bogotá, Colombia",
+    "menciones": [],
+    "alt": [
+      "Portada del carrusel sobre una foto de cinco llantas de moto de distintos dibujos alineadas sobre fondo blanco. Titular: 'Lo que dice su llanta', con el logo de Mundo Motor.",
+      "Cifra grande: 10 años. Edad a la que los fabricantes aconsejan retirar de servicio una llanta aunque conserve el grabado.",
+      "Tabla que descompone la medida 180/55 ZR 17: 180 es el ancho en milímetros, 55 el perfil en porcentaje, ZR la carcasa radial para más de 240 km/h y 17 el rin en pulgadas.",
+      "Recuadro sobre el bloque (73W): 73 es la carga máxima de 365 kg y W la velocidad de 270 km/h; entre paréntesis indica que puede superarla con menos carga.",
+      "Lista de letras de velocidad con su límite: J 100 km/h, P 150 km/h, S 180 km/h, H 210 km/h y W 270 km/h.",
+      "Recuadro que explica el código DOT: los cuatro dígitos finales dan la semana y el año de fabricación; 2923 es la semana 29 de 2023.",
+      "Lista de otras marcas del flanco: TL sin cámara, TT con cámara, flecha de sentido de giro, punto amarillo alineado con la válvula.",
+      "Recuadro que advierte no mezclar una llanta diagonal adelante con una radial atrás: puede causar bamboleos a velocidad de carretera.",
+      "Lámina de cierre con el logo de Mundo Motor, la frase 'El manual manda sobre el mostrador' y la invitación a leer la guía completa en mundomotor.bike."
+    ]
+  },
+  "laminas": [
+    {
+      "tipo": "foto",
+      "imagen": "https://mundomotor.bike/wp-content/uploads/2026/08/NEUMATICOS-DE-MOTO.webp",
+      "propia": true,
+      "credito": "Mundo Motor",
+      "kicker": "Técnica · Llantas",
+      "etiqueta": "Guía práctica",
+      "titulo": "Lo que <em>dice</em> su llanta",
+      "bajada": "Cómo leer los números del flanco <strong>antes de comprar</strong>."
+    },
+    {
+      "tipo": "cifra",
+      "kicker": "Caducidad del caucho",
+      "cifra": "10 años",
+      "nota": "Los grandes fabricantes aconsejan retirar de servicio la llanta a esa edad, aunque conserve el grabado.",
+      "bajada": "Y una revisión profesional anual <strong>a partir de los 5 años</strong> de fabricación."
+    },
+    {
+      "tipo": "tabla",
+      "titulo": "Ejemplo: <em>180/55 ZR 17</em>",
+      "columnas": ["Código", "Significado"],
+      "filas": [
+        ["180", "Ancho: 180 mm de flanco a flanco"],
+        ["55", "Perfil: el flanco mide el 55% del ancho"],
+        ["ZR", "Radial, para más de 240 km/h"],
+        ["17", "Rin de 17 pulgadas"]
+      ],
+      "nota": "M/C: uso exclusivo en motocicleta."
+    },
+    {
+      "tipo": "destacado",
+      "titulo": "El bloque final: <em>(73W)</em>",
+      "caja_titulo": "Carga y velocidad",
+      "caja_texto": "73 es el índice de carga: 365 kg. W es el código de velocidad: 270 km/h. Entre paréntesis significa que puede superar los 270 km/h, pero con menos carga a medida que sube la velocidad.",
+      "bajada": "Los índices deben <strong>igualar o superar</strong> lo que pide el fabricante."
+    },
+    {
+      "tipo": "lista",
+      "titulo": "Letras de <em>velocidad</em>",
+      "items": [
+        {
+          "titulo": "J · 100 km/h",
+          "texto": "L: 120 km/h."
+        },
+        {
+          "titulo": "P · 150 km/h",
+          "texto": "S: 180 km/h."
+        },
+        {
+          "titulo": "H · 210 km/h",
+          "texto": "V: 240 km/h."
+        },
+        {
+          "titulo": "W · 270 km/h",
+          "texto": "(W): homologado por encima de 270 km/h."
+        }
+      ]
+    },
+    {
+      "tipo": "destacado",
+      "titulo": "La <em>fecha</em> está en el código DOT",
+      "caja_titulo": "Los últimos cuatro dígitos",
+      "caja_texto": "Los dos primeros indican la semana y los dos últimos el año de fabricación. Una llanta marcada 2923 fue producida en la semana 29 de 2023.",
+      "bajada": "Exija un DOT <strong>reciente</strong>: el caucho envejece en bodega."
+    },
+    {
+      "tipo": "lista",
+      "titulo": "Otras marcas <em>del flanco</em>",
+      "items": [
+        {
+          "titulo": "TL / TT",
+          "texto": "Sin cámara (Tubeless) o con cámara obligatoria (Tube-Type)."
+        },
+        {
+          "titulo": "Flecha de giro",
+          "texto": "Sentido de rotación obligatorio; FRONT y REAR fijan el eje."
+        },
+        {
+          "titulo": "Punto amarillo",
+          "texto": "El punto más liviano: se alinea con la válvula al montar."
+        },
+        {
+          "titulo": "Punto rojo",
+          "texto": "Tiene prioridad sobre el amarillo si el rin trae marca."
+        }
+      ]
+    },
+    {
+      "tipo": "destacado",
+      "titulo": "No <em>mezcle</em> tecnologías",
+      "caja_titulo": "Diagonal adelante, radial atrás: no",
+      "caja_texto": "Introduce discrepancias en la absorción de impactos y en la suspensión, y puede desencadenar bamboleos (wobble) a velocidades de carretera.",
+      "bajada": "Cambiar el perfil también <strong>altera la geometría</strong> de la dirección."
+    },
+    {
+      "tipo": "cierre",
+      "titulo": "El manual manda sobre el mostrador",
+      "texto": "Medida, índices y un DOT reciente. La guía completa, con tablas de carga y equivalencias, en Mundo Motor.",
+      "url": "mundomotor.bike",
+      "acciones": [
+        "<b>Guarda</b> esta guía",
+        "<b>Compártela</b> con un parcero"
+      ]
+    }
+  ],
+  "vigencia": "permanente",
+  "creada": "2026-08-20"
+}

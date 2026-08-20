@@ -1,0 +1,125 @@
+{
+  "slug": "kit-arrastre",
+  "origen": "https://mundomotor.bike/moto-tips/kit-de-arrastre-como-elegir/",
+  "publicacion": {
+    "gancho": "Elegir el kit de arrastre se reduce a tres decisiones: la medida de la cadena, el tipo de retén y los dientes de los piñones.",
+    "cuerpo": [
+      "Las tres vienen en el manual. Una cadena nueva sobre piñones gastados se deteriora en una fracción de su vida útil: por eso se cambia completo.",
+      "Qué significa 428 o 520, qué cambia entre O-ring y X-ring y qué pasa al tocar la relación."
+    ],
+    "cta": "Guarde esta guía para cuando le toque el cambio. ¿Sabe qué medida de cadena lleva su moto?",
+    "fuente_texto": "Especificaciones de fabricantes de cadenas. Guía completa en mundomotor.bike, enlace en la biografía.",
+    "hashtags": [
+      "#KitDeArrastre",
+      "#MantenimientoDeMoto",
+      "#MotosColombia"
+    ],
+    "ubicacion": "Bogotá, Colombia",
+    "menciones": [],
+    "alt": [
+      "Portada del carrusel sobre una foto en primer plano de la cadena de una moto pasando por la corona. Titular: 'Kit de arrastre: cómo elegirlo', con el logo de Mundo Motor.",
+      "Recuadro amarillo con la regla del conjunto: cadena, piñón y corona se desgastan juntos y se reemplazan juntos; ahorrar en una pieza duplica la mano de obra.",
+      "Recuadro que explica el número de la cadena: el primer dígito es el paso en octavos de pulgada y los dos siguientes el ancho interior.",
+      "Tabla con las medidas 420, 428, 520 y 525: paso de 12,70 mm o 15,875 mm y ancho interior de 6,35 mm o 7,94 mm.",
+      "Tabla que compara cadena estándar, O-ring y X-ring por número de superficies de sello: ninguna, dos y cuatro.",
+      "Recuadro sobre la relación de piñones: menos dientes adelante o más atrás favorecen la aceleración y reducen la velocidad máxima; la inversa alarga el desarrollo.",
+      "Lista de señales de que el kit cumplió su ciclo: dientes en forma de gancho, puntos rígidos, tensión desigual y retenes salidos.",
+      "Lámina de cierre con el logo de Mundo Motor, la frase 'La medida la fija el manual, no el mostrador' y la invitación a leer la guía completa en mundomotor.bike."
+    ],
+    "push": {
+      "titulo": "¿Cambia solo la cadena? Es el error más caro",
+      "texto": "Cómo leer la medida, qué retén conviene en ciudad y qué pasa al tocar los dientes. Guía completa."
+    }
+  },
+  "laminas": [
+    {
+      "tipo": "foto",
+      "imagen": "https://mundomotor.bike/wp-content/uploads/2026/07/Portadas-Mundo-Motor-2.webp",
+      "propia": true,
+      "credito": "Mundo Motor",
+      "kicker": "Mantenimiento · Transmisión",
+      "etiqueta": "Guía práctica",
+      "titulo": "Kit de arrastre: <em>cómo elegirlo</em>",
+      "bajada": "Tres decisiones que vienen en el manual <strong>y lo que pasa si las cambia</strong>."
+    },
+    {
+      "tipo": "destacado",
+      "titulo": "Se cambia <em>completo</em>",
+      "caja_titulo": "Las tres piezas se desgastan juntas",
+      "caja_texto": "Una cadena nueva sobre piñones gastados se deteriora en una fracción de su vida útil, porque los dientes ya no corresponden al paso original.",
+      "bajada": "Ahorrar en una pieza suma <strong>la mano de obra dos veces</strong>."
+    },
+    {
+      "tipo": "destacado",
+      "titulo": "Qué dice el <em>número</em>",
+      "caja_titulo": "428, 520, 525…",
+      "caja_texto": "El primer dígito es el paso en octavos de pulgada: 4 es media pulgada, 5 es 5/8. Los dos siguientes, el ancho interior donde se aloja el diente.",
+      "bajada": "No es un código comercial: <strong>describe dos medidas físicas</strong>."
+    },
+    {
+      "tipo": "tabla",
+      "titulo": "Las <em>medidas</em>",
+      "columnas": ["Medida", "Paso", "Ancho"],
+      "filas": [
+        ["420", "12,70 mm", "6,35 mm"],
+        ["428", "12,70 mm", "7,94 mm"],
+        ["520", "15,875 mm", "6,35 mm"],
+        ["525", "15,875 mm", "7,94 mm"]
+      ],
+      "nota": "Una 428 no sirve sobre piñones de 420 aunque el paso coincida."
+    },
+    {
+      "tipo": "tabla",
+      "titulo": "El <em>retén</em>",
+      "columnas": ["Tipo", "Sellos", "Qué hace"],
+      "filas": [
+        ["Estándar", "Ninguno", "Menor costo; exige lubricar más"],
+        ["O-ring", "Dos", "Retiene la grasa, bloquea la tierra"],
+        ["X-ring", "Cuatro", "Menos fricción, mejor retención"]
+      ],
+      "nota": "Para uso urbano con lluvia y polvo, el retén compensa el costo."
+    },
+    {
+      "tipo": "destacado",
+      "titulo": "Los <em>dientes</em>",
+      "caja_titulo": "Menos adelante o más atrás: acelera más",
+      "caja_texto": "Y reduce la velocidad máxima. La combinación inversa alarga el desarrollo: gira a menos revoluciones en crucero pero pierde respuesta en subidas o con carga.",
+      "bajada": "También altera la lectura del <strong>velocímetro y el odómetro</strong>."
+    },
+    {
+      "tipo": "lista",
+      "titulo": "Señales de que <em>ya cumplió</em>",
+      "items": [
+        {
+          "titulo": "Dientes en gancho",
+          "texto": "O en forma de ola, en el piñón o la corona."
+        },
+        {
+          "titulo": "Puntos rígidos",
+          "texto": "Eslabones que no flexionan al girar la rueda."
+        },
+        {
+          "titulo": "Tensión desigual",
+          "texto": "Zonas flojas y zonas tirantes en el recorrido."
+        },
+        {
+          "titulo": "Retenes salidos",
+          "texto": "La cadena sellada ya perdió la grasa interna."
+        }
+      ],
+      "nota": "Antes de dar el kit por vencido, descarte un problema de ajuste."
+    },
+    {
+      "tipo": "cierre",
+      "titulo": "La medida la fija el manual, no el mostrador",
+      "texto": "Misma medida en las tres piezas y la que especifica el fabricante. La guía completa, en Mundo Motor.",
+      "url": "mundomotor.bike",
+      "acciones": [
+        "<b>Guarda</b> esta guía",
+        "<b>Compártela</b> con un parcero"
+      ]
+    }
+  ],
+  "vigencia": "permanente",
+  "creada": "2026-08-20"
+}

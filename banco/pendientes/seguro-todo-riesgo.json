@@ -1,0 +1,174 @@
+{
+  "slug": "seguro-todo-riesgo",
+  "origen": "https://mundomotor.bike/moto-tips/seguro-todo-riesgo-moto-colombia/",
+  "publicacion": {
+    "gancho": "Puede tener el SOAT al día y quedar sin respaldo si le roban la moto o si provoca un choque que daña otro vehículo.",
+    "cuerpo": [
+      "El SOAT responde por las personas. El seguro todo riesgo, voluntario, cubre lo que el SOAT deja por fuera: su moto, el robo y los daños a terceros.",
+      "Qué ampara, de qué depende el precio y cómo elegir sin firmar a ciegas."
+    ],
+    "cta": "Guarde esta guía antes de cotizar. ¿Su moto tiene hoy algún amparo además del SOAT?",
+    "fuente_texto": "Aseguradoras vigiladas por la Superintendencia Financiera. Guía completa en mundomotor.bike, enlace en la biografía.",
+    "hashtags": [
+      "#SeguroDeMoto",
+      "#SOAT",
+      "#MotosColombia"
+    ],
+    "ubicacion": "Bogotá, Colombia",
+    "menciones": [],
+    "alt": [
+      "Portada del carrusel sobre una foto de un motociclista en un retén mostrando su documento. Titular: 'SOAT no es todo riesgo', con el logo de Mundo Motor.",
+      "Recuadro amarillo con la idea central: el SOAT responde por lesiones o muerte de personas; no paga el daño de su moto ni el robo.",
+      "Tabla comparativa SOAT frente a todo riesgo: obligatorio sí/no, daños a su moto no/sí, robo no/sí, daños a terceros no/sí.",
+      "Lista de los amparos habituales de una póliza voluntaria: pérdida total o parcial, hurto, responsabilidad civil extracontractual y asistencia en vía.",
+      "Lista de los factores que definen el precio de la prima: valor y modelo de la moto, cilindraje, ciudad, uso e historial del conductor.",
+      "Lista de pasos para elegir la póliza: definir qué proteger, comparar al menos tres cotizaciones, revisar exclusiones, confirmar talleres y verificar que la aseguradora esté vigilada.",
+      "Recuadro sobre el deducible: la parte del valor que asume el propietario en cada reclamación; menos deducible, prima más alta.",
+      "Lista de errores comunes al contratar: elegir solo por precio, no leer exclusiones, declarar mal el uso de la moto y no actualizar la información.",
+      "Lámina de cierre con el logo de Mundo Motor, la frase 'Cotice con el detalle por escrito' y la invitación a leer la guía completa en mundomotor.bike."
+    ],
+    "push": {
+      "titulo": "SOAT al día no cubre el robo de su moto",
+      "texto": "Qué ampara el seguro todo riesgo, de qué depende la prima y los errores que anulan la reclamación."
+    }
+  },
+  "laminas": [
+    {
+      "tipo": "foto",
+      "imagen": "https://mundomotor.bike/wp-content/uploads/2024/12/El-texto-del-parrafo.webp",
+      "propia": true,
+      "credito": "Mundo Motor",
+      "kicker": "Trámites · Seguros",
+      "etiqueta": "Guía práctica",
+      "titulo": "SOAT <em>no es</em> todo riesgo",
+      "bajada": "Qué cubre el seguro voluntario para moto y <strong>cómo elegirlo</strong>."
+    },
+    {
+      "tipo": "destacado",
+      "titulo": "La <em>frontera</em>",
+      "caja_titulo": "El SOAT responde por las personas",
+      "caja_texto": "Atiende a las víctimas de accidentes de tránsito, sin importar quién sea el responsable. No paga por el daño de su moto ni por el robo.",
+      "bajada": "Para esos escenarios existe <strong>la póliza voluntaria</strong>."
+    },
+    {
+      "tipo": "tabla",
+      "titulo": "Uno frente al <em>otro</em>",
+      "columnas": ["", "SOAT", "Todo riesgo"],
+      "filas": [
+        ["Obligatorio", "Sí", "No"],
+        ["Su moto", "No", "Sí"],
+        ["Robo", "No", "Sí"],
+        ["Terceros", "No", "Sí"]
+      ],
+      "nota": "En el todo riesgo, cada amparo se pacta en el contrato."
+    },
+    {
+      "tipo": "lista",
+      "titulo": "Qué <em>ampara</em>",
+      "items": [
+        {
+          "titulo": "Pérdida total o parcial",
+          "texto": "Repara o indemniza su moto tras un accidente."
+        },
+        {
+          "titulo": "Hurto",
+          "texto": "Robo total y, en algunos casos, el de partes."
+        },
+        {
+          "titulo": "Responsabilidad civil",
+          "texto": "Daños que le cause a otras personas o a sus bienes."
+        },
+        {
+          "titulo": "Asistencia en vía",
+          "texto": "Grúa, auxilio mecánico o transporte."
+        }
+      ]
+    },
+    {
+      "tipo": "lista",
+      "titulo": "De qué depende <em>el precio</em>",
+      "items": [
+        {
+          "titulo": "Valor y modelo",
+          "texto": "A mayor valor, mayor prima."
+        },
+        {
+          "titulo": "Cilindraje y tipo",
+          "texto": "Una deportiva cuesta más de asegurar que una utilitaria de 125 cc."
+        },
+        {
+          "titulo": "Ciudad y uso",
+          "texto": "Accidentalidad y hurto de la zona; mensajería o aplicaciones elevan el riesgo."
+        },
+        {
+          "titulo": "Historial",
+          "texto": "Edad, experiencia y siniestralidad previa."
+        }
+      ]
+    },
+    {
+      "tipo": "lista",
+      "titulo": "Cómo <em>elegir</em>",
+      "items": [
+        {
+          "titulo": "Defina qué proteger",
+          "texto": "Si la prioridad es el robo, el amparo de hurto; si rueda mucho en ciudad, la responsabilidad civil."
+        },
+        {
+          "titulo": "Tres cotizaciones",
+          "texto": "Con detalle de amparos, límites y deducibles."
+        },
+        {
+          "titulo": "Lea las exclusiones",
+          "texto": "Conducir sin licencia vigente o competir no están cubiertos."
+        },
+        {
+          "titulo": "Aseguradora vigilada",
+          "texto": "Solo compañías autorizadas por la Superintendencia Financiera."
+        }
+      ]
+    },
+    {
+      "tipo": "destacado",
+      "titulo": "La palabra que <em>decide</em>",
+      "caja_titulo": "Deducible",
+      "caja_texto": "Es la parte del valor de la reclamación que asume el propietario. Un deducible más bajo suele significar una prima más alta, y viceversa.",
+      "bajada": "Una prima baja puede esconder <strong>deducibles altos</strong>."
+    },
+    {
+      "tipo": "lista",
+      "titulo": "Errores <em>comunes</em>",
+      "items": [
+        {
+          "titulo": "Elegir solo por precio",
+          "texto": "Puede esconder coberturas limitadas."
+        },
+        {
+          "titulo": "No leer las exclusiones",
+          "texto": "Muchas reclamaciones se niegan por eso."
+        },
+        {
+          "titulo": "Declarar mal el uso",
+          "texto": "Trabajar con la moto asegurada como particular deja el amparo en entredicho."
+        },
+        {
+          "titulo": "No actualizar datos",
+          "texto": "Un cambio de ciudad o de uso se informa."
+        }
+      ]
+    },
+    {
+      "tipo": "cierre",
+      "titulo": "Cotice con el detalle por escrito",
+      "texto": "Coberturas, exclusiones y deducibles antes de firmar. La guía completa, en Mundo Motor.",
+      "url": "mundomotor.bike",
+      "acciones": [
+        "<b>Guarda</b> esta guía",
+        "<b>Compártela</b> con un parcero"
+      ]
+    }
+  ],
+  "vigencia": "anual",
+  "anio": 2026,
+  "creada": "2026-08-20"
+}

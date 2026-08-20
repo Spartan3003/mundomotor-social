@@ -1,0 +1,108 @@
+{
+  "slug": "aceite-10w40-20w50",
+  "origen": "https://mundomotor.bike/moto-tips/cual-es-la-diferencia-entre-aceite-10w40-y-20w50-para-moto/",
+  "publicacion": {
+    "gancho": "10W40 y 20W50 están lado a lado en el mostrador y no son intercambiables: la diferencia está en la viscosidad.",
+    "cuerpo": [
+      "El primer número dice cómo fluye en frío al arrancar; el segundo, qué tan gruesa es la película cuando el motor ya está caliente.",
+      "Elegir mal no daña el motor de inmediato, pero compromete su protección con el tiempo."
+    ],
+    "cta": "Guarde esta guía para el próximo cambio de aceite. ¿Cuál pide el manual de su moto?",
+    "fuente_texto": "Clasificación de viscosidad SAE. Guía completa en mundomotor.bike, enlace en la biografía.",
+    "hashtags": [
+      "#AceiteDeMoto",
+      "#MantenimientoDeMoto",
+      "#MotosColombia"
+    ],
+    "ubicacion": "Bogotá, Colombia",
+    "menciones": [],
+    "alt": [
+      "Portada del carrusel sobre una foto del aceite usado cayendo de una moto a una bandeja metálica. Titular: '10W40 o 20W50: cuál le toca', con el logo de Mundo Motor.",
+      "Recuadro amarillo que explica los dos números: el primero es la fluidez en frío al arrancar y el segundo la viscosidad a temperatura de trabajo.",
+      "Cifra grande: 16 grados. Diferencia en el punto de fluidez entre un 10W40 (-42°C) y un 20W50 (-26°C).",
+      "Comparativa a dos columnas, 10W40 y 20W50: película en caliente más delgada frente a más gruesa, 13.6 cSt frente a 18.8 cSt, motores modernos frente a motores exigentes.",
+      "Recuadro sobre qué motores piden cada uno: 10W40 para tolerancias ajustadas y refrigeración líquida; 20W50 para refrigeración por aire, trabajo y motores con desgaste.",
+      "Recuadro sobre pasar de 20W50 a 10W40: gana arranque pero en motores con desgaste puede bajar la presión de aceite en ralentí caliente.",
+      "Recuadro sobre pasar de 10W40 a 20W50: película más gruesa, pero en motores modernos exige más esfuerzo y puede subir el consumo.",
+      "Lámina de cierre con el logo de Mundo Motor, la frase 'El manual decide, no el mostrador' y la invitación a leer la guía completa en mundomotor.bike."
+    ],
+    "push": {
+      "titulo": "¿20W50 en una moto que pide 10W40?",
+      "texto": "Qué cambia en frío y en caliente, y qué motor pide cada uno. La diferencia explicada sin marketing."
+    }
+  },
+  "laminas": [
+    {
+      "tipo": "foto",
+      "imagen": "https://mundomotor.bike/wp-content/uploads/2026/07/Portadas-Mundo-Motor-1-1.webp",
+      "propia": true,
+      "credito": "Mundo Motor",
+      "kicker": "Mantenimiento · Lubricación",
+      "etiqueta": "Guía práctica",
+      "titulo": "10W40 o 20W50: <em>cuál le toca</em>",
+      "bajada": "Qué significan los números del envase <strong>y qué motor pide cada uno</strong>."
+    },
+    {
+      "tipo": "destacado",
+      "titulo": "Dos números, <em>dos momentos</em>",
+      "caja_titulo": "Frío y caliente",
+      "caja_texto": "El primer número (10 o 20) indica qué tan fluido es el aceite al arrancar en frío. El segundo (40 o 50), la viscosidad cuando el motor alcanza su temperatura de trabajo.",
+      "bajada": "No es un código de marketing: es una medida <strong>estandarizada por la SAE</strong>."
+    },
+    {
+      "tipo": "cifra",
+      "kicker": "Punto de fluidez",
+      "cifra": "16 grados",
+      "nota": "Un 10W40 suele fluir hasta -42°C; un 20W50, hasta -26°C.",
+      "bajada": "Tras horas con el motor apagado, son <strong>segundos reales de protección</strong> en el arranque."
+    },
+    {
+      "tipo": "comparativa",
+      "titulo": "En <em>caliente</em>",
+      "columnas": [
+        {
+          "titulo": "10W40",
+          "datos": ["Película más delgada", "13.6 cSt a 100°C", "Motores modernos", "Menor esfuerzo interno"]
+        },
+        {
+          "titulo": "20W50",
+          "datos": ["Película más gruesa", "18.8 cSt a 100°C", "Motores exigentes", "Mayor reserva TBN"]
+        }
+      ],
+      "nota": "Viscosidad cinemática a 100°C: a mayor número, más grueso con el motor trabajando."
+    },
+    {
+      "tipo": "destacado",
+      "titulo": "Qué motor <em>pide cada uno</em>",
+      "caja_titulo": "10W40: tolerancias ajustadas",
+      "caja_texto": "Refrigeración líquida, diseños modernos, uso urbano y carretera. El 20W50 va en tolerancias amplias, refrigeración por aire, trabajo, tráfico lento y motores con desgaste.",
+      "bajada": "Una película más gruesa de lo necesario <strong>no protege más</strong>: exige más esfuerzo."
+    },
+    {
+      "tipo": "destacado",
+      "titulo": "De 20W50 <em>a 10W40</em>",
+      "caja_titulo": "Gana en el arranque",
+      "caja_texto": "El aceite llega más rápido a los puntos altos del motor. El riesgo está en motores con desgaste: la película más delgada puede bajar la presión de aceite en ralentí prolongado con el motor caliente.",
+      "bajada": "Solo si el fabricante lo permite <strong>dentro del rango del manual</strong>."
+    },
+    {
+      "tipo": "destacado",
+      "titulo": "De 10W40 <em>a 20W50</em>",
+      "caja_titulo": "Película más gruesa, menos fluidez en frío",
+      "caja_texto": "En motores modernos con tolerancias ajustadas no necesariamente protege más: puede exigir más esfuerzo al motor, con impacto en el consumo y en la suavidad de la respuesta.",
+      "bajada": "Antes de culpar a la viscosidad, <strong>revise el nivel</strong>: suele ser un problema de cantidad."
+    },
+    {
+      "tipo": "cierre",
+      "titulo": "El manual decide, no el mostrador",
+      "texto": "La elección depende del diseño del motor, no de una preferencia general. La guía completa, en Mundo Motor.",
+      "url": "mundomotor.bike",
+      "acciones": [
+        "<b>Guarda</b> esta guía",
+        "<b>Compártela</b> con un parcero"
+      ]
+    }
+  ],
+  "vigencia": "permanente",
+  "creada": "2026-08-20"
+}
