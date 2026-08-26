@@ -1,0 +1,44 @@
+{
+  "slug": "numeros-llantas",
+  "origen": "https://mundomotor.bike/moto-tips/que-significan-los-numeros-en-las-llantas-de-moto-guia-tecnica-y-de-seguridad-para-america-latina/",
+  "caption": "El flanco de la llanta es un expediente técnico: ancho, perfil, rin, carga, velocidad y hasta la fecha de fabricación.\n\nLeerlo evita montar una medida que roce el basculante, un índice de carga insuficiente o una llanta con diez años en bodega.\nGuía para descifrar 180/55 ZR 17 M/C (73W) y el código DOT.\n\nGuarde esta guía para la próxima vez que cambie llantas. ¿Sabe de qué semana y año son las suyas?\n\nNomenclatura ETRTO y DOT. Guía completa en mundomotor.bike, enlace en la biografía.\n\n#LlantasDeMoto #SeguridadVial #MotosColombia",
+  "ubicacion": "Bogotá, Colombia",
+  "imagenes": [
+    {
+      "archivo": "01.jpg",
+      "alt": "Portada del carrusel sobre una foto de cinco llantas de moto de distintos dibujos alineadas sobre fondo blanco. Titular: 'Lo que dice su llanta', con el logo de Mundo Motor."
+    },
+    {
+      "archivo": "02.jpg",
+      "alt": "Cifra grande: 10 años. Edad a la que los fabricantes aconsejan retirar de servicio una llanta aunque conserve el grabado."
+    },
+    {
+      "archivo": "03.jpg",
+      "alt": "Tabla que descompone la medida 180/55 ZR 17: 180 es el ancho en milímetros, 55 el perfil en porcentaje, ZR la carcasa radial para más de 240 km/h y 17 el rin en pulgadas."
+    },
+    {
+      "archivo": "04.jpg",
+      "alt": "Recuadro sobre el bloque (73W): 73 es la carga máxima de 365 kg y W la velocidad de 270 km/h; entre paréntesis indica que puede superarla con menos carga."
+    },
+    {
+      "archivo": "05.jpg",
+      "alt": "Lista de letras de velocidad con su límite: J 100 km/h, P 150 km/h, S 180 km/h, H 210 km/h y W 270 km/h."
+    },
+    {
+      "archivo": "06.jpg",
+      "alt": "Recuadro que explica el código DOT: los cuatro dígitos finales dan la semana y el año de fabricación; 2923 es la semana 29 de 2023."
+    },
+    {
+      "archivo": "07.jpg",
+      "alt": "Lista de otras marcas del flanco: TL sin cámara, TT con cámara, flecha de sentido de giro, punto amarillo alineado con la válvula."
+    },
+    {
+      "archivo": "08.jpg",
+      "alt": "Recuadro que advierte no mezclar una llanta diagonal adelante con una radial atrás: puede causar bamboleos a velocidad de carretera."
+    },
+    {
+      "archivo": "09.jpg",
+      "alt": "Lámina de cierre con el logo de Mundo Motor, la frase 'El manual manda sobre el mostrador' y la invitación a leer la guía completa en mundomotor.bike."
+    }
+  ]
+}
