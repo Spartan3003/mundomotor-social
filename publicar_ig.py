@@ -142,12 +142,20 @@ def main() -> int:
         espera_contenedor(h, token)
 
     # 2) contenedor del carrusel
-    padre = pide(f"{API}/{ig_id}/media", {
+    datos_padre = {
         "media_type": "CAROUSEL",
         "children": ",".join(hijos),
         "caption": caption,
         "access_token": token,
-    })
+    }
+    # Post colaborativo: Meta solo acepta 'collaborators' en el contenedor
+    # padre del carrusel (en los hijos lo rechaza). Va como lista JSON de
+    # usernames sin @; el otro perfil recibe la invitacion y decide.
+    colaboradores = [c.lstrip("@") for c in paquete.get("colaboradores", []) if c]
+    if colaboradores:
+        datos_padre["collaborators"] = json.dumps(colaboradores[:3])
+        print(f"Colaboradores invitados: {', '.join(colaboradores[:3])}")
+    padre = pide(f"{API}/{ig_id}/media", datos_padre)
     espera_contenedor(padre["id"], token)
 
     # 3) publicar

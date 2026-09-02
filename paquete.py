@@ -162,6 +162,7 @@ def main(ruta: str) -> int:
         "origen": cfg["origen"],
         "caption": caption,
         "ubicacion": p.get("ubicacion"),
+        "colaboradores": p.get("colaboradores", []),
         "imagenes": [{"archivo": f.name, "alt": a}
                      for f, a in zip(imgs, p.get("alt", []))],
     }, ensure_ascii=False, indent=2), encoding="utf-8")

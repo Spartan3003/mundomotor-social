@@ -1,0 +1,183 @@
+{
+  "slug": "moto-tras-sismo-movemos",
+  "origen": "https://mundomotor.bike/moto-tips/moverse-en-moto-tras-un-sismo-las-cinco-recomendaciones-de-movemos-colombia/",
+  "vigencia": "efimera",
+  "dias_vigencia": 45,
+  "creada": "2026-09-02",
+  "publicacion": {
+    "gancho": "Ayudar en moto tras un sismo también exige volver seguros: cinco reglas para rodar por zonas afectadas.",
+    "cuerpo": [
+      "Tras el sismo de magnitud 7,4 del 10 de agosto, motociclistas de San José (Caldas) y Quibdó pusieron sus motos al servicio de las comunidades afectadas.",
+      "Movemos Colombia y la Cámara de la Industria de Motocicletas de la ANDI publicaron cinco recomendaciones para quienes deban moverse por vías con grietas, escombros o maquinaria."
+    ],
+    "cta": "Guarde el carrusel y compártalo con quien esté rodando por zonas afectadas. ¿Ha tenido que moverse en moto después de una emergencia?",
+    "fuente_texto": "Fuentes: comunicado de Movemos Colombia y la Cámara de la Industria de Motocicletas de la ANDI; Servicio Geológico Colombiano. Guía completa, en el enlace de la biografía.",
+    "hashtags": [
+      "#SeguridadVial",
+      "#MotosColombia",
+      "#MovemosColombia"
+    ],
+    "ubicacion": "Bogotá, Colombia",
+    "menciones": [
+      "@movemoscolombia",
+      "@andicolombiaoficial"
+    ],
+    "colaboradores": [
+      "movemoscolombia",
+      "andicolombiaoficial"
+    ],
+    "push": {
+      "titulo": "Moto tras un sismo: cinco reglas para rodar seguro",
+      "texto": "Movemos Colombia y la ANDI publican qué hacer ante grietas, escombros y maquinaria en la vía. Guía en Mundo Motor."
+    },
+    "alt": [
+      "Portada del carrusel sobre la foto de un motociclista que ajusta su casco frente al espejo de la moto, con el titular 'Moverse en moto tras un sismo: cinco reglas' y el logo de Mundo Motor.",
+      "La cifra 7,4 destacada en amarillo, magnitud del sismo del 10 de agosto de 2026 con epicentro cerca de San José del Palmar, Chocó, según el Servicio Geológico Colombiano.",
+      "Recuadro amarillo con la condición previa a cualquier recorrido: informarse sobre el estado de la ruta y respetar las restricciones de las autoridades.",
+      "Lista numerada con las cinco recomendaciones de Movemos Colombia: casco y protección completa, menos velocidad y más distancia, no cruzar lo que no se puede evaluar, prioridad a vehículos de emergencia y consultar el estado de las vías.",
+      "Foto de una retroexcavadora trabajando sobre una vía destapada con agua y escombros, con el titular sobre dar prioridad a la maquinaria y al personal de rescate.",
+      "Recuadro amarillo que advierte no cruzar escombros, grietas ni charcos cuya profundidad y firmeza no se distingan a simple vista, y detenerse en una zona firme.",
+      "Lista de cuatro fuentes oficiales para consultar el estado de una vía en Colombia: la línea #767 de Invías, las autoridades locales, la UNGRD y las concesiones viales.",
+      "Comparación en dos columnas de los casos de San José, Caldas, donde entre 30 y 40 motociclistas entregaron mercados, agua y frazadas, y Quibdó, donde el grupo Los Bárbaros descargó ayudas humanitarias.",
+      "Lámina de cierre con el logo de Mundo Motor y la invitación a leer la guía completa en mundomotor.bike."
+    ]
+  },
+  "laminas": [
+    {
+      "tipo": "foto",
+      "imagen": "https://mundomotor.bike/wp-content/uploads/2026/09/MOTOCICLETA.jpg.webp",
+      "propia": true,
+      "kicker": "Seguridad vial · Colombia",
+      "etiqueta": "Guía tras el sismo",
+      "size": "mediano",
+      "titulo": "Moverse en moto <em>tras un sismo</em>: cinco reglas",
+      "bajada": "Movemos Colombia y la ANDI publicaron recomendaciones para quienes deban rodar por <strong>zonas afectadas</strong> por el sismo del 10 de agosto.",
+      "fuente": "Comunicado de Movemos Colombia y la Cámara de la Industria de Motocicletas de la ANDI.",
+      "credito": "Mundo Motor"
+    },
+    {
+      "tipo": "cifra",
+      "kicker": "Lo que pasó el 10 de agosto",
+      "cifra": "7,4",
+      "nota": "Magnitud · epicentro cerca de San José del Palmar (Chocó)",
+      "bajada": "A unos <strong>103 kilómetros de profundidad</strong>. Uno de los sismos de mayor magnitud registrados en la historia del país; se sintió en buena parte del territorio nacional.",
+      "fuente": "Servicio Geológico Colombiano."
+    },
+    {
+      "tipo": "destacado",
+      "titulo": "Antes de <em>arrancar</em>",
+      "caja_titulo": "La condición previa",
+      "caja_texto": "Informarse sobre el estado de la ruta y respetar las restricciones de las autoridades.",
+      "bajada": "Si la vía está cerrada o el paso está restringido, la recomendación no es buscar cómo pasar, sino <strong>esperar</strong>. Grietas, escombros y maquinaria cambian el trayecto de un día a otro."
+    },
+    {
+      "tipo": "lista",
+      "titulo": "Las <em>cinco</em> recomendaciones",
+      "size": "chico",
+      "items": [
+        {
+          "marca": "01",
+          "titulo": "Casco certificado y protección completa",
+          "texto": "Brazos y piernas cubiertos, calzado que proteja el tobillo y guantes."
+        },
+        {
+          "marca": "02",
+          "titulo": "Menos velocidad y más distancia",
+          "texto": "Cambios de ritmo progresivos; nada de frenadas bruscas."
+        },
+        {
+          "marca": "03",
+          "titulo": "No cruzar lo que no se puede evaluar",
+          "texto": "Escombros, grietas o charcos de fondo incierto."
+        },
+        {
+          "marca": "04",
+          "titulo": "Prioridad a vehículos de emergencia y maquinaria"
+        },
+        {
+          "marca": "05",
+          "titulo": "Consultar el estado de las vías y no improvisar"
+        }
+      ],
+      "fuente": "Movemos Colombia · Cámara de la Industria de Motocicletas de la ANDI."
+    },
+    {
+      "tipo": "foto",
+      "imagen": "https://mundomotor.bike/wp-content/uploads/2025/07/Portada-PX-Mundo-Motor-19.png",
+      "propia": true,
+      "kicker": "Recomendación 4",
+      "size": "mediano",
+      "titulo": "Distancia de la <em>maquinaria</em>",
+      "bajada": "Al acercarse a labores de rescate, remoción de escombros o reparación de vías: reducir la velocidad, mantener distancia y seguir las indicaciones del personal que controla el tránsito.",
+      "credito": "Mundo Motor"
+    },
+    {
+      "tipo": "destacado",
+      "titulo": "No cruzar lo que <em>no se ve</em>",
+      "caja_titulo": "Escombros, grietas y charcos",
+      "caja_texto": "Si no puede determinar su profundidad y firmeza a simple vista, no los atraviese.",
+      "bajada": "Deténgase de forma gradual en una zona firme y busque un paso seguro. Un charco después de un sismo puede esconder una grieta o un socavón."
+    },
+    {
+      "tipo": "lista",
+      "titulo": "Dónde <em>consultar</em> la vía",
+      "size": "chico",
+      "items": [
+        {
+          "marca": "01",
+          "titulo": "Línea #767 de Invías",
+          "texto": "Estado de la red vial nacional, también en su web y redes oficiales."
+        },
+        {
+          "marca": "02",
+          "titulo": "Autoridades locales",
+          "texto": "Alcaldías, secretarías de movilidad y consejos de gestión del riesgo."
+        },
+        {
+          "marca": "03",
+          "titulo": "UNGRD",
+          "texto": "Reportes de afectación por municipio y zonas con acceso restringido."
+        },
+        {
+          "marca": "04",
+          "titulo": "Concesiones viales",
+          "texto": "Cierres y pasos a un carril en corredores concesionados."
+        }
+      ],
+      "nota": "Un mensaje de un grupo de WhatsApp no reemplaza ninguna de estas fuentes."
+    },
+    {
+      "tipo": "comparativa",
+      "titulo": "Motociclistas que <em>ayudaron</em>",
+      "columnas": [
+        {
+          "titulo": "San José (Caldas)",
+          "datos": [
+            "<b>Entre 30 y 40 motociclistas</b> en una jornada solidaria.",
+            "Entrega de mercados, agua y frazadas.",
+            "Aportes económicos y consumo en negocios locales para apoyar la reactivación."
+          ]
+        },
+        {
+          "titulo": "Quibdó",
+          "datos": [
+            "<b>Los Bárbaros</b>, un grupo de jóvenes motociclistas.",
+            "Recepción y descarga de vehículos con ayudas humanitarias.",
+            "Agilizaron la llegada de alimentos y elementos básicos a las familias afectadas."
+          ]
+        }
+      ],
+      "nota": "Casos recogidos en el comunicado de Movemos Colombia."
+    },
+    {
+      "tipo": "cierre",
+      "titulo": "La guía completa está en la web",
+      "texto": "Qué cambia en la vía después de un sismo, cómo consultar las fuentes oficiales y qué falta por definir para los voluntarios en moto. Lo explicamos entero en Mundo Motor.",
+      "url": "mundomotor.bike",
+      "acciones": [
+        "<b>Guarda</b> esta guía",
+        "<b>Compártela</b> con quien ruede por la zona"
+      ]
+    }
+  ]
+}

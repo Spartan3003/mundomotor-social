@@ -46,7 +46,7 @@ API = f"https://{DOMINIO_PROPIO}/wp-json/wp/v2/posts"
 # (C.14, 50%, $633.200) y es contenido plenamente visible.
 CLAVES_META = {"tipo", "slug", "origen", "url", "size", "imagen", "credito",
                "propia", "vigencia", "anio", "creada", "dias_vigencia",
-               "hashtags", "menciones", "ubicacion", "limpio", "plain"}
+               "hashtags", "menciones", "colaboradores", "ubicacion", "limpio", "plain"}
 
 # Datos que exigen respaldo en el articulo.
 PATRONES = [
